@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TagTheSpot.Services.Spot.Application\TagTheSpot.Services.Spot.Application.csproj" />
+    <ProjectReference Include="..\TagTheSpot.Services.Spot.Domain\TagTheSpot.Services.Spot.Domain.csproj" />
+    <ProjectReference Include="..\TagTheSpot.Services.Spot.Infrastructure\TagTheSpot.Services.Spot.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

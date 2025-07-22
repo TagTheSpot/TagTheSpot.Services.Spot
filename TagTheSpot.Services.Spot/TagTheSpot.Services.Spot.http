@@ -1,0 +1,6 @@
+@TagTheSpot.Services.Spot_HostAddress = http://localhost:5063
+
+GET {{TagTheSpot.Services.Spot_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
