@@ -1,5 +1,5 @@
 
-namespace TagTheSpot.Services.Spot
+namespace TagTheSpot.Services.Spot.WebAPI
 {
     public class Program
     {
@@ -23,11 +23,10 @@ namespace TagTheSpot.Services.Spot
                 app.UseSwaggerUI();
             }
 
-
-
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
 
             app.MapControllers();
 
