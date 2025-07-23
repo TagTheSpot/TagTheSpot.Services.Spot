@@ -5,11 +5,13 @@ VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagTheSpot.Services.Spot.WebAPI", "TagTheSpot.Services.Spot.WebAPI.csproj", "{8BDEA901-8FD1-4216-9DC5-B58B25A124F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagTheSpot.Services.Spot.Infrastructure", "..\TagTheSpot.Services.Spot.Infrastructure\TagTheSpot.Services.Spot.Infrastructure.csproj", "{BD560748-E7D9-4A30-A2DE-4DCD61FEF7F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagTheSpot.Services.Spot.Infrastructure", "..\TagTheSpot.Services.Spot.Infrastructure\TagTheSpot.Services.Spot.Infrastructure.csproj", "{BD560748-E7D9-4A30-A2DE-4DCD61FEF7F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagTheSpot.Services.Spot.Domain", "..\TagTheSpot.Services.Spot.Domain\TagTheSpot.Services.Spot.Domain.csproj", "{6F9A8FCA-FAF7-4C7A-9FBA-44FF401C4487}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagTheSpot.Services.Spot.Domain", "..\TagTheSpot.Services.Spot.Domain\TagTheSpot.Services.Spot.Domain.csproj", "{6F9A8FCA-FAF7-4C7A-9FBA-44FF401C4487}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagTheSpot.Services.Spot.Application", "..\TagTheSpot.Services.Spot.Application\TagTheSpot.Services.Spot.Application.csproj", "{B3A9AA50-B89B-4E80-9F70-1D5A2DC44B23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagTheSpot.Services.Spot.Application", "..\TagTheSpot.Services.Spot.Application\TagTheSpot.Services.Spot.Application.csproj", "{B3A9AA50-B89B-4E80-9F70-1D5A2DC44B23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scr", "scr", "{C2AE1B0A-A76B-4380-9F29-A2DB32243DA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8BDEA901-8FD1-4216-9DC5-B58B25A124F9} = {C2AE1B0A-A76B-4380-9F29-A2DB32243DA6}
+		{BD560748-E7D9-4A30-A2DE-4DCD61FEF7F0} = {C2AE1B0A-A76B-4380-9F29-A2DB32243DA6}
+		{6F9A8FCA-FAF7-4C7A-9FBA-44FF401C4487} = {C2AE1B0A-A76B-4380-9F29-A2DB32243DA6}
+		{B3A9AA50-B89B-4E80-9F70-1D5A2DC44B23} = {C2AE1B0A-A76B-4380-9F29-A2DB32243DA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEA0ABB5-FB97-4347-94F2-4DE27559DF34}
