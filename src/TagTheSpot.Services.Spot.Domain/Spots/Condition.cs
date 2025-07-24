@@ -1,4 +1,4 @@
-﻿namespace TagTheSpot.Services.Spot.Domain.Enums
+﻿namespace TagTheSpot.Services.Spot.Domain.Spots
 {
     public enum Condition
     {

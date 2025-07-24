@@ -1,6 +1,4 @@
-﻿using TagTheSpot.Services.Spot.Domain.Enums;
-
-namespace TagTheSpot.Services.Spot.Domain.Entities
+﻿namespace TagTheSpot.Services.Spot.Domain.Submissions
 {
     public class Submission
     {
