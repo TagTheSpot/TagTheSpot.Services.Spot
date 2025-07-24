@@ -1,4 +1,9 @@
 
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using TagTheSpot.Services.Spot.Application.Abstractions.Services;
+using TagTheSpot.Services.Spot.Application.Services;
+using TagTheSpot.Services.Spot.Application.Validators;
 using TagTheSpot.Services.Spot.Domain.Cities;
 using TagTheSpot.Services.Spot.Infrastructure.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence;
@@ -24,8 +29,10 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 .ValidateOnStart();
 
             builder.Services.AddSingleton<ICityRepository, CityRepository>();
+            builder.Services.AddScoped<ICityService, CityService>();
 
-            var ser = builder.Services.BuildServiceProvider().GetRequiredService<ICityRepository>();
+            builder.Services.AddFluentValidationAutoValidation();
+            builder.Services.AddValidatorsFromAssemblyContaining<GetMatchingCitiesRequestValidator>();
 
             var app = builder.Build();
 
