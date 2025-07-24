@@ -16,7 +16,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
         public async Task<IEnumerable<CityResponse>> GetMatchingCities(
             GetMatchingCitiesRequest request)
         {
-            var matchingCities = await _cityRepository.GetMatchingCities(request.CityPattern);
+            var matchingCities = await _cityRepository.GetMatchingCities(request.Pattern);
 
             return matchingCities.Select(
                 city => new CityResponse(

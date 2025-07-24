@@ -28,7 +28,8 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence
 
         public Task<IEnumerable<City>> GetMatchingCities(string cityPattern)
         {
-            return Task.FromResult(_cities.Where(city => city.Name.StartsWith(cityPattern)));
+            return Task.FromResult(_cities.Where(city => 
+                city.Name.StartsWith(cityPattern, StringComparison.OrdinalIgnoreCase)));
         }
     }
 }

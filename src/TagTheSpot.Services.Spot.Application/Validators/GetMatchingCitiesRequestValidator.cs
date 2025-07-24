@@ -8,7 +8,7 @@ namespace TagTheSpot.Services.Spot.Application.Validators
     {
         public GetMatchingCitiesRequestValidator()
         {
-            RuleFor(x => x.CityPattern)
+            RuleFor(x => x.Pattern)
                 .MaximumLength(50).WithMessage("City length cannot be greater than 50 characters.");
         }
     }
