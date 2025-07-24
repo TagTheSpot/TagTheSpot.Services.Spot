@@ -1,4 +1,4 @@
-﻿namespace TagTheSpot.Services.Spot.Domain.Entities
+﻿namespace TagTheSpot.Services.Spot.Domain.Cities
 {
     public sealed class City
     {

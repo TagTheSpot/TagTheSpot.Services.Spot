@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TagTheSpot.Services.Spot.Application\TagTheSpot.Services.Spot.Application.csproj" />
+    <ProjectReference Include="..\TagTheSpot.Services.Spot.Domain\TagTheSpot.Services.Spot.Domain.csproj" />
+    <ProjectReference Include="..\TagTheSpot.Services.Spot.Infrastructure\TagTheSpot.Services.Spot.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,222 +1,222 @@
-id,ua_city,city,lat,lng,country,iso2,admin_name,capital,population,population_proper
-994d0263-67d4-44f2-a018-411bf0afa801,Київ,Kyiv,50.45,30.5233,Ukraine,UA,"Kyiv, Misto",primary,2952301,2952301
-10dec904-7cfd-4ef2-a66d-e136557c9cdd,Харків,Kharkiv,49.9925,36.2311,Ukraine,UA,Kharkivska Oblast,admin,1421125,1421125
-d2b2ae8b-75a9-463d-a52d-730e74fb1328,Одеса,Odesa,46.4775,30.7326,Ukraine,UA,Odeska Oblast,admin,1010537,1010537
-5b5d7e3b-a2e5-4b23-8099-165d21eeeaa1,Дніпро,Dnipro,48.4675,35.04,Ukraine,UA,Dnipropetrovska Oblast,admin,968502,968502
-47b25095-cf3e-4ef7-ae70-58827b61ec22,Донецьк,Donetsk,48.0028,37.8053,Ukraine,UA,Donetska Oblast,admin,901645,901645
-e1a339da-733e-4539-938c-f793067c15cb,Львів,Lviv,49.8425,24.0322,Ukraine,UA,Lvivska Oblast,admin,717273,717273
-cbe1b5c4-672b-4447-93ad-5cee156b5db4,Запоріжжя,Zaporizhzhia,47.85,35.1175,Ukraine,UA,Zaporizka Oblast,admin,710052,710052
-a0096e42-ab59-40ed-8d93-3d9af3d5b112,Базальтове,BazalвЂ™tove,50.6765,26.16,Ukraine,UA,Rivnenska Oblast,,625543,625543
-800361f5-081e-439a-924f-2616f8a8fe4c,Кривий Ріг,Kryvyi Rih,47.91,33.39,Ukraine,UA,Dnipropetrovska Oblast,minor,603904,603904
-3ad9443c-45f8-42ac-868c-74db1619c98b,Севастополь,Sevastopol,44.605,33.5225,Ukraine,UA,"Sevastopol, Misto",admin,485386,485386
-398c00bd-267e-469e-a26b-91ef67a27068,Миколаїв,Mykolaiv,46.975,31.995,Ukraine,UA,Mykolaivska Oblast,admin,470011,470011
-5a1514e0-5e66-4a08-a1bd-d6e2ee62d6cc,Маріуполь,Mariupol,47.0958,37.5494,Ukraine,UA,Donetska Oblast,minor,449498,449498
-8f396d64-b811-453e-a4e6-713dc7aaaaaa,Луганськ,Luhansk,48.5678,39.3031,Ukraine,UA,Luhanska Oblast,admin,417990,417990
-de3251e2-f26d-4042-ae5f-4634f815ea98,Вінниця,Vinnytsia,49.2333,28.4833,Ukraine,UA,Vinnytska Oblast,admin,369739,369739
-34e11dbe-81fe-4da6-9ad9-c909e834d212,Макіївка,Makiivka,48.0556,37.9611,Ukraine,UA,Donetska Oblast,minor,343158,343158
-6700a5d5-a4ed-405e-8f52-468cfc4d1a50,Сімферополь,Simferopol,44.9519,34.1022,Ukraine,UA,"Krym, Avtonomna Respublika",admin,340540,340540
-20842704-4e3a-443a-bc1a-81aeff83126e,Чернігів,Chernihiv,51.4939,31.2947,Ukraine,UA,Chernihivska Oblast,admin,286899,286899
-e400e1a6-da7f-49b8-8b4a-9303ae033747,Полтава,Poltava,49.5894,34.5514,Ukraine,UA,Poltavska Oblast,admin,283402,283402
-536b0540-c74f-4053-b988-ee18d80b8109,Херсон,Kherson,46.6425,32.625,Ukraine,UA,Khersonska Oblast,admin,279131,279131
-60d7447c-0717-4a59-b71d-bf32f7a3f79a,Хмельницький,Khmelnytskyi,49.4167,27,Ukraine,UA,Khmelnytska Oblast,admin,274452,274452
-0f142d03-f2b3-4111-8b15-e42d8b5a03b6,Черкаси,Cherkasy,49.4444,32.0597,Ukraine,UA,Cherkaska Oblast,admin,269836,269836
-b2e9f127-04ac-4865-a9e1-589c58602803,Суми,Sumy,50.9119,34.8028,Ukraine,UA,Sumska Oblast,admin,265758,265758
-4c2e83e9-6d7e-447a-8d68-9b6e401d9127,Чернівці,Chernivtsi,48.3,25.9333,Ukraine,UA,Chernivetska Oblast,admin,265471,265471
-78b182f4-ab06-498e-8419-6ba67dac6cf0,Житомир,Zhytomyr,50.25,28.6667,Ukraine,UA,Zhytomyrska Oblast,admin,261624,261624
-9e6ebfe5-9f13-4205-a2cf-b895f4e22f67,Горлівка,Horlivka,48.3,38.05,Ukraine,UA,Donetska Oblast,minor,256714,256714
-69d2b4c7-acea-46b9-80e4-c433090f5a29,Рівне,Rivne,50.6192,26.2519,Ukraine,UA,Rivnenska Oblast,admin,245289,245289
-91dbfcd1-e351-4cd4-b6b0-0a122eaa7259,Івано-Франківськ,Ivano-Frankivsk,48.9228,24.7106,Ukraine,UA,Ivano-Frankivska Oblast,admin,238196,238196
-e6440e1a-aaa6-4c66-b97b-a4f9771aa7d6,Кропивницький,Kropyvnytskyi,48.5,32.2667,Ukraine,UA,Kirovohradska Oblast,admin,227413,227413
-f7556291-e23c-46e9-ad9b-23bc58ceda34,Кам’янське,Kamianske,48.5167,34.6167,Ukraine,UA,Dnipropetrovska Oblast,minor,226845,226845
-bb1864f6-8749-4a1a-b28f-142f2f17d7a7,Тернопіль,Ternopil,49.5667,25.6,Ukraine,UA,Ternopilska Oblast,admin,225238,225238
-6eca73c0-6c48-4a21-8abf-1dc0515d9d8a,Кременчук,Kremenchuk,49.0631,33.4039,Ukraine,UA,Poltavska Oblast,minor,220174,220174
-5bd83f91-eabc-4306-a984-63fb2e779e17,Луцьк,Lutsk,50.75,25.3358,Ukraine,UA,Volynska Oblast,admin,215986,215986
-218fd34e-c9e0-40dd-aae0-d775c2a02052,Біла Церква,Bila Tserkva,49.7989,30.1153,Ukraine,UA,Kyivska Oblast,minor,208944,208944
-3a5ad79e-0bf6-4b96-9952-c7d45f56644d,Сєвєродонецьк,Sievierodonetsk,48.9481,38.4933,Ukraine,UA,Luhanska Oblast,minor,150000,150000
-1eff34c8-dc85-4102-9ce6-aff49c9e7a05,Керч,Kerch,45.3619,36.4711,Ukraine,UA,"Krym, Avtonomna Respublika",minor,149566,149566
-c573fdda-a964-4885-88f7-88c94fe6a7f3,Мелітополь,Melitopol,46.8489,35.3675,Ukraine,UA,Zaporizka Oblast,minor,148851,148851
-f4773392-b422-48d2-9df0-4b1dad4d6bb3,Краматорськ,Kramatorsk,48.7392,37.5839,Ukraine,UA,Donetska Oblast,minor,147145,147145
-a8eed8fd-e077-48fc-8e4e-7147ca0de985,Хрустальний,Khrustalnyi,48.1214,38.9453,Ukraine,UA,Luhanska Oblast,,124000,124000
-5e857ce9-cea8-4516-b223-8b5a5e253280,Ужгород,Uzhhorod,48.6239,22.295,Ukraine,UA,Zakarpatska Oblast,admin,115449,115449
-7f1354de-f0a9-4dd7-bb93-5e8da93b3421,Слов’янськ,Sloviansk,48.8533,37.625,Ukraine,UA,Donetska Oblast,,113196,113196
-bef39084-5da0-4729-94e9-87f52e553b54,Бровари,Brovary,50.5111,30.79,Ukraine,UA,Kyivska Oblast,minor,109473,109473
-fa40dab1-f947-47bb-91c6-ae825f0c4310,Євпаторія,Yevpatoriia,45.1939,33.3681,Ukraine,UA,"Krym, Avtonomna Respublika",minor,108248,108248
-4335bbc8-488a-4d08-b7de-3cbd5ec4bb72,Бердянськ,Berdiansk,46.7556,36.7889,Ukraine,UA,Zaporizka Oblast,minor,106311,106311
-0f0aaeb8-b6c9-4d4b-ba7d-50e2d87da655,Алчевськ,Alchevsk,48.4778,38.7978,Ukraine,UA,Luhanska Oblast,minor,105398,105398
-b93e099a-c699-4957-a860-a7170a8040b3,Нікополь,Nikopol,47.5667,34.4,Ukraine,UA,Dnipropetrovska Oblast,minor,105160,105160
-cfdf9dfd-b43b-4963-ac08-83b448179b97,Павлоград,Pavlohrad,48.5167,35.8667,Ukraine,UA,Dnipropetrovska Oblast,minor,101430,101430
-41e2ede3-d3e7-4bbf-9f5a-14c1c1df9e0e,Кам’янець-Подільський,Kamianets-Podilskyi,48.6833,26.5833,Ukraine,UA,Khmelnytska Oblast,minor,100462,100462
-baa98bc6-9701-492f-9086-665f96e33a8d,Лисичанськ,Lysychansk,48.9167,38.4,Ukraine,UA,Luhanska Oblast,,96161,96161
-7b447c03-a4da-443c-abb8-e7e3040a75fa,Довжанськ,Dovzhansk,48.0778,39.6472,Ukraine,UA,Luhanska Oblast,minor,95153,95153
-116fc55f-3a10-45ca-8f68-a70d6dfbb3db,Мукачеве,Mukacheve,48.45,22.75,Ukraine,UA,Zakarpatska Oblast,minor,85569,85569
-c3ffd932-6aea-41fe-8e22-a95af2543812,Конотоп,Konotop,51.2167,33.2,Ukraine,UA,Sumska Oblast,minor,84787,84787
-37a44234-f1cb-411f-a1fd-00d47c1d387f,Умань,Uman,48.75,30.2167,Ukraine,UA,Cherkaska Oblast,minor,82154,82154
-2c7dbce6-fe9a-4894-96cb-182b2a17e7dc,Єнакієве,Yenakiieve,48.2167,38.2,Ukraine,UA,Donetska Oblast,,79348,79348
-7a3432e4-f9e1-4b2e-ac62-2f34ec6647c5,Ялта,Yalta,44.4994,34.17,Ukraine,UA,"Krym, Avtonomna Respublika",,79272,79272
-eb51ea22-fc6d-47a7-8a0b-78fd7d3889ed,Шостка,Shostka,51.8667,33.4833,Ukraine,UA,Sumska Oblast,minor,76788,76788
-9aaed5b6-9ff2-40c6-8713-48a72bacb5cd,Стаханов,Stakhanov,48.5681,38.6586,Ukraine,UA,Luhanska Oblast,,75745,75745
-8ebcb775-b291-40d6-b1c5-b0a9fedeb84c,Дрогобич,Drohobych,49.35,23.5,Ukraine,UA,Lvivska Oblast,minor,74610,74610
-55f87dfa-2dc9-44ec-bd19-248aa186ecac,Костянтинівка,Kostiantynivka,48.5333,37.7167,Ukraine,UA,Donetska Oblast,,72888,72888
-7e207181-1c3c-4296-b7c6-895e48bc4350,Бахмут,Bakhmut,48.5947,38.0008,Ukraine,UA,Donetska Oblast,minor,71094,71094
-81af1ffa-6042-4c9e-8b38-c9adc9a278c6,Феодосія,Fedosiia,45.0342,35.3792,Ukraine,UA,"Krym, Avtonomna Respublika",,69145,69145
-0de2c864-40b4-4199-8fe1-c24c56d00474,Ковель,Kovel,51.2167,24.7167,Ukraine,UA,Volynska Oblast,minor,67575,67575
-5b0df178-1f78-4feb-97fe-75d0786bcae9,Ніжин,Nizhyn,51.0381,31.8861,Ukraine,UA,Chernihivska Oblast,minor,66981,66981
-0700798e-4069-4bb1-92bc-1fe2387c7d28,Сміла,Smila,49.2117,31.8731,Ukraine,UA,Cherkaska Oblast,minor,65675,65675
-b1de7f07-834b-4785-a6c0-93fe99732b87,Червоноград,Chervonohrad,50.3867,24.2289,Ukraine,UA,Lvivska Oblast,minor,64297,64297
-0758d71f-c5e4-43ed-8aa8-8d307741e6c8,Покровськ,Pokrovsk,48.2828,37.1828,Ukraine,UA,Donetska Oblast,minor,63437,63437
-28d0512c-c245-4201-b6f7-68b5bfaa39af,Первомайськ,Pervomaisk,48.0439,30.85,Ukraine,UA,Mykolaivska Oblast,minor,63377,63377
-5c0a06d3-84ec-485a-beb1-1f5afee9f734,Коростень,Korosten,50.95,28.6333,Ukraine,UA,Zhytomyrska Oblast,minor,61496,61496
-9007562a-2c1d-4b56-9c22-2941ff4c0485,Коломия,Kolomyia,48.5306,25.0403,Ukraine,UA,Ivano-Frankivska Oblast,minor,61269,61269
-b64884a0-0b65-4c95-bc23-e4ab5f204aa5,Рубіжне,Rubizhne,49.01,38.3714,Ukraine,UA,Luhanska Oblast,,59951,59951
-53c0ef76-6ebc-474e-8910-8398e62cb712,Харцизьк,Khartsyzk,48.0428,38.1425,Ukraine,UA,Donetska Oblast,,59763,59763
-ec36561e-7bb1-4748-8268-102ba3fd9347,Дружківка,Druzhkivka,48.6214,37.5278,Ukraine,UA,Donetska Oblast,,59400,59400
-f9224287-5bc6-4af4-816c-1fc665bb18ea,Чорноморськ,Chornomorsk,46.3017,30.6569,Ukraine,UA,Odeska Oblast,,57983,57983
-aaef69d0-18d6-445e-98a9-173cc1175b33,Білгород-Дністровський,Bilhorod-Dnistrovskyi,46.1833,30.35,Ukraine,UA,Odeska Oblast,minor,57210,57210
-a3358ca1-1bbb-4fb7-89f4-b4c34ebbd362,Ірпінь,Irpin,50.5167,30.25,Ukraine,UA,Kyivska Oblast,,56806,56806
-2c791e90-a62d-4ee3-ae6b-17f5f65f3c80,Чистякове,Chystiakove,48.0219,38.6264,Ukraine,UA,Donetska Oblast,,55511,55511
-7892527f-5c62-496c-8e39-0d70acfec7c3,Стрий,Stryi,49.25,23.85,Ukraine,UA,Lvivska Oblast,minor,55100,55100
-146d7685-a154-45cb-abb9-2f9e87780161,Новоград-Волинський,Novohrad-Volynskyi,50.5833,27.6333,Ukraine,UA,Zhytomyrska Oblast,minor,55086,55086
-66372fae-ab62-41f8-9ec9-035d5086a748,Лозова,Lozova,48.8833,36.3833,Ukraine,UA,Kharkivska Oblast,minor,54026,54026
-6f56655c-c599-4845-8a6c-5de5a00dfc6c,Антрацит,Antratsyt,48.1192,39.09,Ukraine,UA,Luhanska Oblast,,52353,52353
-371b6105-0d5b-4e81-b2f4-c79001b27331,Горішні Плавні,Horishni Plavni,49.0167,33.6667,Ukraine,UA,Poltavska Oblast,,52167,52167
-b2e30669-7a57-4a6a-af6e-6be621071f80,Мирноград,Myrnohrad,48.2911,37.2681,Ukraine,UA,Donetska Oblast,,50360,50360
-c826cd0e-491d-4564-92fe-07a5ff261975,Шахтарськ,Shakhtarsk,48.0469,38.4686,Ukraine,UA,Donetska Oblast,minor,49482,49482
-b7a113c5-baa5-4abe-bbdb-f9729e58908b,Охтирка,Okhtyrka,50.303,34.892,Ukraine,UA,Sumska Oblast,minor,47971,47971
-56ecce58-1b88-4178-b064-398b6eaf2662,Сніжне,Snizhne,48.0283,38.7656,Ukraine,UA,Donetska Oblast,,47259,47259
-c1307265-10a9-437d-a0c5-686845410306,Ровеньки,Rovenky,48.0711,39.3428,Ukraine,UA,Luhanska Oblast,,46734,46734
-a8e86dba-16e4-4e08-995b-765a7111d011,Фастів,Fastiv,50.0833,29.9167,Ukraine,UA,Kyivska Oblast,minor,45907,45907
-5c05ced4-134b-484e-a14c-86f9fd83f270,Лубни,Lubny,50.0167,33,Ukraine,UA,Poltavska Oblast,minor,45786,45786
-85fe2008-f3b0-410a-b5db-11dfe7ddbf84,Брянка,Brianka,48.5133,38.6431,Ukraine,UA,Luhanska Oblast,,44987,44987
-86d9eb83-266a-43e5-b5fd-52a2bfd4971d,Краснодон,Krasnodon,48.3,39.7333,Ukraine,UA,Luhanska Oblast,,43683,43683
-57858dd7-fd5d-47f1-9f05-9d0ecc99e34e,Ромни,Romny,50.75,33.4667,Ukraine,UA,Sumska Oblast,minor,40316,40316
-2d6d00f0-3657-41bf-8fe9-7906d248a6f3,Миргород,Myrhorod,49.9667,33.6,Ukraine,UA,Poltavska Oblast,minor,40160,40160
-94c3cff7-7e52-48e2-a320-ab97ed950df5,Подільськ,Podilsk,47.7419,29.535,Ukraine,UA,Odeska Oblast,minor,40155,40155
-a0fe48a7-2eb4-4ca0-93cc-4d0e2143f5e0,Вишневе,Vyshneve,50.3869,30.3581,Ukraine,UA,Kyivska Oblast,,39900,39900
-1aa66493-e862-4bd3-99e0-3a30e0a58df2,Васильків,Vasylkiv,50.1783,30.3158,Ukraine,UA,Kyivska Oblast,,37696,37696
-bc4dfc34-c9e6-4a79-9cc4-61f8ddd15185,Дубно,Dubno,50.3931,25.735,Ukraine,UA,Rivnenska Oblast,minor,37545,37545
-aa1ade45-ced4-4457-8835-58b2839ddae8,Борислав,Boryslav,49.2892,23.4189,Ukraine,UA,Lvivska Oblast,,37093,37093
-539123e4-f367-4354-8038-93a2d629ba58,Буча,Bucha,50.5486,30.2208,Ukraine,UA,Kyivska Oblast,minor,36971,36971
-b0cf5c11-ba24-4d93-8aab-1e416c8e185a,Голубівське,Holubivske,48.6333,38.65,Ukraine,UA,Luhanska Oblast,,36388,36388
-0c6e0ef5-32bc-45ee-9961-47d6fe74b06d,Боярка,Boyarka,50.3292,30.2886,Ukraine,UA,Kyivska Oblast,,35411,35411
-2efc1bb8-1ea6-4d08-84e2-015f88e52ff9,Ясинувата,Yasynuvata,48.1278,37.8625,Ukraine,UA,Donetska Oblast,,35303,35303
-158c4f84-7d45-49c2-9538-8a04258c06c6,Славута,Slavuta,50.3028,26.8683,Ukraine,UA,Khmelnytska Oblast,,34918,34918
-0523fc4d-0d93-49c2-ade2-042624d75d15,Самбір,Sambir,49.5167,23.2028,Ukraine,UA,Lvivska Oblast,minor,34444,34444
-d0d691f9-558f-46e4-b1e5-80b73814924a,Торецк,Toretsk,48.3917,37.8733,Ukraine,UA,Donetska Oblast,,34378,34378
-267c8c24-aa67-4ddd-8503-6ae04772f4d5,Жмеринка,Zhmerynka,49.05,28.1,Ukraine,UA,Vinnytska Oblast,minor,33754,33754
-ec96b8ea-ddfe-4bdf-86b9-dfb8bf85fce1,Чугуїв,Chuhuiv,49.8356,36.6864,Ukraine,UA,Kharkivska Oblast,minor,33144,33144
-e32801cf-1feb-46ee-9e17-fcc5075d60c2,Новояворівське,Novoyavorovskoye,49.9311,23.5731,Ukraine,UA,Lvivska Oblast,,30723,30723
-1b4eaaf8-1d4d-419e-861c-cd5236190459,Могилів-Подільський,Mohyliv-Podilskyi,48.45,27.7833,Ukraine,UA,Vinnytska Oblast,minor,29925,29925
-b43cc82d-591d-44ab-bd18-88b49705de75,Трускавець,Truskavets,49.2806,23.505,Ukraine,UA,Lvivska Oblast,,28287,28287
-75ec8e50-a3ef-4896-8fc0-281c49153020,Добропілля,Dobropillia,48.4689,37.0828,Ukraine,UA,Donetska Oblast,,28170,28170
-d6e5dfea-1c85-4e4f-a906-893862f78df5,Куп’янськ,Kupiansk,49.7167,37.5833,Ukraine,UA,Kharkivska Oblast,minor,27169,27169
-ca6a2917-a89b-4f4b-85e9-505c6be71803,Переяслав-Хмельницький,Pereyaslav-KhmelвЂ™nytsвЂ™kyy,50.065,31.445,Ukraine,UA,Kyivska Oblast,,27088,27088
-9ce3dade-adf6-45e4-848e-a393f4c22f72,Хмільник,Khmilnyk,49.5569,27.9572,Ukraine,UA,Vinnytska Oblast,minor,26916,26916
-206a71f2-78b4-46b9-9845-f0c387379729,Кіровськ,Kirovsk,48.6375,38.6428,Ukraine,UA,Luhanska Oblast,,26654,26654
-a9e2368f-5c9a-45ae-a59d-7542020cdf97,Софіївська Борщагівка,SofiyivsвЂ™ka Borshchahivka,50.4114,30.3692,Ukraine,UA,Kyivska Oblast,,26571,26571
-c052a3fd-9bf4-4c77-a5a0-ef9bedba1636,Перевальськ,Perevalsk,48.4333,38.8167,Ukraine,UA,Luhanska Oblast,minor,26132,26132
-6e42b97e-742d-4d38-a57f-2613c6bef27e,Виноградів,Vynohradiv,48.1497,23.025,Ukraine,UA,Zakarpatska Oblast,minor,25317,25317
-154c3a6b-f3dd-4100-b259-5b845623db90,Армянськ,Armiansk,46.1074,33.6919,Ukraine,UA,"Krym, Avtonomna Respublika",,24415,24415
-bdd62c33-b531-4cd1-b448-1f3975a98d44,Саки,Saky,45.1336,33.5772,Ukraine,UA,"Krym, Avtonomna Respublika",minor,24285,24285
-f71a37a9-5742-490b-9e40-272746bf2fdf,Дебальцеве,Debaltseve,48.3333,38.4,Ukraine,UA,Donetska Oblast,,24209,24209
-82fdcf33-847c-44ef-b0b7-051c37532d2e,Селидове,Selydove,48.15,37.3039,Ukraine,UA,Donetska Oblast,,23793,23793
-12509ced-1505-447a-bf3d-dfc8bf9218f7,Молодогвардійськ,Molodohvardiisk,48.3444,39.6583,Ukraine,UA,Luhanska Oblast,,22937,22937
-d4bd93a9-ef88-4f8b-b94d-6e77e7aef428,Мерефа,Merefa,49.8167,36.05,Ukraine,UA,Kharkivska Oblast,,21421,21421
-fb029d49-cdd1-42a0-8a98-3bcaf741d5d7,Білогородка,Bilohorodka,50.3942,30.2314,Ukraine,UA,Kyivska Oblast,,21367,21367
-dd528e80-9663-43d5-abf5-26241c03ff25,Суходолськ,Sukhodilsk,48.35,39.7167,Ukraine,UA,Luhanska Oblast,,21324,21324
-01accbf3-77ab-41ae-aa1d-a459bd4270a7,Пелагіївка,Pelahiivka,48.0989,38.6128,Ukraine,UA,Donetska Oblast,,17833,17833
-244d1174-70f2-4dc3-b690-a6c67fe3f0b9,Гостомель,Hostomel,50.5692,30.2653,Ukraine,UA,Kyivska Oblast,,16190,16190
-a501d1b8-5f9e-488f-83f2-990df6f61a3a,Таромське,Taromske,48.4617,34.7828,Ukraine,UA,Dnipropetrovska Oblast,,15838,15838
-2a239318-b0f3-4bf9-96ee-7d8b79eb965e,Винники,Vynnyky,49.8156,24.1297,Ukraine,UA,Lvivska Oblast,,15723,15723
-7c1c1374-d9eb-4f92-ad07-76327d16e9b7,Червонопартизанськ,Chervonopartyzansk,48.0833,39.7833,Ukraine,UA,Luhanska Oblast,,15218,15218
-7601eb10-99e8-4519-b0e9-d3d6a787875b,Миколаївка,Mykolaivka,48.8521,37.774,Ukraine,UA,Donetska Oblast,,14210,14210
-ba9285df-77e0-4663-b622-27e6b4d57949,Нижня Кринка,Nyzhnia Krynka,48.1144,38.1606,Ukraine,UA,Donetska Oblast,,13927,13927
-8ab594b8-4421-4798-9942-83a641e5442b,Антонівка,Antonivka,46.6808,32.7358,Ukraine,UA,Khersonska Oblast,,12812,12812
-9f41d4bb-1775-4e7d-bee0-ea802cd34f0b,Петровське,Petrovske,48.2833,38.8833,Ukraine,UA,Luhanska Oblast,,12642,12642
-ee7b3d14-e65b-46ee-9d71-89e77c75b772,Приморський,Prymorskyi,45.1167,35.4806,Ukraine,UA,"Krym, Avtonomna Respublika",,12560,12560
-91919d44-7f59-4e36-97ed-df621810c9d5,Часів Яр,Chasiv Yar,48.5884,37.8359,Ukraine,UA,Donetska Oblast,,12250,12250
-bc1bf8be-8a14-4a1b-b5ca-3c20892d2baa,Жданівка,Zhdanivka,48.1375,38.2608,Ukraine,UA,Donetska Oblast,,11913,11913
-417af1cb-4d2b-4f7e-958b-1f1891a41674,Вахрушеве,Vakhrusheve,48.1667,38.8333,Ukraine,UA,Luhanska Oblast,,11421,11421
-f9c99cf7-0c32-4a23-9c16-7952d7a0d1ad,Гірник,Hirnyk,48.05,37.3667,Ukraine,UA,Donetska Oblast,,11378,11378
-3750918d-2572-418d-b6a4-598134c518da,Лиманка,Lymanka,46.3883,30.6808,Ukraine,UA,Odeska Oblast,,10590,10590
-29424a35-ec8a-4359-a42b-51320170066d,Соледар,Soledar,48.6953,38.0675,Ukraine,UA,Donetska Oblast,,10490,10490
-164a17aa-304a-48a7-aa87-9ef03b9a088f,Сартана,Sartana,47.1667,37.6833,Ukraine,UA,Donetska Oblast,,10350,10350
-385145e6-18b2-47b3-8c13-9d3f51507303,Гаспра,Haspra,44.4361,34.1106,Ukraine,UA,"Krym, Avtonomna Respublika",,10310,10310
-5d79c1b7-c362-4081-9ca6-d657da8f9e6b,Інкерман,Inkerman,44.6,33.6,Ukraine,UA,"Sevastopol, Misto",,10196,10196
-2a6e4149-0e9a-4eac-8d6a-f21434a5113a,Королево,Korolevo,48.15,23.1333,Ukraine,UA,Zakarpatska Oblast,,10165,10165
-fcef8b6a-a1cc-427f-b2cd-74e25fce100d,Снятин,Sniatyn,48.45,25.5667,Ukraine,UA,Ivano-Frankivska Oblast,minor,9942,9942
-75a9474f-e510-4418-a496-3cab7dd9bd8c,Новгородське,Novgorodskoye,48.3319,37.8364,Ukraine,UA,Donetska Oblast,,9917,9917
-c9ad424f-5908-4b6e-af17-a974fa66e476,Сєверне,Sieverne,48.0858,38.6942,Ukraine,UA,Donetska Oblast,,9832,9832
-2b05680c-ff56-4b03-82e7-20152795ba44,Софіївка,Sofiivka,48.2603,38.1594,Ukraine,UA,Donetska Oblast,,9597,9597
-9b54464c-003d-4836-9afa-0583f70b233a,Теплогірськ,Teplohirsk,48.5967,38.5828,Ukraine,UA,Luhanska Oblast,,9270,9270
-76c5c413-ca7b-42cb-83ec-f5c9232d5f5e,Біленьке,Bilenke,48.7664,37.6314,Ukraine,UA,Donetska Oblast,,9136,9136
-e07c330e-6723-483e-a9b7-b5fb3b0b4dfd,Гурзуф,Hurzuf,44.5528,34.2875,Ukraine,UA,"Krym, Avtonomna Respublika",,9117,9117
-52c99797-9021-4736-bbf9-b8af75828262,Городенка,Horodenka,48.6675,25.5003,Ukraine,UA,Ivano-Frankivska Oblast,minor,9113,9113
-f813404b-7d1a-49b5-9ade-03e11c39a121,Північне,Pivnichne,48.3886,37.9067,Ukraine,UA,Donetska Oblast,,9024,9024
-6677973c-a8b7-4bd2-b75e-72cddc775784,Ясенівський,Yasenivskyi,48.1606,39.2175,Ukraine,UA,Luhanska Oblast,,8943,8943
-ced7318a-f56e-4e45-a670-0a40e2711779,Любимівка,Liubymivka,48.0397,39.44,Ukraine,UA,Luhanska Oblast,,8578,8578
-4b824505-c3e2-46b1-b458-96170b5cfb3f,Масандра,Masandra,44.5167,34.1833,Ukraine,UA,"Krym, Avtonomna Respublika",,8571,8571
-55eed1e6-2575-43de-9b83-8797ec1f5cf9,Білки,Bilky,48.3294,23.1397,Ukraine,UA,Zakarpatska Oblast,,8064,8064
-e2964405-cb38-43a8-9028-475ece283f6f,Ясногірка,Yasnohirka,48.7675,37.5669,Ukraine,UA,Donetska Oblast,,8034,8034
-5ef0b4ce-9c90-4a97-b8b1-f3bf35511f88,Білицьке,Bilytske,48.4086,37.1796,Ukraine,UA,Donetska Oblast,,7913,7913
-292280c9-5727-4003-b9d4-8687ab4de2c1,Почаїв,Pochaiv,50.0028,25.5097,Ukraine,UA,Ternopilska Oblast,,7691,7691
-1f1e9e30-7654-45b2-8323-fdfdcd4f2552,Олександрівка,Oleksandrivka,46.3294,30.6336,Ukraine,UA,Odeska Oblast,,7495,7495
-874e7161-4454-47f8-89c5-7e95def3de12,Вуглегірськ,Vuhlehirsk,48.31,38.27,Ukraine,UA,Donetska Oblast,,7372,7372
-bb182961-2bf1-47d3-baea-d467598385fc,Зоринськ,Zorynsk,48.4167,38.6167,Ukraine,UA,Luhanska Oblast,,7173,7173
-3dfeac61-b644-4ef5-8a98-b382aaef0364,Комишани,Komyshany,46.6364,32.1703,Ukraine,UA,Khersonska Oblast,,6941,6941
-5abb7b00-0a0c-421f-8e06-e55f9fa61d3e,Олексієво-Дружківка,Oleksiievo-Druzhkivka,48.5806,37.6147,Ukraine,UA,Donetska Oblast,,6924,6924
-f09579de-3a6c-4926-827c-ba0cf071ad1e,Пісківка,Piskivka,50.7078,29.595,Ukraine,UA,Kyivska Oblast,minor,6896,6896
-cc0813aa-3775-4898-9769-a95f0d8794e4,Голмівський,Holmivskyi,48.4006,38.0797,Ukraine,UA,Donetska Oblast,,6750,6750
-5e726e12-787f-4889-af76-0aa9ea6c6eef,Новодружеськ,Novodruzhesk,48.9634,38.352,Ukraine,UA,Luhanska Oblast,,6705,6705
-4f95a502-c4d5-42c2-aa70-9ce8e89b1076,Карнаухівка,Karnaukhivka,48.4714,34.7369,Ukraine,UA,Dnipropetrovska Oblast,,6631,6631
-fd5b5d0c-af88-4758-9eb6-2186249ebfff,Велика Березовиця,Velikaya BerГ«zovitsa,49.4964,25.6086,Ukraine,UA,Ternopilska Oblast,,6503,6503
-bc11cc41-9eb7-48dc-a096-88bd8bdfbbdb,Розкішне,Rozkishne,48.4922,39.2719,Ukraine,UA,Luhanska Oblast,,6482,6482
-db1b5c50-8aaf-4192-8688-72595e87d2d7,Ворзель,Vorzel,50.55,30.15,Ukraine,UA,Kyivska Oblast,,6441,6441
-491d4941-9aac-4da2-841d-585901db275c,Шепетівка,Shepetivka,50.1833,27.0667,Ukraine,UA,Khmelnytska Oblast,minor,6373,6373
-3e6d83ee-0361-49e4-8bb9-6647cee4c99f,Галич,Halych,49.1247,24.7286,Ukraine,UA,Ivano-Frankivska Oblast,minor,6196,6196
-41f043d4-e3e8-483f-902d-9bc5c2d7c8c4,Петропавлівська Борщагівка,PetropavlivsвЂ™ka Borshchahivka,50.4338,30.3286,Ukraine,UA,Kyivska Oblast,,6125,6125
-080f64b4-fa24-4bdc-829c-5c4f39b60ee9,Балабине,Balabyne,47.7442,35.2203,Ukraine,UA,Zaporizka Oblast,,6010,6010
-07635d52-378c-49c2-aed0-4aef16e81341,Старий Крим,Staryi Krym,47.1597,37.4869,Ukraine,UA,Donetska Oblast,,5887,5887
-7e70ce5d-d140-4eb5-bb81-c18ce8b26997,Зеленівка,Zelenivka,46.7178,32.6544,Ukraine,UA,Khersonska Oblast,,5775,5775
-834cd26f-2b08-4552-87f4-4a849c9f5854,Чорнухине,Chornukhyne,48.3264,38.5156,Ukraine,UA,Luhanska Oblast,,5725,5725
-36cfb031-a5e1-4bad-b519-6a604e7f31da,Коцюбинське,KotsyubynsвЂ™ke,50.49,30.3347,Ukraine,UA,"Kyiv, Misto",,5709,5709
-74d372b3-6216-4b2a-83eb-07781cdc0720,Кореїз,Koreiz,44.4331,34.0872,Ukraine,UA,"Krym, Avtonomna Respublika",,5455,5455
-bf48d3cd-01ba-4a0c-ae3a-a4c46f51cfa2,Брюховичі,Bryukhovychi,49.9039,23.9539,Ukraine,UA,Lvivska Oblast,,5400,5400
-f492bfed-4e28-4662-8a8f-53411b963035,Горенка,Horenka,50.5569,30.3175,Ukraine,UA,Kyivska Oblast,,5358,5358
-e28ed740-112a-4bc5-a251-8604846e103f,Чабани,Chabany,50.3403,30.4228,Ukraine,UA,Kyivska Oblast,,5334,5334
-6502f1a0-a2e1-439d-9ea0-85d137734dc0,Тепле,Teple,48.3328,39.5422,Ukraine,UA,Luhanska Oblast,,5201,5201
-23d06329-7b42-4e93-920d-e13852a73735,Залізне,Zalizne,48.375,37.8733,Ukraine,UA,Donetska Oblast,,4928,4928
-25197a56-31bc-4e33-8e07-bb89c9d7fe9e,Хотів,Khotiv,50.3333,30.4667,Ukraine,UA,Kyivska Oblast,,4737,4737
-335d31e1-8cb1-4e70-b16e-9c0a7ba9e7b5,Новоолександрівка,Novooleksandrivka,48.3454,34.9969,Ukraine,UA,Dnipropetrovska Oblast,,4502,4502
-f79c1553-c301-448c-9e87-6f12e10f48c2,Заозерне,Zaozerne,45.1606,33.285,Ukraine,UA,"Krym, Avtonomna Respublika",,4332,4332
-95a6d5b6-ef22-4df2-9783-281c87bd66c7,Алмазна,Almazna,48.5167,38.5833,Ukraine,UA,Luhanska Oblast,,4301,4301
-16cacad7-a510-41f3-8147-36d576ad0a60,Шабельківка,Shabelkivka,48.7608,37.4881,Ukraine,UA,Donetska Oblast,,4267,4267
-22e4fd77-373f-40dd-a53a-f63cc614815c,Оброшине,Obroshino,49.7853,23.8686,Ukraine,UA,Lvivska Oblast,,4186,4186
-45522e9b-28b5-4384-8edf-83aa84d0a3e1,Крихівці,Krykhivtsi,48.9008,24.6662,Ukraine,UA,Ivano-Frankivska Oblast,,4125,4125
-3f1e3d8c-dd63-46b8-8201-e69a9f50472f,Новопілля,Novopillia,47.9539,33.5278,Ukraine,UA,Dnipropetrovska Oblast,,4037,4037
-13bf7d86-c050-497a-b31f-d4423ec012ce,Зайцеве,Zaitseve,48.4292,38.0094,Ukraine,UA,Donetska Oblast,,3919,3919
-de9d7bdc-f575-473f-92c5-295f29b16d08,Сімеїз,Simeiz,44.4058,33.99,Ukraine,UA,"Krym, Avtonomna Respublika",,3901,3901
-d969827d-6550-4bc6-bfa8-90e776d60965,Новосілки,Novosilky,50.3544,30.4544,Ukraine,UA,"Kyiv, Misto",,3761,3761
-0e7adf96-b357-47ad-bacc-246d831a7c50,Ясинівка,Yasynivka,48.1358,37.9303,Ukraine,UA,Donetska Oblast,,3588,3588
-1c285d47-1948-41e6-ade4-41b5dbb54815,Крюківщина,Kryukivshchyna,50.3683,30.3681,Ukraine,UA,Kyivska Oblast,,3509,3509
-c1dfcbe9-2805-40f9-b5ad-a147e9cfaf37,Шахтарське,Shakhtarske,48.0497,39.5528,Ukraine,UA,Luhanska Oblast,,3495,3495
-a1f1f304-606b-4785-afbc-5cb2c2ccefb7,Михайлівка-Рубежівка,Mykhaylivka-Rubezhivka,50.5003,30.1458,Ukraine,UA,Kyivska Oblast,,3430,3430
-e96bb2af-0caa-4dd6-9c65-78ac49f888ba,Валянівське,Valianivske,48.0767,39.5611,Ukraine,UA,Luhanska Oblast,,3324,3324
-bfaafbe3-1092-44bc-a939-d386388fee44,Малокатеринівка,Malokaterynivka,47.6581,35.26,Ukraine,UA,Zaporizka Oblast,,3320,3320
-86c72433-e32d-4f7d-bf1d-46f17d3da9f6,Південна Ломуватка,Yuzhna Lomuvatka,48.4375,38.5311,Ukraine,UA,Luhanska Oblast,,3310,3310
-6e24b46c-22ce-40d5-8258-f6d4018a195c,Щербинівка,Shcherbynivka,48.3886,37.9067,Ukraine,UA,Donetska Oblast,,3266,3266
-2868b1d0-edd9-4425-b4a1-c0fe6413c9bd,Вилок,Vylok,48.1147,22.8319,Ukraine,UA,Zakarpatska Oblast,,3201,3201
-a5b204a4-3df0-4b72-ad33-ee135fe6c8d0,Товсте,Tovste,48.8464,25.7253,Ukraine,UA,Ternopilska Oblast,,3156,3156
-2e89f0ac-96bb-4ab5-8df1-62d364caa39f,П’ятопілля,Piatypillia,48.0119,38.0919,Ukraine,UA,Donetska Oblast,,3155,3155
-1a893b78-8016-4412-9a04-f08938f60625,Гатне,Hatne,50.3583,30.3989,Ukraine,UA,Kyivska Oblast,,3077,3077
-3f1ec35d-85c2-45ef-9f2c-ef31c84543c0,Булавинське,Bulavynske,48.255,38.3336,Ukraine,UA,Donetska Oblast,,3070,3070
-7a549276-d9ad-48f2-ab0f-dff261ac2980,Дубове,Dubove,48.1261,39.6433,Ukraine,UA,Luhanska Oblast,,3018,3018
-290a5f4b-eb11-409e-888a-0704d918c307,Кулиничі,Kulynychi,49.9819,36.3861,Ukraine,UA,Kharkivska Oblast,,2985,2985
-0eb4ca1f-dffc-4533-84e1-24e41d379487,Садки,Sadky,49.009,33.4602,Ukraine,UA,Poltavska Oblast,,2939,2939
-c18b6293-cdd7-40ae-ab63-283cb70126c8,Красноторка,Krasnotorka,48.6858,37.5267,Ukraine,UA,Donetska Oblast,,2915,2915
-dfcfad13-ea92-4161-a345-0c0a350b753d,Первомайський,Pervomaiskyi,47.9736,38.7875,Ukraine,UA,Donetska Oblast,,2837,2837
-ade40f36-57f3-4565-860b-56fe5eed5d0f,Бритівка,Brytivka,46.1722,30.2833,Ukraine,UA,Odeska Oblast,,2818,2818
-3fedb624-4e0a-48a7-81e6-153350ae66e2,Ближнє,Blyzhnie,45.0569,35.3306,Ukraine,UA,"Krym, Avtonomna Respublika",,2779,2779
-d60e82aa-aad7-4220-b1d7-67aae03f3ac7,Михайлівка,Mykhailivka,48.0683,39.2633,Ukraine,UA,Luhanska Oblast,,2765,2765
-220465ef-a538-4cfd-b95f-878d056552c6,Ларине,Laryne,47.8828,37.9294,Ukraine,UA,Donetska Oblast,,2761,2761
-dfe605f1-2c2b-4254-8713-1e372a18b9f0,Ведмеже,Vedmezhe,48.1242,39.5856,Ukraine,UA,Luhanska Oblast,,2727,2727
-35d800c0-1d26-409b-9a9c-16aac1e97499,Володимир-Волинський,Volodymyr-Volynskyi,50.8525,24.3236,Ukraine,UA,Volynska Oblast,minor,,
+п»їId,Name,city,Latitude,Longitude,country,iso2,admin_name,capital,population,population_proper
+994d0263-67d4-44f2-a018-411bf0afa801,РљРёС—РІ,Kyiv,50.45,30.5233,Ukraine,UA,"Kyiv, Misto",primary,2952301,2952301
+10dec904-7cfd-4ef2-a66d-e136557c9cdd,РҐР°СЂРєС–РІ,Kharkiv,49.9925,36.2311,Ukraine,UA,Kharkivska Oblast,admin,1421125,1421125
+d2b2ae8b-75a9-463d-a52d-730e74fb1328,РћРґРµСЃР°,Odesa,46.4775,30.7326,Ukraine,UA,Odeska Oblast,admin,1010537,1010537
+5b5d7e3b-a2e5-4b23-8099-165d21eeeaa1,Р”РЅС–РїСЂРѕ,Dnipro,48.4675,35.04,Ukraine,UA,Dnipropetrovska Oblast,admin,968502,968502
+47b25095-cf3e-4ef7-ae70-58827b61ec22,Р”РѕРЅРµС†СЊРє,Donetsk,48.0028,37.8053,Ukraine,UA,Donetska Oblast,admin,901645,901645
+e1a339da-733e-4539-938c-f793067c15cb,Р›СЊРІС–РІ,Lviv,49.8425,24.0322,Ukraine,UA,Lvivska Oblast,admin,717273,717273
+cbe1b5c4-672b-4447-93ad-5cee156b5db4,Р—Р°РїРѕСЂС–Р¶Р¶СЏ,Zaporizhzhia,47.85,35.1175,Ukraine,UA,Zaporizka Oblast,admin,710052,710052
+a0096e42-ab59-40ed-8d93-3d9af3d5b112,Р‘Р°Р·Р°Р»СЊС‚РѕРІРµ,BazalРІР‚в„ўtove,50.6765,26.16,Ukraine,UA,Rivnenska Oblast,,625543,625543
+800361f5-081e-439a-924f-2616f8a8fe4c,РљСЂРёРІРёР№ Р С–Рі,Kryvyi Rih,47.91,33.39,Ukraine,UA,Dnipropetrovska Oblast,minor,603904,603904
+3ad9443c-45f8-42ac-868c-74db1619c98b,РЎРµРІР°СЃС‚РѕРїРѕР»СЊ,Sevastopol,44.605,33.5225,Ukraine,UA,"Sevastopol, Misto",admin,485386,485386
+398c00bd-267e-469e-a26b-91ef67a27068,РњРёРєРѕР»Р°С—РІ,Mykolaiv,46.975,31.995,Ukraine,UA,Mykolaivska Oblast,admin,470011,470011
+5a1514e0-5e66-4a08-a1bd-d6e2ee62d6cc,РњР°СЂС–СѓРїРѕР»СЊ,Mariupol,47.0958,37.5494,Ukraine,UA,Donetska Oblast,minor,449498,449498
+8f396d64-b811-453e-a4e6-713dc7aaaaaa,Р›СѓРіР°РЅСЃСЊРє,Luhansk,48.5678,39.3031,Ukraine,UA,Luhanska Oblast,admin,417990,417990
+de3251e2-f26d-4042-ae5f-4634f815ea98,Р’С–РЅРЅРёС†СЏ,Vinnytsia,49.2333,28.4833,Ukraine,UA,Vinnytska Oblast,admin,369739,369739
+34e11dbe-81fe-4da6-9ad9-c909e834d212,РњР°РєС–С—РІРєР°,Makiivka,48.0556,37.9611,Ukraine,UA,Donetska Oblast,minor,343158,343158
+6700a5d5-a4ed-405e-8f52-468cfc4d1a50,РЎС–РјС„РµСЂРѕРїРѕР»СЊ,Simferopol,44.9519,34.1022,Ukraine,UA,"Krym, Avtonomna Respublika",admin,340540,340540
+20842704-4e3a-443a-bc1a-81aeff83126e,Р§РµСЂРЅС–РіС–РІ,Chernihiv,51.4939,31.2947,Ukraine,UA,Chernihivska Oblast,admin,286899,286899
+e400e1a6-da7f-49b8-8b4a-9303ae033747,РџРѕР»С‚Р°РІР°,Poltava,49.5894,34.5514,Ukraine,UA,Poltavska Oblast,admin,283402,283402
+536b0540-c74f-4053-b988-ee18d80b8109,РҐРµСЂСЃРѕРЅ,Kherson,46.6425,32.625,Ukraine,UA,Khersonska Oblast,admin,279131,279131
+60d7447c-0717-4a59-b71d-bf32f7a3f79a,РҐРјРµР»СЊРЅРёС†СЊРєРёР№,Khmelnytskyi,49.4167,27,Ukraine,UA,Khmelnytska Oblast,admin,274452,274452
+0f142d03-f2b3-4111-8b15-e42d8b5a03b6,Р§РµСЂРєР°СЃРё,Cherkasy,49.4444,32.0597,Ukraine,UA,Cherkaska Oblast,admin,269836,269836
+b2e9f127-04ac-4865-a9e1-589c58602803,РЎСѓРјРё,Sumy,50.9119,34.8028,Ukraine,UA,Sumska Oblast,admin,265758,265758
+4c2e83e9-6d7e-447a-8d68-9b6e401d9127,Р§РµСЂРЅС–РІС†С–,Chernivtsi,48.3,25.9333,Ukraine,UA,Chernivetska Oblast,admin,265471,265471
+78b182f4-ab06-498e-8419-6ba67dac6cf0,Р–РёС‚РѕРјРёСЂ,Zhytomyr,50.25,28.6667,Ukraine,UA,Zhytomyrska Oblast,admin,261624,261624
+9e6ebfe5-9f13-4205-a2cf-b895f4e22f67,Р“РѕСЂР»С–РІРєР°,Horlivka,48.3,38.05,Ukraine,UA,Donetska Oblast,minor,256714,256714
+69d2b4c7-acea-46b9-80e4-c433090f5a29,Р С–РІРЅРµ,Rivne,50.6192,26.2519,Ukraine,UA,Rivnenska Oblast,admin,245289,245289
+91dbfcd1-e351-4cd4-b6b0-0a122eaa7259,Р†РІР°РЅРѕ-Р¤СЂР°РЅРєС–РІСЃСЊРє,Ivano-Frankivsk,48.9228,24.7106,Ukraine,UA,Ivano-Frankivska Oblast,admin,238196,238196
+e6440e1a-aaa6-4c66-b97b-a4f9771aa7d6,РљСЂРѕРїРёРІРЅРёС†СЊРєРёР№,Kropyvnytskyi,48.5,32.2667,Ukraine,UA,Kirovohradska Oblast,admin,227413,227413
+f7556291-e23c-46e9-ad9b-23bc58ceda34,РљР°РјвЂ™СЏРЅСЃСЊРєРµ,Kamianske,48.5167,34.6167,Ukraine,UA,Dnipropetrovska Oblast,minor,226845,226845
+bb1864f6-8749-4a1a-b28f-142f2f17d7a7,РўРµСЂРЅРѕРїС–Р»СЊ,Ternopil,49.5667,25.6,Ukraine,UA,Ternopilska Oblast,admin,225238,225238
+6eca73c0-6c48-4a21-8abf-1dc0515d9d8a,РљСЂРµРјРµРЅС‡СѓРє,Kremenchuk,49.0631,33.4039,Ukraine,UA,Poltavska Oblast,minor,220174,220174
+5bd83f91-eabc-4306-a984-63fb2e779e17,Р›СѓС†СЊРє,Lutsk,50.75,25.3358,Ukraine,UA,Volynska Oblast,admin,215986,215986
+218fd34e-c9e0-40dd-aae0-d775c2a02052,Р‘С–Р»Р° Р¦РµСЂРєРІР°,Bila Tserkva,49.7989,30.1153,Ukraine,UA,Kyivska Oblast,minor,208944,208944
+3a5ad79e-0bf6-4b96-9952-c7d45f56644d,РЎС”РІС”СЂРѕРґРѕРЅРµС†СЊРє,Sievierodonetsk,48.9481,38.4933,Ukraine,UA,Luhanska Oblast,minor,150000,150000
+1eff34c8-dc85-4102-9ce6-aff49c9e7a05,РљРµСЂС‡,Kerch,45.3619,36.4711,Ukraine,UA,"Krym, Avtonomna Respublika",minor,149566,149566
+c573fdda-a964-4885-88f7-88c94fe6a7f3,РњРµР»С–С‚РѕРїРѕР»СЊ,Melitopol,46.8489,35.3675,Ukraine,UA,Zaporizka Oblast,minor,148851,148851
+f4773392-b422-48d2-9df0-4b1dad4d6bb3,РљСЂР°РјР°С‚РѕСЂСЃСЊРє,Kramatorsk,48.7392,37.5839,Ukraine,UA,Donetska Oblast,minor,147145,147145
+a8eed8fd-e077-48fc-8e4e-7147ca0de985,РҐСЂСѓСЃС‚Р°Р»СЊРЅРёР№,Khrustalnyi,48.1214,38.9453,Ukraine,UA,Luhanska Oblast,,124000,124000
+5e857ce9-cea8-4516-b223-8b5a5e253280,РЈР¶РіРѕСЂРѕРґ,Uzhhorod,48.6239,22.295,Ukraine,UA,Zakarpatska Oblast,admin,115449,115449
+7f1354de-f0a9-4dd7-bb93-5e8da93b3421,РЎР»РѕРІвЂ™СЏРЅСЃСЊРє,Sloviansk,48.8533,37.625,Ukraine,UA,Donetska Oblast,,113196,113196
+bef39084-5da0-4729-94e9-87f52e553b54,Р‘СЂРѕРІР°СЂРё,Brovary,50.5111,30.79,Ukraine,UA,Kyivska Oblast,minor,109473,109473
+fa40dab1-f947-47bb-91c6-ae825f0c4310,Р„РІРїР°С‚РѕСЂС–СЏ,Yevpatoriia,45.1939,33.3681,Ukraine,UA,"Krym, Avtonomna Respublika",minor,108248,108248
+4335bbc8-488a-4d08-b7de-3cbd5ec4bb72,Р‘РµСЂРґСЏРЅСЃСЊРє,Berdiansk,46.7556,36.7889,Ukraine,UA,Zaporizka Oblast,minor,106311,106311
+0f0aaeb8-b6c9-4d4b-ba7d-50e2d87da655,РђР»С‡РµРІСЃСЊРє,Alchevsk,48.4778,38.7978,Ukraine,UA,Luhanska Oblast,minor,105398,105398
+b93e099a-c699-4957-a860-a7170a8040b3,РќС–РєРѕРїРѕР»СЊ,Nikopol,47.5667,34.4,Ukraine,UA,Dnipropetrovska Oblast,minor,105160,105160
+cfdf9dfd-b43b-4963-ac08-83b448179b97,РџР°РІР»РѕРіСЂР°Рґ,Pavlohrad,48.5167,35.8667,Ukraine,UA,Dnipropetrovska Oblast,minor,101430,101430
+41e2ede3-d3e7-4bbf-9f5a-14c1c1df9e0e,РљР°РјвЂ™СЏРЅРµС†СЊ-РџРѕРґС–Р»СЊСЃСЊРєРёР№,Kamianets-Podilskyi,48.6833,26.5833,Ukraine,UA,Khmelnytska Oblast,minor,100462,100462
+baa98bc6-9701-492f-9086-665f96e33a8d,Р›РёСЃРёС‡Р°РЅСЃСЊРє,Lysychansk,48.9167,38.4,Ukraine,UA,Luhanska Oblast,,96161,96161
+7b447c03-a4da-443c-abb8-e7e3040a75fa,Р”РѕРІР¶Р°РЅСЃСЊРє,Dovzhansk,48.0778,39.6472,Ukraine,UA,Luhanska Oblast,minor,95153,95153
+116fc55f-3a10-45ca-8f68-a70d6dfbb3db,РњСѓРєР°С‡РµРІРµ,Mukacheve,48.45,22.75,Ukraine,UA,Zakarpatska Oblast,minor,85569,85569
+c3ffd932-6aea-41fe-8e22-a95af2543812,РљРѕРЅРѕС‚РѕРї,Konotop,51.2167,33.2,Ukraine,UA,Sumska Oblast,minor,84787,84787
+37a44234-f1cb-411f-a1fd-00d47c1d387f,РЈРјР°РЅСЊ,Uman,48.75,30.2167,Ukraine,UA,Cherkaska Oblast,minor,82154,82154
+2c7dbce6-fe9a-4894-96cb-182b2a17e7dc,Р„РЅР°РєС–С”РІРµ,Yenakiieve,48.2167,38.2,Ukraine,UA,Donetska Oblast,,79348,79348
+7a3432e4-f9e1-4b2e-ac62-2f34ec6647c5,РЇР»С‚Р°,Yalta,44.4994,34.17,Ukraine,UA,"Krym, Avtonomna Respublika",,79272,79272
+eb51ea22-fc6d-47a7-8a0b-78fd7d3889ed,РЁРѕСЃС‚РєР°,Shostka,51.8667,33.4833,Ukraine,UA,Sumska Oblast,minor,76788,76788
+9aaed5b6-9ff2-40c6-8713-48a72bacb5cd,РЎС‚Р°С…Р°РЅРѕРІ,Stakhanov,48.5681,38.6586,Ukraine,UA,Luhanska Oblast,,75745,75745
+8ebcb775-b291-40d6-b1c5-b0a9fedeb84c,Р”СЂРѕРіРѕР±РёС‡,Drohobych,49.35,23.5,Ukraine,UA,Lvivska Oblast,minor,74610,74610
+55f87dfa-2dc9-44ec-bd19-248aa186ecac,РљРѕСЃС‚СЏРЅС‚РёРЅС–РІРєР°,Kostiantynivka,48.5333,37.7167,Ukraine,UA,Donetska Oblast,,72888,72888
+7e207181-1c3c-4296-b7c6-895e48bc4350,Р‘Р°С…РјСѓС‚,Bakhmut,48.5947,38.0008,Ukraine,UA,Donetska Oblast,minor,71094,71094
+81af1ffa-6042-4c9e-8b38-c9adc9a278c6,Р¤РµРѕРґРѕСЃС–СЏ,Fedosiia,45.0342,35.3792,Ukraine,UA,"Krym, Avtonomna Respublika",,69145,69145
+0de2c864-40b4-4199-8fe1-c24c56d00474,РљРѕРІРµР»СЊ,Kovel,51.2167,24.7167,Ukraine,UA,Volynska Oblast,minor,67575,67575
+5b0df178-1f78-4feb-97fe-75d0786bcae9,РќС–Р¶РёРЅ,Nizhyn,51.0381,31.8861,Ukraine,UA,Chernihivska Oblast,minor,66981,66981
+0700798e-4069-4bb1-92bc-1fe2387c7d28,РЎРјС–Р»Р°,Smila,49.2117,31.8731,Ukraine,UA,Cherkaska Oblast,minor,65675,65675
+b1de7f07-834b-4785-a6c0-93fe99732b87,Р§РµСЂРІРѕРЅРѕРіСЂР°Рґ,Chervonohrad,50.3867,24.2289,Ukraine,UA,Lvivska Oblast,minor,64297,64297
+0758d71f-c5e4-43ed-8aa8-8d307741e6c8,РџРѕРєСЂРѕРІСЃСЊРє,Pokrovsk,48.2828,37.1828,Ukraine,UA,Donetska Oblast,minor,63437,63437
+28d0512c-c245-4201-b6f7-68b5bfaa39af,РџРµСЂРІРѕРјР°Р№СЃСЊРє,Pervomaisk,48.0439,30.85,Ukraine,UA,Mykolaivska Oblast,minor,63377,63377
+5c0a06d3-84ec-485a-beb1-1f5afee9f734,РљРѕСЂРѕСЃС‚РµРЅСЊ,Korosten,50.95,28.6333,Ukraine,UA,Zhytomyrska Oblast,minor,61496,61496
+9007562a-2c1d-4b56-9c22-2941ff4c0485,РљРѕР»РѕРјРёСЏ,Kolomyia,48.5306,25.0403,Ukraine,UA,Ivano-Frankivska Oblast,minor,61269,61269
+b64884a0-0b65-4c95-bc23-e4ab5f204aa5,Р СѓР±С–Р¶РЅРµ,Rubizhne,49.01,38.3714,Ukraine,UA,Luhanska Oblast,,59951,59951
+53c0ef76-6ebc-474e-8910-8398e62cb712,РҐР°СЂС†РёР·СЊРє,Khartsyzk,48.0428,38.1425,Ukraine,UA,Donetska Oblast,,59763,59763
+ec36561e-7bb1-4748-8268-102ba3fd9347,Р”СЂСѓР¶РєС–РІРєР°,Druzhkivka,48.6214,37.5278,Ukraine,UA,Donetska Oblast,,59400,59400
+f9224287-5bc6-4af4-816c-1fc665bb18ea,Р§РѕСЂРЅРѕРјРѕСЂСЃСЊРє,Chornomorsk,46.3017,30.6569,Ukraine,UA,Odeska Oblast,,57983,57983
+aaef69d0-18d6-445e-98a9-173cc1175b33,Р‘С–Р»РіРѕСЂРѕРґ-Р”РЅС–СЃС‚СЂРѕРІСЃСЊРєРёР№,Bilhorod-Dnistrovskyi,46.1833,30.35,Ukraine,UA,Odeska Oblast,minor,57210,57210
+a3358ca1-1bbb-4fb7-89f4-b4c34ebbd362,Р†СЂРїС–РЅСЊ,Irpin,50.5167,30.25,Ukraine,UA,Kyivska Oblast,,56806,56806
+2c791e90-a62d-4ee3-ae6b-17f5f65f3c80,Р§РёСЃС‚СЏРєРѕРІРµ,Chystiakove,48.0219,38.6264,Ukraine,UA,Donetska Oblast,,55511,55511
+7892527f-5c62-496c-8e39-0d70acfec7c3,РЎС‚СЂРёР№,Stryi,49.25,23.85,Ukraine,UA,Lvivska Oblast,minor,55100,55100
+146d7685-a154-45cb-abb9-2f9e87780161,РќРѕРІРѕРіСЂР°Рґ-Р’РѕР»РёРЅСЃСЊРєРёР№,Novohrad-Volynskyi,50.5833,27.6333,Ukraine,UA,Zhytomyrska Oblast,minor,55086,55086
+66372fae-ab62-41f8-9ec9-035d5086a748,Р›РѕР·РѕРІР°,Lozova,48.8833,36.3833,Ukraine,UA,Kharkivska Oblast,minor,54026,54026
+6f56655c-c599-4845-8a6c-5de5a00dfc6c,РђРЅС‚СЂР°С†РёС‚,Antratsyt,48.1192,39.09,Ukraine,UA,Luhanska Oblast,,52353,52353
+371b6105-0d5b-4e81-b2f4-c79001b27331,Р“РѕСЂС–С€РЅС– РџР»Р°РІРЅС–,Horishni Plavni,49.0167,33.6667,Ukraine,UA,Poltavska Oblast,,52167,52167
+b2e30669-7a57-4a6a-af6e-6be621071f80,РњРёСЂРЅРѕРіСЂР°Рґ,Myrnohrad,48.2911,37.2681,Ukraine,UA,Donetska Oblast,,50360,50360
+c826cd0e-491d-4564-92fe-07a5ff261975,РЁР°С…С‚Р°СЂСЃСЊРє,Shakhtarsk,48.0469,38.4686,Ukraine,UA,Donetska Oblast,minor,49482,49482
+b7a113c5-baa5-4abe-bbdb-f9729e58908b,РћС…С‚РёСЂРєР°,Okhtyrka,50.303,34.892,Ukraine,UA,Sumska Oblast,minor,47971,47971
+56ecce58-1b88-4178-b064-398b6eaf2662,РЎРЅС–Р¶РЅРµ,Snizhne,48.0283,38.7656,Ukraine,UA,Donetska Oblast,,47259,47259
+c1307265-10a9-437d-a0c5-686845410306,Р РѕРІРµРЅСЊРєРё,Rovenky,48.0711,39.3428,Ukraine,UA,Luhanska Oblast,,46734,46734
+a8e86dba-16e4-4e08-995b-765a7111d011,Р¤Р°СЃС‚С–РІ,Fastiv,50.0833,29.9167,Ukraine,UA,Kyivska Oblast,minor,45907,45907
+5c05ced4-134b-484e-a14c-86f9fd83f270,Р›СѓР±РЅРё,Lubny,50.0167,33,Ukraine,UA,Poltavska Oblast,minor,45786,45786
+85fe2008-f3b0-410a-b5db-11dfe7ddbf84,Р‘СЂСЏРЅРєР°,Brianka,48.5133,38.6431,Ukraine,UA,Luhanska Oblast,,44987,44987
+86d9eb83-266a-43e5-b5fd-52a2bfd4971d,РљСЂР°СЃРЅРѕРґРѕРЅ,Krasnodon,48.3,39.7333,Ukraine,UA,Luhanska Oblast,,43683,43683
+57858dd7-fd5d-47f1-9f05-9d0ecc99e34e,Р РѕРјРЅРё,Romny,50.75,33.4667,Ukraine,UA,Sumska Oblast,minor,40316,40316
+2d6d00f0-3657-41bf-8fe9-7906d248a6f3,РњРёСЂРіРѕСЂРѕРґ,Myrhorod,49.9667,33.6,Ukraine,UA,Poltavska Oblast,minor,40160,40160
+94c3cff7-7e52-48e2-a320-ab97ed950df5,РџРѕРґС–Р»СЊСЃСЊРє,Podilsk,47.7419,29.535,Ukraine,UA,Odeska Oblast,minor,40155,40155
+a0fe48a7-2eb4-4ca0-93cc-4d0e2143f5e0,Р’РёС€РЅРµРІРµ,Vyshneve,50.3869,30.3581,Ukraine,UA,Kyivska Oblast,,39900,39900
+1aa66493-e862-4bd3-99e0-3a30e0a58df2,Р’Р°СЃРёР»СЊРєС–РІ,Vasylkiv,50.1783,30.3158,Ukraine,UA,Kyivska Oblast,,37696,37696
+bc4dfc34-c9e6-4a79-9cc4-61f8ddd15185,Р”СѓР±РЅРѕ,Dubno,50.3931,25.735,Ukraine,UA,Rivnenska Oblast,minor,37545,37545
+aa1ade45-ced4-4457-8835-58b2839ddae8,Р‘РѕСЂРёСЃР»Р°РІ,Boryslav,49.2892,23.4189,Ukraine,UA,Lvivska Oblast,,37093,37093
+539123e4-f367-4354-8038-93a2d629ba58,Р‘СѓС‡Р°,Bucha,50.5486,30.2208,Ukraine,UA,Kyivska Oblast,minor,36971,36971
+b0cf5c11-ba24-4d93-8aab-1e416c8e185a,Р“РѕР»СѓР±С–РІСЃСЊРєРµ,Holubivske,48.6333,38.65,Ukraine,UA,Luhanska Oblast,,36388,36388
+0c6e0ef5-32bc-45ee-9961-47d6fe74b06d,Р‘РѕСЏСЂРєР°,Boyarka,50.3292,30.2886,Ukraine,UA,Kyivska Oblast,,35411,35411
+2efc1bb8-1ea6-4d08-84e2-015f88e52ff9,РЇСЃРёРЅСѓРІР°С‚Р°,Yasynuvata,48.1278,37.8625,Ukraine,UA,Donetska Oblast,,35303,35303
+158c4f84-7d45-49c2-9538-8a04258c06c6,РЎР»Р°РІСѓС‚Р°,Slavuta,50.3028,26.8683,Ukraine,UA,Khmelnytska Oblast,,34918,34918
+0523fc4d-0d93-49c2-ade2-042624d75d15,РЎР°РјР±С–СЂ,Sambir,49.5167,23.2028,Ukraine,UA,Lvivska Oblast,minor,34444,34444
+d0d691f9-558f-46e4-b1e5-80b73814924a,РўРѕСЂРµС†Рє,Toretsk,48.3917,37.8733,Ukraine,UA,Donetska Oblast,,34378,34378
+267c8c24-aa67-4ddd-8503-6ae04772f4d5,Р–РјРµСЂРёРЅРєР°,Zhmerynka,49.05,28.1,Ukraine,UA,Vinnytska Oblast,minor,33754,33754
+ec96b8ea-ddfe-4bdf-86b9-dfb8bf85fce1,Р§СѓРіСѓС—РІ,Chuhuiv,49.8356,36.6864,Ukraine,UA,Kharkivska Oblast,minor,33144,33144
+e32801cf-1feb-46ee-9e17-fcc5075d60c2,РќРѕРІРѕСЏРІРѕСЂС–РІСЃСЊРєРµ,Novoyavorovskoye,49.9311,23.5731,Ukraine,UA,Lvivska Oblast,,30723,30723
+1b4eaaf8-1d4d-419e-861c-cd5236190459,РњРѕРіРёР»С–РІ-РџРѕРґС–Р»СЊСЃСЊРєРёР№,Mohyliv-Podilskyi,48.45,27.7833,Ukraine,UA,Vinnytska Oblast,minor,29925,29925
+b43cc82d-591d-44ab-bd18-88b49705de75,РўСЂСѓСЃРєР°РІРµС†СЊ,Truskavets,49.2806,23.505,Ukraine,UA,Lvivska Oblast,,28287,28287
+75ec8e50-a3ef-4896-8fc0-281c49153020,Р”РѕР±СЂРѕРїС–Р»Р»СЏ,Dobropillia,48.4689,37.0828,Ukraine,UA,Donetska Oblast,,28170,28170
+d6e5dfea-1c85-4e4f-a906-893862f78df5,РљСѓРївЂ™СЏРЅСЃСЊРє,Kupiansk,49.7167,37.5833,Ukraine,UA,Kharkivska Oblast,minor,27169,27169
+ca6a2917-a89b-4f4b-85e9-505c6be71803,РџРµСЂРµСЏСЃР»Р°РІ-РҐРјРµР»СЊРЅРёС†СЊРєРёР№,Pereyaslav-KhmelРІР‚в„ўnytsРІР‚в„ўkyy,50.065,31.445,Ukraine,UA,Kyivska Oblast,,27088,27088
+9ce3dade-adf6-45e4-848e-a393f4c22f72,РҐРјС–Р»СЊРЅРёРє,Khmilnyk,49.5569,27.9572,Ukraine,UA,Vinnytska Oblast,minor,26916,26916
+206a71f2-78b4-46b9-9845-f0c387379729,РљС–СЂРѕРІСЃСЊРє,Kirovsk,48.6375,38.6428,Ukraine,UA,Luhanska Oblast,,26654,26654
+a9e2368f-5c9a-45ae-a59d-7542020cdf97,РЎРѕС„С–С—РІСЃСЊРєР° Р‘РѕСЂС‰Р°РіС–РІРєР°,SofiyivsРІР‚в„ўka Borshchahivka,50.4114,30.3692,Ukraine,UA,Kyivska Oblast,,26571,26571
+c052a3fd-9bf4-4c77-a5a0-ef9bedba1636,РџРµСЂРµРІР°Р»СЊСЃСЊРє,Perevalsk,48.4333,38.8167,Ukraine,UA,Luhanska Oblast,minor,26132,26132
+6e42b97e-742d-4d38-a57f-2613c6bef27e,Р’РёРЅРѕРіСЂР°РґС–РІ,Vynohradiv,48.1497,23.025,Ukraine,UA,Zakarpatska Oblast,minor,25317,25317
+154c3a6b-f3dd-4100-b259-5b845623db90,РђСЂРјСЏРЅСЃСЊРє,Armiansk,46.1074,33.6919,Ukraine,UA,"Krym, Avtonomna Respublika",,24415,24415
+bdd62c33-b531-4cd1-b448-1f3975a98d44,РЎР°РєРё,Saky,45.1336,33.5772,Ukraine,UA,"Krym, Avtonomna Respublika",minor,24285,24285
+f71a37a9-5742-490b-9e40-272746bf2fdf,Р”РµР±Р°Р»СЊС†РµРІРµ,Debaltseve,48.3333,38.4,Ukraine,UA,Donetska Oblast,,24209,24209
+82fdcf33-847c-44ef-b0b7-051c37532d2e,РЎРµР»РёРґРѕРІРµ,Selydove,48.15,37.3039,Ukraine,UA,Donetska Oblast,,23793,23793
+12509ced-1505-447a-bf3d-dfc8bf9218f7,РњРѕР»РѕРґРѕРіРІР°СЂРґС–Р№СЃСЊРє,Molodohvardiisk,48.3444,39.6583,Ukraine,UA,Luhanska Oblast,,22937,22937
+d4bd93a9-ef88-4f8b-b94d-6e77e7aef428,РњРµСЂРµС„Р°,Merefa,49.8167,36.05,Ukraine,UA,Kharkivska Oblast,,21421,21421
+fb029d49-cdd1-42a0-8a98-3bcaf741d5d7,Р‘С–Р»РѕРіРѕСЂРѕРґРєР°,Bilohorodka,50.3942,30.2314,Ukraine,UA,Kyivska Oblast,,21367,21367
+dd528e80-9663-43d5-abf5-26241c03ff25,РЎСѓС…РѕРґРѕР»СЃСЊРє,Sukhodilsk,48.35,39.7167,Ukraine,UA,Luhanska Oblast,,21324,21324
+01accbf3-77ab-41ae-aa1d-a459bd4270a7,РџРµР»Р°РіС–С—РІРєР°,Pelahiivka,48.0989,38.6128,Ukraine,UA,Donetska Oblast,,17833,17833
+244d1174-70f2-4dc3-b690-a6c67fe3f0b9,Р“РѕСЃС‚РѕРјРµР»СЊ,Hostomel,50.5692,30.2653,Ukraine,UA,Kyivska Oblast,,16190,16190
+a501d1b8-5f9e-488f-83f2-990df6f61a3a,РўР°СЂРѕРјСЃСЊРєРµ,Taromske,48.4617,34.7828,Ukraine,UA,Dnipropetrovska Oblast,,15838,15838
+2a239318-b0f3-4bf9-96ee-7d8b79eb965e,Р’РёРЅРЅРёРєРё,Vynnyky,49.8156,24.1297,Ukraine,UA,Lvivska Oblast,,15723,15723
+7c1c1374-d9eb-4f92-ad07-76327d16e9b7,Р§РµСЂРІРѕРЅРѕРїР°СЂС‚РёР·Р°РЅСЃСЊРє,Chervonopartyzansk,48.0833,39.7833,Ukraine,UA,Luhanska Oblast,,15218,15218
+7601eb10-99e8-4519-b0e9-d3d6a787875b,РњРёРєРѕР»Р°С—РІРєР°,Mykolaivka,48.8521,37.774,Ukraine,UA,Donetska Oblast,,14210,14210
+ba9285df-77e0-4663-b622-27e6b4d57949,РќРёР¶РЅСЏ РљСЂРёРЅРєР°,Nyzhnia Krynka,48.1144,38.1606,Ukraine,UA,Donetska Oblast,,13927,13927
+8ab594b8-4421-4798-9942-83a641e5442b,РђРЅС‚РѕРЅС–РІРєР°,Antonivka,46.6808,32.7358,Ukraine,UA,Khersonska Oblast,,12812,12812
+9f41d4bb-1775-4e7d-bee0-ea802cd34f0b,РџРµС‚СЂРѕРІСЃСЊРєРµ,Petrovske,48.2833,38.8833,Ukraine,UA,Luhanska Oblast,,12642,12642
+ee7b3d14-e65b-46ee-9d71-89e77c75b772,РџСЂРёРјРѕСЂСЃСЊРєРёР№,Prymorskyi,45.1167,35.4806,Ukraine,UA,"Krym, Avtonomna Respublika",,12560,12560
+91919d44-7f59-4e36-97ed-df621810c9d5,Р§Р°СЃС–РІ РЇСЂ,Chasiv Yar,48.5884,37.8359,Ukraine,UA,Donetska Oblast,,12250,12250
+bc1bf8be-8a14-4a1b-b5ca-3c20892d2baa,Р–РґР°РЅС–РІРєР°,Zhdanivka,48.1375,38.2608,Ukraine,UA,Donetska Oblast,,11913,11913
+417af1cb-4d2b-4f7e-958b-1f1891a41674,Р’Р°С…СЂСѓС€РµРІРµ,Vakhrusheve,48.1667,38.8333,Ukraine,UA,Luhanska Oblast,,11421,11421
+f9c99cf7-0c32-4a23-9c16-7952d7a0d1ad,Р“С–СЂРЅРёРє,Hirnyk,48.05,37.3667,Ukraine,UA,Donetska Oblast,,11378,11378
+3750918d-2572-418d-b6a4-598134c518da,Р›РёРјР°РЅРєР°,Lymanka,46.3883,30.6808,Ukraine,UA,Odeska Oblast,,10590,10590
+29424a35-ec8a-4359-a42b-51320170066d,РЎРѕР»РµРґР°СЂ,Soledar,48.6953,38.0675,Ukraine,UA,Donetska Oblast,,10490,10490
+164a17aa-304a-48a7-aa87-9ef03b9a088f,РЎР°СЂС‚Р°РЅР°,Sartana,47.1667,37.6833,Ukraine,UA,Donetska Oblast,,10350,10350
+385145e6-18b2-47b3-8c13-9d3f51507303,Р“Р°СЃРїСЂР°,Haspra,44.4361,34.1106,Ukraine,UA,"Krym, Avtonomna Respublika",,10310,10310
+5d79c1b7-c362-4081-9ca6-d657da8f9e6b,Р†РЅРєРµСЂРјР°РЅ,Inkerman,44.6,33.6,Ukraine,UA,"Sevastopol, Misto",,10196,10196
+2a6e4149-0e9a-4eac-8d6a-f21434a5113a,РљРѕСЂРѕР»РµРІРѕ,Korolevo,48.15,23.1333,Ukraine,UA,Zakarpatska Oblast,,10165,10165
+fcef8b6a-a1cc-427f-b2cd-74e25fce100d,РЎРЅСЏС‚РёРЅ,Sniatyn,48.45,25.5667,Ukraine,UA,Ivano-Frankivska Oblast,minor,9942,9942
+75a9474f-e510-4418-a496-3cab7dd9bd8c,РќРѕРІРіРѕСЂРѕРґСЃСЊРєРµ,Novgorodskoye,48.3319,37.8364,Ukraine,UA,Donetska Oblast,,9917,9917
+c9ad424f-5908-4b6e-af17-a974fa66e476,РЎС”РІРµСЂРЅРµ,Sieverne,48.0858,38.6942,Ukraine,UA,Donetska Oblast,,9832,9832
+2b05680c-ff56-4b03-82e7-20152795ba44,РЎРѕС„С–С—РІРєР°,Sofiivka,48.2603,38.1594,Ukraine,UA,Donetska Oblast,,9597,9597
+9b54464c-003d-4836-9afa-0583f70b233a,РўРµРїР»РѕРіС–СЂСЃСЊРє,Teplohirsk,48.5967,38.5828,Ukraine,UA,Luhanska Oblast,,9270,9270
+76c5c413-ca7b-42cb-83ec-f5c9232d5f5e,Р‘С–Р»РµРЅСЊРєРµ,Bilenke,48.7664,37.6314,Ukraine,UA,Donetska Oblast,,9136,9136
+e07c330e-6723-483e-a9b7-b5fb3b0b4dfd,Р“СѓСЂР·СѓС„,Hurzuf,44.5528,34.2875,Ukraine,UA,"Krym, Avtonomna Respublika",,9117,9117
+52c99797-9021-4736-bbf9-b8af75828262,Р“РѕСЂРѕРґРµРЅРєР°,Horodenka,48.6675,25.5003,Ukraine,UA,Ivano-Frankivska Oblast,minor,9113,9113
+f813404b-7d1a-49b5-9ade-03e11c39a121,РџС–РІРЅС–С‡РЅРµ,Pivnichne,48.3886,37.9067,Ukraine,UA,Donetska Oblast,,9024,9024
+6677973c-a8b7-4bd2-b75e-72cddc775784,РЇСЃРµРЅС–РІСЃСЊРєРёР№,Yasenivskyi,48.1606,39.2175,Ukraine,UA,Luhanska Oblast,,8943,8943
+ced7318a-f56e-4e45-a670-0a40e2711779,Р›СЋР±РёРјС–РІРєР°,Liubymivka,48.0397,39.44,Ukraine,UA,Luhanska Oblast,,8578,8578
+4b824505-c3e2-46b1-b458-96170b5cfb3f,РњР°СЃР°РЅРґСЂР°,Masandra,44.5167,34.1833,Ukraine,UA,"Krym, Avtonomna Respublika",,8571,8571
+55eed1e6-2575-43de-9b83-8797ec1f5cf9,Р‘С–Р»РєРё,Bilky,48.3294,23.1397,Ukraine,UA,Zakarpatska Oblast,,8064,8064
+e2964405-cb38-43a8-9028-475ece283f6f,РЇСЃРЅРѕРіС–СЂРєР°,Yasnohirka,48.7675,37.5669,Ukraine,UA,Donetska Oblast,,8034,8034
+5ef0b4ce-9c90-4a97-b8b1-f3bf35511f88,Р‘С–Р»РёС†СЊРєРµ,Bilytske,48.4086,37.1796,Ukraine,UA,Donetska Oblast,,7913,7913
+292280c9-5727-4003-b9d4-8687ab4de2c1,РџРѕС‡Р°С—РІ,Pochaiv,50.0028,25.5097,Ukraine,UA,Ternopilska Oblast,,7691,7691
+1f1e9e30-7654-45b2-8323-fdfdcd4f2552,РћР»РµРєСЃР°РЅРґСЂС–РІРєР°,Oleksandrivka,46.3294,30.6336,Ukraine,UA,Odeska Oblast,,7495,7495
+874e7161-4454-47f8-89c5-7e95def3de12,Р’СѓРіР»РµРіС–СЂСЃСЊРє,Vuhlehirsk,48.31,38.27,Ukraine,UA,Donetska Oblast,,7372,7372
+bb182961-2bf1-47d3-baea-d467598385fc,Р—РѕСЂРёРЅСЃСЊРє,Zorynsk,48.4167,38.6167,Ukraine,UA,Luhanska Oblast,,7173,7173
+3dfeac61-b644-4ef5-8a98-b382aaef0364,РљРѕРјРёС€Р°РЅРё,Komyshany,46.6364,32.1703,Ukraine,UA,Khersonska Oblast,,6941,6941
+5abb7b00-0a0c-421f-8e06-e55f9fa61d3e,РћР»РµРєСЃС–С”РІРѕ-Р”СЂСѓР¶РєС–РІРєР°,Oleksiievo-Druzhkivka,48.5806,37.6147,Ukraine,UA,Donetska Oblast,,6924,6924
+f09579de-3a6c-4926-827c-ba0cf071ad1e,РџС–СЃРєС–РІРєР°,Piskivka,50.7078,29.595,Ukraine,UA,Kyivska Oblast,minor,6896,6896
+cc0813aa-3775-4898-9769-a95f0d8794e4,Р“РѕР»РјС–РІСЃСЊРєРёР№,Holmivskyi,48.4006,38.0797,Ukraine,UA,Donetska Oblast,,6750,6750
+5e726e12-787f-4889-af76-0aa9ea6c6eef,РќРѕРІРѕРґСЂСѓР¶РµСЃСЊРє,Novodruzhesk,48.9634,38.352,Ukraine,UA,Luhanska Oblast,,6705,6705
+4f95a502-c4d5-42c2-aa70-9ce8e89b1076,РљР°СЂРЅР°СѓС…С–РІРєР°,Karnaukhivka,48.4714,34.7369,Ukraine,UA,Dnipropetrovska Oblast,,6631,6631
+fd5b5d0c-af88-4758-9eb6-2186249ebfff,Р’РµР»РёРєР° Р‘РµСЂРµР·РѕРІРёС†СЏ,Velikaya BerР“В«zovitsa,49.4964,25.6086,Ukraine,UA,Ternopilska Oblast,,6503,6503
+bc11cc41-9eb7-48dc-a096-88bd8bdfbbdb,Р РѕР·РєС–С€РЅРµ,Rozkishne,48.4922,39.2719,Ukraine,UA,Luhanska Oblast,,6482,6482
+db1b5c50-8aaf-4192-8688-72595e87d2d7,Р’РѕСЂР·РµР»СЊ,Vorzel,50.55,30.15,Ukraine,UA,Kyivska Oblast,,6441,6441
+491d4941-9aac-4da2-841d-585901db275c,РЁРµРїРµС‚С–РІРєР°,Shepetivka,50.1833,27.0667,Ukraine,UA,Khmelnytska Oblast,minor,6373,6373
+3e6d83ee-0361-49e4-8bb9-6647cee4c99f,Р“Р°Р»РёС‡,Halych,49.1247,24.7286,Ukraine,UA,Ivano-Frankivska Oblast,minor,6196,6196
+41f043d4-e3e8-483f-902d-9bc5c2d7c8c4,РџРµС‚СЂРѕРїР°РІР»С–РІСЃСЊРєР° Р‘РѕСЂС‰Р°РіС–РІРєР°,PetropavlivsРІР‚в„ўka Borshchahivka,50.4338,30.3286,Ukraine,UA,Kyivska Oblast,,6125,6125
+080f64b4-fa24-4bdc-829c-5c4f39b60ee9,Р‘Р°Р»Р°Р±РёРЅРµ,Balabyne,47.7442,35.2203,Ukraine,UA,Zaporizka Oblast,,6010,6010
+07635d52-378c-49c2-aed0-4aef16e81341,РЎС‚Р°СЂРёР№ РљСЂРёРј,Staryi Krym,47.1597,37.4869,Ukraine,UA,Donetska Oblast,,5887,5887
+7e70ce5d-d140-4eb5-bb81-c18ce8b26997,Р—РµР»РµРЅС–РІРєР°,Zelenivka,46.7178,32.6544,Ukraine,UA,Khersonska Oblast,,5775,5775
+834cd26f-2b08-4552-87f4-4a849c9f5854,Р§РѕСЂРЅСѓС…РёРЅРµ,Chornukhyne,48.3264,38.5156,Ukraine,UA,Luhanska Oblast,,5725,5725
+36cfb031-a5e1-4bad-b519-6a604e7f31da,РљРѕС†СЋР±РёРЅСЃСЊРєРµ,KotsyubynsРІР‚в„ўke,50.49,30.3347,Ukraine,UA,"Kyiv, Misto",,5709,5709
+74d372b3-6216-4b2a-83eb-07781cdc0720,РљРѕСЂРµС—Р·,Koreiz,44.4331,34.0872,Ukraine,UA,"Krym, Avtonomna Respublika",,5455,5455
+bf48d3cd-01ba-4a0c-ae3a-a4c46f51cfa2,Р‘СЂСЋС…РѕРІРёС‡С–,Bryukhovychi,49.9039,23.9539,Ukraine,UA,Lvivska Oblast,,5400,5400
+f492bfed-4e28-4662-8a8f-53411b963035,Р“РѕСЂРµРЅРєР°,Horenka,50.5569,30.3175,Ukraine,UA,Kyivska Oblast,,5358,5358
+e28ed740-112a-4bc5-a251-8604846e103f,Р§Р°Р±Р°РЅРё,Chabany,50.3403,30.4228,Ukraine,UA,Kyivska Oblast,,5334,5334
+6502f1a0-a2e1-439d-9ea0-85d137734dc0,РўРµРїР»Рµ,Teple,48.3328,39.5422,Ukraine,UA,Luhanska Oblast,,5201,5201
+23d06329-7b42-4e93-920d-e13852a73735,Р—Р°Р»С–Р·РЅРµ,Zalizne,48.375,37.8733,Ukraine,UA,Donetska Oblast,,4928,4928
+25197a56-31bc-4e33-8e07-bb89c9d7fe9e,РҐРѕС‚С–РІ,Khotiv,50.3333,30.4667,Ukraine,UA,Kyivska Oblast,,4737,4737
+335d31e1-8cb1-4e70-b16e-9c0a7ba9e7b5,РќРѕРІРѕРѕР»РµРєСЃР°РЅРґСЂС–РІРєР°,Novooleksandrivka,48.3454,34.9969,Ukraine,UA,Dnipropetrovska Oblast,,4502,4502
+f79c1553-c301-448c-9e87-6f12e10f48c2,Р—Р°РѕР·РµСЂРЅРµ,Zaozerne,45.1606,33.285,Ukraine,UA,"Krym, Avtonomna Respublika",,4332,4332
+95a6d5b6-ef22-4df2-9783-281c87bd66c7,РђР»РјР°Р·РЅР°,Almazna,48.5167,38.5833,Ukraine,UA,Luhanska Oblast,,4301,4301
+16cacad7-a510-41f3-8147-36d576ad0a60,РЁР°Р±РµР»СЊРєС–РІРєР°,Shabelkivka,48.7608,37.4881,Ukraine,UA,Donetska Oblast,,4267,4267
+22e4fd77-373f-40dd-a53a-f63cc614815c,РћР±СЂРѕС€РёРЅРµ,Obroshino,49.7853,23.8686,Ukraine,UA,Lvivska Oblast,,4186,4186
+45522e9b-28b5-4384-8edf-83aa84d0a3e1,РљСЂРёС…С–РІС†С–,Krykhivtsi,48.9008,24.6662,Ukraine,UA,Ivano-Frankivska Oblast,,4125,4125
+3f1e3d8c-dd63-46b8-8201-e69a9f50472f,РќРѕРІРѕРїС–Р»Р»СЏ,Novopillia,47.9539,33.5278,Ukraine,UA,Dnipropetrovska Oblast,,4037,4037
+13bf7d86-c050-497a-b31f-d4423ec012ce,Р—Р°Р№С†РµРІРµ,Zaitseve,48.4292,38.0094,Ukraine,UA,Donetska Oblast,,3919,3919
+de9d7bdc-f575-473f-92c5-295f29b16d08,РЎС–РјРµС—Р·,Simeiz,44.4058,33.99,Ukraine,UA,"Krym, Avtonomna Respublika",,3901,3901
+d969827d-6550-4bc6-bfa8-90e776d60965,РќРѕРІРѕСЃС–Р»РєРё,Novosilky,50.3544,30.4544,Ukraine,UA,"Kyiv, Misto",,3761,3761
+0e7adf96-b357-47ad-bacc-246d831a7c50,РЇСЃРёРЅС–РІРєР°,Yasynivka,48.1358,37.9303,Ukraine,UA,Donetska Oblast,,3588,3588
+1c285d47-1948-41e6-ade4-41b5dbb54815,РљСЂСЋРєС–РІС‰РёРЅР°,Kryukivshchyna,50.3683,30.3681,Ukraine,UA,Kyivska Oblast,,3509,3509
+c1dfcbe9-2805-40f9-b5ad-a147e9cfaf37,РЁР°С…С‚Р°СЂСЃСЊРєРµ,Shakhtarske,48.0497,39.5528,Ukraine,UA,Luhanska Oblast,,3495,3495
+a1f1f304-606b-4785-afbc-5cb2c2ccefb7,РњРёС…Р°Р№Р»С–РІРєР°-Р СѓР±РµР¶С–РІРєР°,Mykhaylivka-Rubezhivka,50.5003,30.1458,Ukraine,UA,Kyivska Oblast,,3430,3430
+e96bb2af-0caa-4dd6-9c65-78ac49f888ba,Р’Р°Р»СЏРЅС–РІСЃСЊРєРµ,Valianivske,48.0767,39.5611,Ukraine,UA,Luhanska Oblast,,3324,3324
+bfaafbe3-1092-44bc-a939-d386388fee44,РњР°Р»РѕРєР°С‚РµСЂРёРЅС–РІРєР°,Malokaterynivka,47.6581,35.26,Ukraine,UA,Zaporizka Oblast,,3320,3320
+86c72433-e32d-4f7d-bf1d-46f17d3da9f6,РџС–РІРґРµРЅРЅР° Р›РѕРјСѓРІР°С‚РєР°,Yuzhna Lomuvatka,48.4375,38.5311,Ukraine,UA,Luhanska Oblast,,3310,3310
+6e24b46c-22ce-40d5-8258-f6d4018a195c,Р©РµСЂР±РёРЅС–РІРєР°,Shcherbynivka,48.3886,37.9067,Ukraine,UA,Donetska Oblast,,3266,3266
+2868b1d0-edd9-4425-b4a1-c0fe6413c9bd,Р’РёР»РѕРє,Vylok,48.1147,22.8319,Ukraine,UA,Zakarpatska Oblast,,3201,3201
+a5b204a4-3df0-4b72-ad33-ee135fe6c8d0,РўРѕРІСЃС‚Рµ,Tovste,48.8464,25.7253,Ukraine,UA,Ternopilska Oblast,,3156,3156
+2e89f0ac-96bb-4ab5-8df1-62d364caa39f,РџвЂ™СЏС‚РѕРїС–Р»Р»СЏ,Piatypillia,48.0119,38.0919,Ukraine,UA,Donetska Oblast,,3155,3155
+1a893b78-8016-4412-9a04-f08938f60625,Р“Р°С‚РЅРµ,Hatne,50.3583,30.3989,Ukraine,UA,Kyivska Oblast,,3077,3077
+3f1ec35d-85c2-45ef-9f2c-ef31c84543c0,Р‘СѓР»Р°РІРёРЅСЃСЊРєРµ,Bulavynske,48.255,38.3336,Ukraine,UA,Donetska Oblast,,3070,3070
+7a549276-d9ad-48f2-ab0f-dff261ac2980,Р”СѓР±РѕРІРµ,Dubove,48.1261,39.6433,Ukraine,UA,Luhanska Oblast,,3018,3018
+290a5f4b-eb11-409e-888a-0704d918c307,РљСѓР»РёРЅРёС‡С–,Kulynychi,49.9819,36.3861,Ukraine,UA,Kharkivska Oblast,,2985,2985
+0eb4ca1f-dffc-4533-84e1-24e41d379487,РЎР°РґРєРё,Sadky,49.009,33.4602,Ukraine,UA,Poltavska Oblast,,2939,2939
+c18b6293-cdd7-40ae-ab63-283cb70126c8,РљСЂР°СЃРЅРѕС‚РѕСЂРєР°,Krasnotorka,48.6858,37.5267,Ukraine,UA,Donetska Oblast,,2915,2915
+dfcfad13-ea92-4161-a345-0c0a350b753d,РџРµСЂРІРѕРјР°Р№СЃСЊРєРёР№,Pervomaiskyi,47.9736,38.7875,Ukraine,UA,Donetska Oblast,,2837,2837
+ade40f36-57f3-4565-860b-56fe5eed5d0f,Р‘СЂРёС‚С–РІРєР°,Brytivka,46.1722,30.2833,Ukraine,UA,Odeska Oblast,,2818,2818
+3fedb624-4e0a-48a7-81e6-153350ae66e2,Р‘Р»РёР¶РЅС”,Blyzhnie,45.0569,35.3306,Ukraine,UA,"Krym, Avtonomna Respublika",,2779,2779
+d60e82aa-aad7-4220-b1d7-67aae03f3ac7,РњРёС…Р°Р№Р»С–РІРєР°,Mykhailivka,48.0683,39.2633,Ukraine,UA,Luhanska Oblast,,2765,2765
+220465ef-a538-4cfd-b95f-878d056552c6,Р›Р°СЂРёРЅРµ,Laryne,47.8828,37.9294,Ukraine,UA,Donetska Oblast,,2761,2761
+dfe605f1-2c2b-4254-8713-1e372a18b9f0,Р’РµРґРјРµР¶Рµ,Vedmezhe,48.1242,39.5856,Ukraine,UA,Luhanska Oblast,,2727,2727
+35d800c0-1d26-409b-9a9c-16aac1e97499,Р’РѕР»РѕРґРёРјРёСЂ-Р’РѕР»РёРЅСЃСЊРєРёР№,Volodymyr-Volynskyi,50.8525,24.3236,Ukraine,UA,Volynska Oblast,minor,,
