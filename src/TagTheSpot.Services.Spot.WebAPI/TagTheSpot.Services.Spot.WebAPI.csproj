@@ -23,4 +23,11 @@
     <ProjectReference Include="..\TagTheSpot.Services.Spot.Infrastructure\TagTheSpot.Services.Spot.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\data\cities.csv">
+      <Link>data\cities.csv</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

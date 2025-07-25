@@ -12,11 +12,9 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence
         private readonly List<City> _cities;
 
         public CityRepository(
-            IHostEnvironment environment,
             IOptions<DataSettings> dataSettings)
         {
-            var sourcePath = Path.Combine(environment.ContentRootPath,
-                "..", dataSettings.Value.CityDataRelativePath);
+            var sourcePath = Path.Combine(AppContext.BaseDirectory, dataSettings.Value.CityDataRelativePath);
 
             sourcePath = Path.GetFullPath(sourcePath);
 
