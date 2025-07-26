@@ -8,6 +8,7 @@ using TagTheSpot.Services.Spot.Application.Services;
 using TagTheSpot.Services.Spot.Application.Validators;
 using TagTheSpot.Services.Spot.Domain.Cities;
 using TagTheSpot.Services.Spot.Domain.Users;
+using TagTheSpot.Services.Spot.Infrastructure.Extensions;
 using TagTheSpot.Services.Spot.Infrastructure.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Options;
@@ -58,6 +59,8 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.ApplyMigrations();
 
             app.UseHttpsRedirection();
 
