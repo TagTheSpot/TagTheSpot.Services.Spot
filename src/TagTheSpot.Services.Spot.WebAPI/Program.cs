@@ -20,6 +20,7 @@ using TagTheSpot.Services.Spot.Infrastructure.Persistence.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories;
 using TagTheSpot.Services.Spot.Infrastructure.Services;
 using TraffiLearn.Infrastructure.External.Blobs.Options;
+using TagTheSpot.Services.Spot.Domain.Spots;
 
 namespace TagTheSpot.Services.Spot.WebAPI
 {
@@ -71,6 +72,9 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddSingleton<IBlobService, AzureBlobStorageService>();
+
+            builder.Services.AddScoped<ISpotRepository, SpotRepository>();
+            builder.Services.AddScoped<ISpotService, SpotService>();
 
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<GetMatchingCitiesRequestValidator>();
