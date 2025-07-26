@@ -1,4 +1,5 @@
-
+using Azure.Storage.Blobs.Models;
+using Azure.Storage.Blobs;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using MassTransit;
@@ -6,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using TagTheSpot.Services.Shared.Messaging.Events.Users;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
+using TagTheSpot.Services.Spot.Application.Abstractions.Storage;
 using TagTheSpot.Services.Spot.Application.Consumers;
 using TagTheSpot.Services.Spot.Application.Services;
 using TagTheSpot.Services.Spot.Application.Validators;
@@ -16,6 +18,8 @@ using TagTheSpot.Services.Spot.Infrastructure.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories;
+using TagTheSpot.Services.Spot.Infrastructure.Services;
+using TraffiLearn.Infrastructure.External.Blobs.Options;
 
 namespace TagTheSpot.Services.Spot.WebAPI
 {
@@ -57,10 +61,16 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 .ValidateDataAnnotations()
                 .ValidateOnStart();
 
+            builder.Services.AddOptions<AzureBlobStorageSettings>()
+                .BindConfiguration(AzureBlobStorageSettings.SectionName)
+                .ValidateDataAnnotations()
+                .ValidateOnStart();
+
             builder.Services.AddSingleton<ICityRepository, CityRepository>();
             builder.Services.AddScoped<ICityService, CityService>();
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddSingleton<IBlobService, AzureBlobStorageService>();
 
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<GetMatchingCitiesRequestValidator>();
@@ -86,6 +96,26 @@ namespace TagTheSpot.Services.Spot.WebAPI
                         e.ConfigureConsumer<UserCreatedEventConsumer>(context);
                     });
                 });
+            });
+
+            builder.Services.AddSingleton((serviceProvider) =>
+            {
+                var blobStorageSettings = serviceProvider.GetRequiredService<IOptions<AzureBlobStorageSettings>>().Value;
+
+                var blobServiceClient = new BlobServiceClient(blobStorageSettings.ConnectionString);
+
+                var containerClient = blobServiceClient.GetBlobContainerClient(blobStorageSettings.ContainerName);
+
+                containerClient.CreateIfNotExists();
+
+                var properties = containerClient.GetProperties();
+
+                if (properties.Value.PublicAccess != PublicAccessType.Blob)
+                {
+                    containerClient.SetAccessPolicy(PublicAccessType.Blob);
+                }
+
+                return containerClient;
             });
 
             var app = builder.Build();

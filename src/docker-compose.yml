@@ -14,3 +14,19 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - "5433:5432"
+    volumes:
+      - tagthespot_services_spot_postgresdb_data:/var/lib/postgresql/data
+  
+  tagthespot.services.spot.azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:latest
+    container_name: tagthespot.services.spot.azurite
+    ports:
+      - "10000:10000"
+    command: "azurite-blob --blobHost 0.0.0.0 -l /data"
+    volumes:
+      - tagthespot_services_spot_blob_data:/data
+
+
+volumes:
+  tagthespot_services_spot_postgresdb_data:
+  tagthespot_services_spot_blob_data:
