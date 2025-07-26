@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using TagTheSpot.Services.Spot.Domain.Spots;
+﻿using TagTheSpot.Services.Spot.Domain.Spots;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
 {
@@ -14,7 +13,8 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
 
         public async Task<Domain.Spots.Spot?> GetByIdAsync(Guid id)
         {
-            return await _dbContext.Spots.FirstOrDefaultAsync(spot => spot.Id == id);
+            return await _dbContext.Spots
+                .FindAsync(id);
         }
     }
 }

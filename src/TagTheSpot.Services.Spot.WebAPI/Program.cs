@@ -20,6 +20,7 @@ using TagTheSpot.Services.Spot.Infrastructure.Persistence.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories;
 using TagTheSpot.Services.Spot.Infrastructure.Services;
 using TraffiLearn.Infrastructure.External.Blobs.Options;
+using TagTheSpot.Services.Shared.Messaging.Options;
 using TagTheSpot.Services.Spot.Domain.Spots;
 
 namespace TagTheSpot.Services.Spot.WebAPI

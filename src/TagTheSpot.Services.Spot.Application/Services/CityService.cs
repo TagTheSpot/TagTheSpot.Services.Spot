@@ -13,10 +13,10 @@ namespace TagTheSpot.Services.Spot.Application.Services
             _cityRepository = cityRepository;
         }
 
-        public async Task<IEnumerable<CityResponse>> GetMatchingCities(
+        public async Task<IEnumerable<CityResponse>> GetMatchingCitiesAsync(
             GetMatchingCitiesRequest request)
         {
-            var matchingCities = await _cityRepository.GetMatchingCities(request.Pattern);
+            var matchingCities = await _cityRepository.GetMatchingCitiesAsync(request.Pattern);
 
             return matchingCities.Select(
                 city => new CityResponse(

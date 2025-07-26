@@ -2,6 +2,6 @@
 {
     public interface ICityRepository
     {
-        Task<IEnumerable<City>> GetMatchingCities(string cityPattern);
+        Task<IEnumerable<City>> GetMatchingCitiesAsync(string cityPattern);
     }
 }

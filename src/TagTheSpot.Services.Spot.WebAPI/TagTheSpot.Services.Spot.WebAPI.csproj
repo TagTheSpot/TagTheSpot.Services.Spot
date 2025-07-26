@@ -22,6 +22,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="TagTheSpot.Services.Shared.Essentials" Version="1.0.3" />
+    <PackageReference Include="TagTheSpot.Services.Shared.Messaging" Version="1.0.3" />
   </ItemGroup>
 
   <ItemGroup>

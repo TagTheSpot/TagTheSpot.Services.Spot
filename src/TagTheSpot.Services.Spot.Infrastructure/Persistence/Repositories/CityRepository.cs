@@ -23,7 +23,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             _cities = csv.GetRecords<City>().ToList();
         }
 
-        public Task<IEnumerable<City>> GetMatchingCities(string cityPattern)
+        public Task<IEnumerable<City>> GetMatchingCitiesAsync(string cityPattern)
         {
             return Task.FromResult(_cities.Where(city =>
                 city.Name.StartsWith(cityPattern, StringComparison.OrdinalIgnoreCase)));
