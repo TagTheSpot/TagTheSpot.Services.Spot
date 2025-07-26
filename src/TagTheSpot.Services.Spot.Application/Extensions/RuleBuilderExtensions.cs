@@ -11,9 +11,8 @@ namespace TagTheSpot.Services.Spot.Application.Extensions
         {
             return ruleBuilder
                 .Must(value =>
-                    Enum.TryParse<TEnum>(value, ignoreCase, out var _) &&
-                    Enum.IsDefined(typeof(TEnum), value)
-                )
+                    Enum.TryParse<TEnum>(value, ignoreCase, out var parsed)
+                    && Enum.IsDefined(typeof(TEnum), parsed))
                 .WithMessage("'{PropertyValue}' is not a valid value for {PropertyName}.");
         }
     }

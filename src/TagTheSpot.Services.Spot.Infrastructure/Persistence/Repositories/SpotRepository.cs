@@ -16,5 +16,11 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             return await _dbContext.Spots
                 .FindAsync(id);
         }
+
+        public async Task InsertAsync(Domain.Spots.Spot spot)
+        {
+            await _dbContext.Spots.AddAsync(spot);
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

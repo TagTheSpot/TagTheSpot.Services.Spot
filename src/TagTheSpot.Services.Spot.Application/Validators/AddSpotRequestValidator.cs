@@ -14,14 +14,13 @@ namespace TagTheSpot.Services.Spot.Application.Validators
                 .NotEmpty();
 
             RuleFor(x => x.Latitude)
-                .InclusiveBetween(-90, 90).WithMessage("Latitude must be between -90 and 90.")
-                .NotEmpty();
+                .InclusiveBetween(-90, 90).WithMessage("Latitude must be between -90 and 90.");
 
             RuleFor(x => x.Longitude)
-                .InclusiveBetween(-180, 180).WithMessage("Longitude must be between -180 and 180.")
-                .NotEmpty();
+                .InclusiveBetween(-180, 180).WithMessage("Longitude must be between -180 and 180.");
 
             RuleFor(x => x.SpotType)
+                .Cascade(CascadeMode.Stop)
                 .NotEmpty()
                 .MustBeEnumValue<AddSpotRequest, SpotType>();
 
@@ -42,12 +41,12 @@ namespace TagTheSpot.Services.Spot.Application.Validators
                 .MaximumLength(1000).WithMessage("Description must be between 10 and 1000 characters.")
                 .NotEmpty();
 
-            RuleFor(x => x.Images)
-                .NotNull()
-                .Must(images => images.Count >= 1)
-                .WithMessage("At least one image is required.")
-                .Must(images => images.Count <= 20)
-                .WithMessage("You can upload up to 20 images only.");
+            //RuleFor(x => x.Images)
+            //    .NotNull()
+            //    .Must(images => images.Count >= 1)
+            //    .WithMessage("At least one image is required.")
+            //    .Must(images => images.Count <= 20)
+            //    .WithMessage("You can upload up to 20 images only.");
         }
     }
 }
