@@ -4,7 +4,7 @@ namespace TagTheSpot.Services.Spot.Application.Abstractions.Services
 {
     public interface ICityService
     {
-        Task<IEnumerable<CityResponse>> GetMatchingCities(
+        Task<IEnumerable<CityResponse>> GetMatchingCitiesAsync(
             GetMatchingCitiesRequest request);
     }
 }
