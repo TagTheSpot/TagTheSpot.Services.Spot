@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using TagTheSpot.Services.Spot.Application.DTO;
+using TagTheSpot.Services.Spot.Application.DTO.UseCases;
 
 namespace TagTheSpot.Services.Spot.Application.Validators
 {

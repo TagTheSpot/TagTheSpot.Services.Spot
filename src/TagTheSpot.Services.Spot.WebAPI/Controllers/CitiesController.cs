@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
-using TagTheSpot.Services.Spot.Application.DTO;
+using TagTheSpot.Services.Spot.Application.DTO.UseCases;
 
 namespace TagTheSpot.Services.Spot.WebAPI.Controllers
 {

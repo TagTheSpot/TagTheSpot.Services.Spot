@@ -1,5 +1,5 @@
 ﻿using TagTheSpot.Services.Spot.Application.Abstractions.Services;
-using TagTheSpot.Services.Spot.Application.DTO;
+using TagTheSpot.Services.Spot.Application.DTO.UseCases;
 using TagTheSpot.Services.Spot.Domain.Cities;
 
 namespace TagTheSpot.Services.Spot.Application.Services
