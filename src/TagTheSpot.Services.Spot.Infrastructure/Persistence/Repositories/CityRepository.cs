@@ -1,11 +1,10 @@
 ﻿using CsvHelper;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System.Globalization;
 using TagTheSpot.Services.Spot.Domain.Cities;
 using TagTheSpot.Services.Spot.Infrastructure.Options;
 
-namespace TagTheSpot.Services.Spot.Infrastructure.Persistence
+namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
 {
     public sealed class CityRepository : ICityRepository
     {
@@ -26,7 +25,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence
 
         public Task<IEnumerable<City>> GetMatchingCities(string cityPattern)
         {
-            return Task.FromResult(_cities.Where(city => 
+            return Task.FromResult(_cities.Where(city =>
                 city.Name.StartsWith(cityPattern, StringComparison.OrdinalIgnoreCase)));
         }
     }

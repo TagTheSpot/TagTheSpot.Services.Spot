@@ -1,13 +1,18 @@
 
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.Application.Services;
 using TagTheSpot.Services.Spot.Application.Validators;
 using TagTheSpot.Services.Spot.Domain.Cities;
+using TagTheSpot.Services.Spot.Domain.Users;
+using TagTheSpot.Services.Spot.Infrastructure.Extensions;
 using TagTheSpot.Services.Spot.Infrastructure.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Options;
+using TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories;
 
 namespace TagTheSpot.Services.Spot.WebAPI
 {
@@ -20,6 +25,14 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<ApplicationDbContext>(
+                (serviceProvider, options) =>
+                {
+                    var dbSettings = serviceProvider.GetRequiredService<IOptions<DbSettings>>().Value;
+
+                    options.UseNpgsql(dbSettings.ConnectionString);
+                });
 
             builder.Services.AddOptions<DbSettings>()
                 .BindConfiguration(DbSettings.SectionName)
@@ -34,6 +47,8 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddSingleton<ICityRepository, CityRepository>();
             builder.Services.AddScoped<ICityService, CityService>();
 
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<GetMatchingCitiesRequestValidator>();
 
@@ -44,6 +59,8 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.ApplyMigrations();
 
             app.UseHttpsRedirection();
 

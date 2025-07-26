@@ -1,6 +1,6 @@
 ﻿namespace TagTheSpot.Services.Spot.Domain.Submissions
 {
-    public class Submission
+    public sealed class Submission
     {
         public Guid Id { get; set; }
 
