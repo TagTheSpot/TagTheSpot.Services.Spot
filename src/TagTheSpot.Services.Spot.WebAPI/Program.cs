@@ -21,6 +21,7 @@ using TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories;
 using TagTheSpot.Services.Spot.Infrastructure.Services;
 using TraffiLearn.Infrastructure.External.Blobs.Options;
 using TagTheSpot.Services.Spot.Domain.Spots;
+using TagTheSpot.Services.Spot.WebAPI.Middleware;
 
 namespace TagTheSpot.Services.Spot.WebAPI
 {
@@ -123,6 +124,8 @@ namespace TagTheSpot.Services.Spot.WebAPI
             });
 
             var app = builder.Build();
+
+            app.UseExceptionHandlingMiddleware();
 
             if (app.Environment.IsDevelopment())
             {
