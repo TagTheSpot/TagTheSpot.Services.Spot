@@ -5,7 +5,7 @@ namespace TagTheSpot.Services.Spot.Application.Abstractions.Services
 {
     public interface ISpotService
     {
-        Task<Domain.Spots.Spot?> GetByIdAsync(Guid id);
+        Task<Result<SpotResponse>> GetByIdAsync(Guid id);
 
         Task<Result<Guid>> AddSpotAsync(AddSpotRequest request);
     }

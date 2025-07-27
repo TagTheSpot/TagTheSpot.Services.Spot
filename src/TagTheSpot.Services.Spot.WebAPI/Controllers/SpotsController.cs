@@ -24,9 +24,10 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
         public async Task<IActionResult> GetSpotById(
             [FromRoute] Guid id)
         {
-            Domain.Spots.Spot? spot = await _spotService.GetByIdAsync(id);
+            var result = await _spotService.GetByIdAsync(id);
 
-            return spot is not null ? Ok(spot) : NotFound();
+            return result.IsSuccess ? 
+                Ok(result.Value) : _problemDetailsFactory.GetProblemDetails(result);
         }
 
         [HttpPost("spots")]

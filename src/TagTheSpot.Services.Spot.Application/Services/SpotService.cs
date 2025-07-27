@@ -43,9 +43,32 @@ namespace TagTheSpot.Services.Spot.Application.Services
             return Result.Success(spot.Id);
         }
 
-        public async Task<Domain.Spots.Spot?> GetByIdAsync(Guid id)
+        public async Task<Result<SpotResponse>> GetByIdAsync(Guid id)
         {
-            return await _spotRepository.GetByIdAsync(id);
+            Domain.Spots.Spot? spot = await _spotRepository.GetByIdAsync(id);
+
+            if (spot is null)
+            {
+                return Result.Failure<SpotResponse>(Error
+                    .NotFound("404", "Spot with the specified ID was not found."));
+            }
+
+            SpotResponse spotResponse = new SpotResponse(
+                Id: spot.Id,
+                CityId: spot.CityId,
+                ImagesUrls: spot.ImagesUrls,
+                Latitude: spot.Latitude,
+                Longitude: spot.Longitude,
+                Type: spot.Type,
+                Description: spot.Description,
+                SkillLevel: spot.SkillLevel,
+                IsCovered: spot.IsCovered,
+                Lighting: spot.Lighting,
+                CreatedAt: spot.CreatedAt,
+                Accessibility: spot.Accessibility,
+                Condition: spot.Condition);
+
+            return Result.Success(spotResponse);
         }
     }
 }
