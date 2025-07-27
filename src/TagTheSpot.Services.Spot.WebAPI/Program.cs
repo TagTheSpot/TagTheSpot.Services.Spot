@@ -1,17 +1,24 @@
-using Azure.Storage.Blobs.Models;
 using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Extensions;
+using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Integrations;
 using TagTheSpot.Services.Shared.Messaging.Events.Users;
+using TagTheSpot.Services.Shared.Messaging.Options;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.Application.Abstractions.Storage;
 using TagTheSpot.Services.Spot.Application.Consumers;
+using TagTheSpot.Services.Spot.Application.DTO.UseCases;
+using TagTheSpot.Services.Spot.Application.Extensions;
+using TagTheSpot.Services.Spot.Application.Mappers;
 using TagTheSpot.Services.Spot.Application.Services;
 using TagTheSpot.Services.Spot.Application.Validators;
 using TagTheSpot.Services.Spot.Domain.Cities;
+using TagTheSpot.Services.Spot.Domain.Spots;
 using TagTheSpot.Services.Spot.Domain.Users;
 using TagTheSpot.Services.Spot.Infrastructure.Extensions;
 using TagTheSpot.Services.Spot.Infrastructure.Options;
@@ -19,9 +26,10 @@ using TagTheSpot.Services.Spot.Infrastructure.Persistence;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories;
 using TagTheSpot.Services.Spot.Infrastructure.Services;
+using TagTheSpot.Services.Spot.WebAPI.Factories;
 using TraffiLearn.Infrastructure.External.Blobs.Options;
-using TagTheSpot.Services.Spot.Domain.Spots;
 using TagTheSpot.Services.Spot.WebAPI.Middleware;
+
 
 namespace TagTheSpot.Services.Spot.WebAPI
 {
@@ -32,6 +40,9 @@ namespace TagTheSpot.Services.Spot.WebAPI
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
+
+            builder.Services.AddJsonMultipartFormDataSupport(JsonSerializerChoice.Newtonsoft);
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -78,7 +89,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddScoped<ISpotService, SpotService>();
 
             builder.Services.AddFluentValidationAutoValidation();
-            builder.Services.AddValidatorsFromAssemblyContaining<GetMatchingCitiesRequestValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<AddSpotRequestValidator>();
 
             builder.Services.AddMassTransit(cfg =>
             {
@@ -123,6 +134,11 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 return containerClient;
             });
 
+            builder.Services.AddMapper<AddSpotRequest, Domain.Spots.Spot, AddSpotRequestToSpotMapper>();
+
+            builder.Services.AddSingleton<ProblemDetailsFactory>();
+            builder.Services.AddHttpContextAccessor();
+
             var app = builder.Build();
 
             app.UseExceptionHandlingMiddleware();
@@ -136,8 +152,6 @@ namespace TagTheSpot.Services.Spot.WebAPI
             app.ApplyMigrations();
 
             app.UseHttpsRedirection();
-
-            app.UseAuthorization();
 
             app.MapControllers();
 

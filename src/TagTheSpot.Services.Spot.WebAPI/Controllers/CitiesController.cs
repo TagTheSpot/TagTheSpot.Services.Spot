@@ -19,7 +19,7 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
         public async Task<IActionResult> Register(
             [FromQuery] GetMatchingCitiesRequest request)
         {
-            var result = await _cityService.GetMatchingCities(request);
+            var result = await _cityService.GetMatchingCitiesAsync(request);
 
             return Ok(result);
         }

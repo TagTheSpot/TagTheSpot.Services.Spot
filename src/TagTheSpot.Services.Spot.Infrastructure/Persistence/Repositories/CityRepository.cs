@@ -23,7 +23,17 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             _cities = csv.GetRecords<City>().ToList();
         }
 
-        public Task<IEnumerable<City>> GetMatchingCities(string cityPattern)
+        public Task<bool> ExistsAsync(Guid id)
+        {
+            return Task.FromResult(_cities.Any(x => x.Id == id));
+        }
+
+        public Task<City?> GetByIdAsync(Guid id)
+        {
+            return Task.FromResult(_cities.FirstOrDefault(c => c.Id == id));
+        }
+
+        public Task<IEnumerable<City>> GetMatchingCitiesAsync(string cityPattern)
         {
             return Task.FromResult(_cities.Where(city =>
                 city.Name.StartsWith(cityPattern, StringComparison.OrdinalIgnoreCase)));
