@@ -41,12 +41,16 @@ namespace TagTheSpot.Services.Spot.Application.Validators
                 .MaximumLength(1000).WithMessage("Description must be between 10 and 1000 characters.")
                 .NotEmpty();
 
-            //RuleFor(x => x.Images)
-            //    .NotNull()
-            //    .Must(images => images.Count >= 1)
-            //    .WithMessage("At least one image is required.")
-            //    .Must(images => images.Count <= 20)
-            //    .WithMessage("You can upload up to 20 images only.");
+            RuleFor(x => x.Images)
+                .Cascade(CascadeMode.Stop)
+                .NotNull()
+                .Must(images => images.Count >= 1)
+                .WithMessage("At least one image is required.")
+                .Must(images => images.Count <= 20)
+                .WithMessage("You can upload up to 20 images only.");
+
+            RuleForEach(x => x.Images)
+                .SetValidator(new ImageFileValidator());
         }
     }
 }

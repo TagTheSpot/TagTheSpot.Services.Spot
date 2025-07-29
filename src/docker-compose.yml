@@ -1,11 +1,11 @@
 services:
-  tagthespot.services.spot.webapi:
+  tagthespot-services-spot-webapi:
     image: ${DOCKER_REGISTRY-}tagthespotservicesspotwebapi
     build:
       context: .
       dockerfile: TagTheSpot.Services.Spot.WebAPI/Dockerfile
 
-  tagthespot.services.spot.database:
+  tagthespot-services-spot-database:
     container_name: tagthespot.services.spot.database
     image: postgres:latest
     environment:
@@ -17,16 +17,16 @@ services:
     volumes:
       - tagthespot_services_spot_postgresdb_data:/var/lib/postgresql/data
   
-  tagthespot.services.spot.azurite:
-    image: mcr.microsoft.com/azure-storage/azurite:latest
+  tagthespot-services-spot-azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:3.32.0
     container_name: tagthespot.services.spot.azurite
     ports:
       - "10000:10000"
     command: "azurite-blob --blobHost 0.0.0.0 -l /data"
     volumes:
-      - tagthespot_services_spot_blob_data:/data
+      - tagthespot_services_spot_azurite_data:/data
 
 
 volumes:
   tagthespot_services_spot_postgresdb_data:
-  tagthespot_services_spot_blob_data:
+  tagthespot_services_spot_azurite_data:

@@ -83,7 +83,6 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddScoped<ICityService, CityService>();
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
-            builder.Services.AddSingleton<IBlobService, AzureBlobStorageService>();
 
             builder.Services.AddScoped<ISpotRepository, SpotRepository>();
             builder.Services.AddScoped<ISpotService, SpotService>();
@@ -133,6 +132,8 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
                 return containerClient;
             });
+
+            builder.Services.AddSingleton<IBlobService, AzureBlobStorageService>();
 
             builder.Services.AddMapper<AddSpotRequest, Domain.Spots.Spot, AddSpotRequestToSpotMapper>();
 

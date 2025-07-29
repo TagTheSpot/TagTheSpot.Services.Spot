@@ -1,4 +1,6 @@
-﻿namespace TagTheSpot.Services.Spot.Application.DTO.UseCases
+﻿using Microsoft.AspNetCore.Http;
+
+namespace TagTheSpot.Services.Spot.Application.DTO.UseCases
 {
     public sealed record AddSpotRequest(
         Guid CityId,
@@ -10,5 +12,6 @@
         bool? Lighting,
         string? SkillLevel,
         string? Accessibility,
-        string? Condition);
+        string? Condition,
+        List<IFormFile> Images);
 }

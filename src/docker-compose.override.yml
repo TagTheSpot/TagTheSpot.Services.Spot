@@ -1,5 +1,5 @@
 services:
-  tagthespot.services.spot.webapi:
+  tagthespot-services-spot-webapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
