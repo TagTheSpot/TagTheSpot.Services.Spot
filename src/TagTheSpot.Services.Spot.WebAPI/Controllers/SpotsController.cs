@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Attributes;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.Application.DTO.UseCases;
 using TagTheSpot.Services.Spot.WebAPI.Factories;
@@ -32,15 +33,15 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
 
         [HttpPost("spots")]
         public async Task<IActionResult> AddSpot(
-            [FromBody] AddSpotRequest request)
+            [FromForm] AddSpotRequest request)
         {
             var result = await _spotService.AddSpotAsync(request);
 
             return result.IsSuccess
                 ? CreatedAtAction(
-                    nameof(GetSpotById),
-                    new { id = result.Value },
-                    new { id = result.Value })
+                    actionName: nameof(GetSpotById),
+                    routeValues: new { id = result.Value },
+                    value: result.Value)
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
     }

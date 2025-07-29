@@ -13,16 +13,22 @@ namespace TagTheSpot.Services.Spot.Application.Services
     {
         private readonly ISpotRepository _spotRepository;
         private readonly ICityRepository _cityRepository;
+        private readonly IBlobService _blobService;
         private readonly Mapper<AddSpotRequest, Domain.Spots.Spot> _mapper;
+        private readonly ILogger<SpotService> _logger;
 
         public SpotService(
             ISpotRepository spotRepository,
             ICityRepository cityRepository,
-            Mapper<AddSpotRequest, Domain.Spots.Spot> mapper)
+            IBlobService blobService,
+            Mapper<AddSpotRequest, Domain.Spots.Spot> mapper,
+            ILogger<SpotService> logger)
         {
             _spotRepository = spotRepository;
             _cityRepository = cityRepository;
+            _blobService = blobService;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<Result<Guid>> AddSpotAsync(AddSpotRequest request)
@@ -37,6 +43,28 @@ namespace TagTheSpot.Services.Spot.Application.Services
             }
 
             spot.CityId = request.CityId;
+
+            List<string> imagesUris = new();
+
+            foreach (var image in request.Images)
+            {
+                try
+                {
+                    using Stream stream = image.OpenReadStream();
+
+                    var uploadResponse = await _blobService.UploadAsync(
+                        stream,
+                        contentType: image.ContentType);
+
+                    imagesUris.Add(uploadResponse.BlobUri);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Fail during uploading image with name {ImageName} for spot ID {SpotId}. Error: {ExceptionError}", image.FileName, spot.Id, ex.Message);
+                }
+            }
+
+            spot.ImagesUrls = imagesUris;
 
             await _spotRepository.InsertAsync(spot);
 
