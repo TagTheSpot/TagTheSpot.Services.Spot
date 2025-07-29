@@ -29,7 +29,7 @@ using TagTheSpot.Services.Spot.Infrastructure.Services;
 using TagTheSpot.Services.Spot.WebAPI.Factories;
 using TraffiLearn.Infrastructure.External.Blobs.Options;
 using TagTheSpot.Services.Spot.WebAPI.Middleware;
-
+using TagTheSpot.Services.Spot.WebAPI.Extensions;
 
 namespace TagTheSpot.Services.Spot.WebAPI
 {
@@ -44,7 +44,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddJsonMultipartFormDataSupport(JsonSerializerChoice.Newtonsoft);
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.ConfigureSwaggerGen();
 
             builder.Services.AddDbContext<ApplicationDbContext>(
                 (serviceProvider, options) =>
