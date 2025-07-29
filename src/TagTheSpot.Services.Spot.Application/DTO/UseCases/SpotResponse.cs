@@ -5,7 +5,6 @@ namespace TagTheSpot.Services.Spot.Application.DTO.UseCases
     public sealed record SpotResponse(
         Guid Id,
         Guid CityId,
-        List<string> ImagesUrls,
         double Latitude,
         double Longitude,
         SpotType Type,
@@ -15,5 +14,6 @@ namespace TagTheSpot.Services.Spot.Application.DTO.UseCases
         bool? Lighting,
         DateTime CreatedAt,
         Accessibility? Accessibility,
-        Condition? Condition);
+        Condition? Condition,
+        List<string> ImagesUrls);
 }

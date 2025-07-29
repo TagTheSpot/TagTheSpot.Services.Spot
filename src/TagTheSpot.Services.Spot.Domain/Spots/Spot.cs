@@ -2,11 +2,9 @@
 {
     public sealed class Spot
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; init; }
 
         public Guid CityId { get; set; }
-
-        public List<string> ImagesUrls { get; set; } = [];
 
         public double Latitude { get; set; }
 
@@ -27,5 +25,7 @@
         public Accessibility? Accessibility { get; set; }
 
         public Condition? Condition { get; set; }
+
+        public List<string> ImagesUrls { get; set; } = [];
     }
 }

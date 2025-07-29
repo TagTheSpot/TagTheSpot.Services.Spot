@@ -9,6 +9,7 @@ using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Extensions;
 using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Integrations;
 using TagTheSpot.Services.Shared.Messaging.Events.Users;
 using TagTheSpot.Services.Shared.Messaging.Options;
+using TagTheSpot.Services.Spot.Application.Abstractions.Identity;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.Application.Abstractions.Storage;
 using TagTheSpot.Services.Spot.Application.Consumers;
@@ -19,6 +20,7 @@ using TagTheSpot.Services.Spot.Application.Services;
 using TagTheSpot.Services.Spot.Application.Validators;
 using TagTheSpot.Services.Spot.Domain.Cities;
 using TagTheSpot.Services.Spot.Domain.Spots;
+using TagTheSpot.Services.Spot.Domain.Submissions;
 using TagTheSpot.Services.Spot.Domain.Users;
 using TagTheSpot.Services.Spot.Infrastructure.Extensions;
 using TagTheSpot.Services.Spot.Infrastructure.Options;
@@ -94,6 +96,11 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddScoped<ISpotRepository, SpotRepository>();
             builder.Services.AddScoped<ISpotService, SpotService>();
 
+            builder.Services.AddScoped<ISubmissionRepository, SubmissionRepository>();
+            builder.Services.AddScoped<ISubmissionService, SubmissionService>();
+
+            builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<AddSpotRequestValidator>();
 
@@ -143,6 +150,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddSingleton<IBlobService, AzureBlobStorageService>();
 
             builder.Services.AddMapper<AddSpotRequest, Domain.Spots.Spot, AddSpotRequestToSpotMapper>();
+            builder.Services.AddMapper<Submission, SubmissionResponse, SubmissionToSubmissionResponseMapper>();
 
             builder.Services.AddSingleton<ProblemDetailsFactory>();
             builder.Services.AddHttpContextAccessor();

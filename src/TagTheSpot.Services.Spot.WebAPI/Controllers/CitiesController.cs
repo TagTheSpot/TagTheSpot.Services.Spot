@@ -4,7 +4,7 @@ using TagTheSpot.Services.Spot.Application.DTO.UseCases;
 
 namespace TagTheSpot.Services.Spot.WebAPI.Controllers
 {
-    [Route("api/")]
+    [Route("api/cities")]
     [ApiController]
     public class CitiesController : ControllerBase
     {
@@ -15,8 +15,8 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
             _cityService = cityService;
         }
 
-        [HttpGet("cities")]
-        public async Task<IActionResult> Register(
+        [HttpGet]
+        public async Task<IActionResult> GetMatchingCities(
             [FromQuery] GetMatchingCitiesRequest request)
         {
             var result = await _cityService.GetMatchingCitiesAsync(request);
