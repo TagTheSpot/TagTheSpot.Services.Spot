@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.WebAPI.Factories;
 
@@ -19,6 +20,7 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
             _problemDetailsFactory = problemDetailsFactory;
         }
 
+        [Authorize]
         [HttpGet("mine")]
         public async Task<IActionResult> GetCurrentUserSubmissions(
             CancellationToken cancellationToken)
