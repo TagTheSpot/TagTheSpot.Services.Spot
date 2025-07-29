@@ -26,10 +26,10 @@ using TagTheSpot.Services.Spot.Infrastructure.Persistence;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories;
 using TagTheSpot.Services.Spot.Infrastructure.Services;
+using TagTheSpot.Services.Spot.WebAPI.Extensions;
 using TagTheSpot.Services.Spot.WebAPI.Factories;
-using TraffiLearn.Infrastructure.External.Blobs.Options;
 using TagTheSpot.Services.Spot.WebAPI.Middleware;
-
+using TraffiLearn.Infrastructure.External.Blobs.Options;
 
 namespace TagTheSpot.Services.Spot.WebAPI
 {
@@ -44,7 +44,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddJsonMultipartFormDataSupport(JsonSerializerChoice.Newtonsoft);
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.ConfigureSwaggerGen();
 
             builder.Services.AddDbContext<ApplicationDbContext>(
                 (serviceProvider, options) =>
@@ -78,6 +78,13 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 .BindConfiguration(AzureBlobStorageSettings.SectionName)
                 .ValidateDataAnnotations()
                 .ValidateOnStart();
+
+            builder.Services.AddOptions<JwtSettings>()
+                .BindConfiguration(JwtSettings.SectionName)
+                .ValidateDataAnnotations()
+                .ValidateOnStart();
+
+            builder.Services.ConfigureAuthentication();
 
             builder.Services.AddSingleton<ICityRepository, CityRepository>();
             builder.Services.AddScoped<ICityService, CityService>();
@@ -153,6 +160,9 @@ namespace TagTheSpot.Services.Spot.WebAPI
             app.ApplyMigrations();
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapControllers();
 
