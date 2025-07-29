@@ -2,7 +2,7 @@
 {
     public sealed class Submission
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; init; }
 
         public Guid UserId { get; set; }
 

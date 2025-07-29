@@ -2,7 +2,7 @@
 {
     public sealed class Spot
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; init; }
 
         public Guid CityId { get; set; }
 

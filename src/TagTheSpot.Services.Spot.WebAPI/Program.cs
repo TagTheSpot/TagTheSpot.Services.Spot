@@ -19,6 +19,7 @@ using TagTheSpot.Services.Spot.Application.Services;
 using TagTheSpot.Services.Spot.Application.Validators;
 using TagTheSpot.Services.Spot.Domain.Cities;
 using TagTheSpot.Services.Spot.Domain.Spots;
+using TagTheSpot.Services.Spot.Domain.Submissions;
 using TagTheSpot.Services.Spot.Domain.Users;
 using TagTheSpot.Services.Spot.Infrastructure.Extensions;
 using TagTheSpot.Services.Spot.Infrastructure.Options;
@@ -93,6 +94,8 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
             builder.Services.AddScoped<ISpotRepository, SpotRepository>();
             builder.Services.AddScoped<ISpotService, SpotService>();
+
+            builder.Services.AddScoped<ISubmissionRepository, SubmissionRepository>();
 
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<AddSpotRequestValidator>();
