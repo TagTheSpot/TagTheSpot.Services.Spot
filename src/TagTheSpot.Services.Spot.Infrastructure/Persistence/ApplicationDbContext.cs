@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TagTheSpot.Services.Spot.Domain.Users;
-using TagTheSpot.Services.Spot.Domain.Spots;
 using TagTheSpot.Services.Spot.Domain.Submissions;
+using TagTheSpot.Services.Spot.Domain.Users;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Persistence
 {
