@@ -6,8 +6,6 @@
 
         public Guid CityId { get; set; }
 
-        public List<string> ImagesUrls { get; set; } = [];
-
         public double Latitude { get; set; }
 
         public double Longitude { get; set; }
@@ -27,5 +25,7 @@
         public Accessibility? Accessibility { get; set; }
 
         public Condition? Condition { get; set; }
+
+        public List<string> ImagesUrls { get; set; } = [];
     }
 }

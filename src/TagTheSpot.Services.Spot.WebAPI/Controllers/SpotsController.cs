@@ -6,7 +6,7 @@ using TagTheSpot.Services.Spot.WebAPI.Factories;
 
 namespace TagTheSpot.Services.Spot.WebAPI.Controllers
 {
-    [Route("api")]
+    [Route("api/spots")]
     [ApiController]
     public class SpotsController : ControllerBase
     {
@@ -21,7 +21,7 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
             _problemDetailsFactory = problemDetailsFactory;
         }
 
-        [HttpGet("spots/{id:guid}")]
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetSpotById(
             [FromRoute] Guid id)
         {
@@ -32,7 +32,7 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
         }
 
         [Authorize(Roles = "Admin,Owner")]
-        [HttpPost("spots")]
+        [HttpPost]
         public async Task<IActionResult> AddSpot(
             [FromForm] AddSpotRequest request)
         {

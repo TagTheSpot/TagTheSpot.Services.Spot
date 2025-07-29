@@ -97,6 +97,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddScoped<ISpotService, SpotService>();
 
             builder.Services.AddScoped<ISubmissionRepository, SubmissionRepository>();
+            builder.Services.AddScoped<ISubmissionService, SubmissionService>();
 
             builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
@@ -149,6 +150,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddSingleton<IBlobService, AzureBlobStorageService>();
 
             builder.Services.AddMapper<AddSpotRequest, Domain.Spots.Spot, AddSpotRequestToSpotMapper>();
+            builder.Services.AddMapper<Submission, SubmissionResponse, SubmissionToSubmissionResponseMapper>();
 
             builder.Services.AddSingleton<ProblemDetailsFactory>();
             builder.Services.AddHttpContextAccessor();
