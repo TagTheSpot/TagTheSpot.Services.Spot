@@ -11,16 +11,21 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<Domain.Spots.Spot?> GetByIdAsync(Guid id)
+        public async Task<Domain.Spots.Spot?> GetByIdAsync(
+            Guid id, CancellationToken cancellationToken = default)
         {
             return await _dbContext.Spots
-                .FindAsync(id);
+                .FindAsync(
+                    keyValues: [id],
+                    cancellationToken);
         }
 
-        public async Task InsertAsync(Domain.Spots.Spot spot)
+        public async Task InsertAsync(
+            Domain.Spots.Spot spot,
+            CancellationToken cancellationToken = default)
         {
-            await _dbContext.Spots.AddAsync(spot);
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.Spots.AddAsync(spot, cancellationToken);
+            await _dbContext.SaveChangesAsync(cancellationToken);
         }
     }
 }

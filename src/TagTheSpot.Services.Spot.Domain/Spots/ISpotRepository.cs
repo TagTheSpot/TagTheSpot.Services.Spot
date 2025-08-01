@@ -2,8 +2,12 @@
 {
     public interface ISpotRepository
     {
-        Task<Spot?> GetByIdAsync(Guid id);
+        Task<Spot?> GetByIdAsync(
+            Guid id, 
+            CancellationToken cancellationToken = default);
 
-        Task InsertAsync(Spot spot); 
+        Task InsertAsync(
+            Spot spot, 
+            CancellationToken cancellationToken = default); 
     }
 }
