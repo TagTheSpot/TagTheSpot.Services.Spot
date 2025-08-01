@@ -109,6 +109,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             {
                 cfg.AddConsumer<UserCreatedEventConsumer>();
                 cfg.AddConsumer<SubmissionRejectedEventConsumer>();
+                cfg.AddConsumer<SubmissionApprovedEventConsumer>();
 
                 cfg.UsingRabbitMq((context, config) =>
                 {
@@ -128,6 +129,9 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
                         e.Bind<SubmissionRejectedEvent>();
                         e.ConfigureConsumer<SubmissionRejectedEventConsumer>(context);
+
+                        e.Bind<SubmissionApprovedEvent>();
+                        e.ConfigureConsumer<SubmissionApprovedEventConsumer>(context);
                     });
                 });
             });
