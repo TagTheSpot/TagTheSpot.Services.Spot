@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Extensions;
 using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Integrations;
+using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
 using TagTheSpot.Services.Shared.Messaging.Events.Users;
 using TagTheSpot.Services.Shared.Messaging.Options;
 using TagTheSpot.Services.Spot.Application.Abstractions.Identity;
@@ -107,6 +108,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddMassTransit(cfg =>
             {
                 cfg.AddConsumer<UserCreatedEventConsumer>();
+                cfg.AddConsumer<SubmissionRejectedEventConsumer>();
 
                 cfg.UsingRabbitMq((context, config) =>
                 {
@@ -123,6 +125,9 @@ namespace TagTheSpot.Services.Spot.WebAPI
                     {
                         e.Bind<UserCreatedEvent>();
                         e.ConfigureConsumer<UserCreatedEventConsumer>(context);
+
+                        e.Bind<SubmissionRejectedEvent>();
+                        e.ConfigureConsumer<SubmissionRejectedEventConsumer>(context);
                     });
                 });
             });
@@ -151,6 +156,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
             builder.Services.AddMapper<AddSpotRequest, Domain.Spots.Spot, AddSpotRequestToSpotMapper>();
             builder.Services.AddMapper<Submission, SubmissionResponse, SubmissionToSubmissionResponseMapper>();
+            builder.Services.AddMapper<Submission, Domain.Spots.Spot, SubmissionToSpotMapper>();
 
             builder.Services.AddSingleton<ProblemDetailsFactory>();
             builder.Services.AddHttpContextAccessor();

@@ -30,8 +30,6 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.JsonMultipartFormDataSupport" Version="2.0.0" />
-    <PackageReference Include="TagTheSpot.Services.Shared.Essentials" Version="1.0.3" />
-    <PackageReference Include="TagTheSpot.Services.Shared.Messaging" Version="1.0.3" />
   </ItemGroup>
 
   <ItemGroup>

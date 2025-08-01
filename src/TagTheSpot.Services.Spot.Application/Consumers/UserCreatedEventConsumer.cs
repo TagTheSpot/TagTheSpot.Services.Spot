@@ -22,7 +22,7 @@ namespace TagTheSpot.Services.Spot.Application.Consumers
         {
             var message = context.Message;
 
-            _logger.LogInformation("Consuming UserCreatedEvent for UserId: {UserId}, Email: {Email}", message.UserId, message.Email);
+            _logger.LogInformation("Consuming UserCreatedEvent for user with id: {UserId}, email: {Email}", message.UserId, message.Email);
 
             try
             {
@@ -35,12 +35,13 @@ namespace TagTheSpot.Services.Spot.Application.Consumers
 
                 await _userRepository.InsertAsync(user, context.CancellationToken);
 
-                _logger.LogInformation("User with UserId: {UserId} inserted successfully.", message.UserId);
+                _logger.LogInformation("User with id: {UserId} inserted successfully.", message.UserId);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occurred while consuming UserCreatedEvent for UserId: {UserId}", message.UserId);
-                throw; // let MassTransit handle retry or dead-lettering
+                _logger.LogError(ex, "Error occurred while consuming UserCreatedEvent for user id: {UserId}", message.UserId);
+
+                throw;
             }
         }
     }
