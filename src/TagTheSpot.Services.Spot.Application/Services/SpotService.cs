@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MassTransit;
+using Microsoft.Extensions.Logging;
 using TagTheSpot.Services.Shared.Essentials.Results;
 using TagTheSpot.Services.Spot.Application.Abstractions.Data;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
@@ -97,6 +98,18 @@ namespace TagTheSpot.Services.Spot.Application.Services
                 Condition: spot.Condition);
 
             return Result.Success(spotResponse);
+        }
+
+        public async Task<Result<Guid>> DeleteSpotAsync(Guid id)
+        {
+            Domain.Spots.Spot? spot = await _spotRepository.GetByIdAsync(id);
+
+            if (spot is null)
+                return Result.Failure<Guid>(Error.NotFound("404", "Spot does not exist"));
+
+            await _spotRepository.DeleteAsync(spot);
+
+            return Result.Success(spot.Id);
         }
     }
 }

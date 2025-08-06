@@ -8,5 +8,7 @@ namespace TagTheSpot.Services.Spot.Application.Abstractions.Services
         Task<Result<SpotResponse>> GetByIdAsync(Guid id);
 
         Task<Result<Guid>> AddSpotAsync(AddSpotRequest request);
+
+        Task<Result<Guid>> DeleteSpotAsync(Guid id);
     }
 }
