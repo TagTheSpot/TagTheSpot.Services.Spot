@@ -164,6 +164,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
             builder.Services.AddSingleton<ProblemDetailsFactory>();
             builder.Services.AddHttpContextAccessor();
+            builder.Services.AddCorsPolicies();
 
             var app = builder.Build();
 
@@ -171,9 +172,16 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseCors(CorsExtensions.DevelopmentPolicyName);
             }
+            else
+            {
+                app.UseHttpsRedirection();
+                app.UseHsts();
+            }
+
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.ApplyMigrations();
 
