@@ -8,6 +8,10 @@
 
         Task InsertAsync(
             Spot spot, 
-            CancellationToken cancellationToken = default); 
+            CancellationToken cancellationToken = default);
+
+        Task DeleteAsync(
+            Spot spot,
+            CancellationToken cancellationToken = default);
     }
 }

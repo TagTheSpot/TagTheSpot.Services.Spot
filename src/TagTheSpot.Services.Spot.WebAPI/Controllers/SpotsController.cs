@@ -45,5 +45,16 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
                     value: result.Value)
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
+
+        [Authorize(Roles ="Owner")]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteSpot(Guid id)
+        {
+            var result = await _spotService.DeleteSpotAsync(id);
+
+            return result.IsSuccess
+                ? Ok(result.Value)
+                : _problemDetailsFactory.GetProblemDetails(result);
+        }
     }
 }

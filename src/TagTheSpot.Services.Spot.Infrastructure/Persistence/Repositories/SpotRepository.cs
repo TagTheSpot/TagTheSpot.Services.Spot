@@ -27,5 +27,14 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             await _dbContext.Spots.AddAsync(spot, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
+
+        public async Task DeleteAsync(
+            Domain.Spots.Spot spot,
+            CancellationToken cancellationToken = default)
+        {
+            _dbContext.Spots.Remove(spot);
+
+            await _dbContext.SaveChangesAsync(cancellationToken);
+        }
     }
 }
