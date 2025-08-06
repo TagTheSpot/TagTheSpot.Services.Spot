@@ -82,22 +82,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
                     .NotFound("404", "Spot with the specified ID was not found."));
             }
 
-            SpotResponse spotResponse = new SpotResponse(
-                Id: spot.Id,
-                CityId: spot.CityId,
-                ImagesUrls: spot.ImagesUrls,
-                Latitude: spot.Latitude,
-                Longitude: spot.Longitude,
-                Type: spot.Type,
-                Description: spot.Description,
-                SkillLevel: spot.SkillLevel,
-                IsCovered: spot.IsCovered,
-                Lighting: spot.Lighting,
-                CreatedAt: spot.CreatedAt,
-                Accessibility: spot.Accessibility,
-                Condition: spot.Condition);
-
-            return Result.Success(spotResponse);
+            return Result.Success(spot.ToSpotResponse());
         }
 
         public async Task<Result<Guid>> DeleteSpotAsync(Guid id)
@@ -110,6 +95,14 @@ namespace TagTheSpot.Services.Spot.Application.Services
             await _spotRepository.DeleteAsync(spot);
 
             return Result.Success(spot.Id);
+        }
+
+        public async Task<Result<List<SpotResponse>>> GetByCityId(Guid cityId)
+        {
+            List<Domain.Spots.Spot> spots = await _spotRepository
+                .GetByCityIdAsync(cityId);
+
+            return Result.Success(spots.Select(spot => spot.ToSpotResponse()).ToList());
         }
     }
 }

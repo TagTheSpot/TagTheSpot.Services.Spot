@@ -46,7 +46,7 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
 
-        [Authorize(Roles ="Owner")]
+        [Authorize(Roles = "Owner")]
         [HttpDelete]
         public async Task<IActionResult> DeleteSpot(Guid id)
         {

@@ -13,5 +13,9 @@
         Task DeleteAsync(
             Spot spot,
             CancellationToken cancellationToken = default);
+
+        Task<List<Spot>> GetByCityIdAsync(
+            Guid cityId,
+            CancellationToken cancellationToken = default);
     }
 }

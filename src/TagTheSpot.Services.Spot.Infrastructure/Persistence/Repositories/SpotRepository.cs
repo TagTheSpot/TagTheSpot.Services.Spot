@@ -1,4 +1,5 @@
-﻿using TagTheSpot.Services.Spot.Domain.Spots;
+﻿using Microsoft.EntityFrameworkCore;
+using TagTheSpot.Services.Spot.Domain.Spots;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
 {
@@ -35,6 +36,14 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             _dbContext.Spots.Remove(spot);
 
             await _dbContext.SaveChangesAsync(cancellationToken);
+        }
+
+        public async Task<List<Domain.Spots.Spot>> GetByCityIdAsync(Guid cityId, CancellationToken cancellationToken = default)
+        {
+            IQueryable<Domain.Spots.Spot> spots = _dbContext.Spots
+                .Where(spot => spot.CityId == cityId);
+
+            return await spots.ToListAsync();
         }
     }
 }
