@@ -4,6 +4,9 @@ services:
     build:
       context: .
       dockerfile: TagTheSpot.Services.Spot.WebAPI/Dockerfile
+    ports:
+      - "8002:8080"
+      - "18002:8081"
 
   tagthespot-services-spot-database:
     container_name: tagthespot.services.spot.database
