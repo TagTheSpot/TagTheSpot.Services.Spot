@@ -99,6 +99,13 @@ namespace TagTheSpot.Services.Spot.Application.Services
 
         public async Task<Result<List<SpotResponse>>> GetByCityId(Guid cityId)
         {
+            var exists = await _cityRepository.ExistsAsync(cityId);
+
+            if (!exists)
+            {
+                return Result.Failure<List<SpotResponse>>(SpotErrors.CityNotFound);
+            }
+
             List<Domain.Spots.Spot> spots = await _spotRepository
                 .GetByCityIdAsync(cityId);
 
