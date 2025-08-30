@@ -38,5 +38,15 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
                 ? Ok(result.Value)
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
+
+        [HttpGet("{cityId}")]
+        public async Task<IActionResult> GetCityById(Guid cityId)
+        {
+            var result = await _cityService.GetByIdAsync(cityId);
+
+            return result.IsSuccess
+                ? Ok(result.Value)
+                : _problemDetailsFactory.GetProblemDetails(result);
+        }
     }
 }
