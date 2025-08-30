@@ -1,4 +1,5 @@
-﻿using TagTheSpot.Services.Spot.Application.DTO.UseCases;
+﻿using TagTheSpot.Services.Shared.Essentials.Results;
+using TagTheSpot.Services.Spot.Application.DTO.UseCases;
 
 namespace TagTheSpot.Services.Spot.Application.Abstractions.Services
 {
@@ -6,5 +7,7 @@ namespace TagTheSpot.Services.Spot.Application.Abstractions.Services
     {
         Task<IEnumerable<CityResponse>> GetMatchingCitiesAsync(
             GetMatchingCitiesRequest request);
+
+        Task<Result<CityResponse>> GetByIdAsync(Guid id);
     }
 }
