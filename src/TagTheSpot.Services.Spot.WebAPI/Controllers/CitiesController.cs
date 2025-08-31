@@ -32,7 +32,7 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
         [HttpGet("{cityId}/spots")]
         public async Task<IActionResult> GetSpotsByCityId(Guid cityId)
         {
-            var result = await _spotService.GetByCityId(cityId);
+            var result = await _spotService.GetByCityIdAsync(cityId);
 
             return result.IsSuccess
                 ? Ok(result.Value)

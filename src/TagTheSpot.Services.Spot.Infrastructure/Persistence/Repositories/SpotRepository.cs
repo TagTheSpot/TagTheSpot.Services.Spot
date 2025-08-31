@@ -38,12 +38,42 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<List<Domain.Spots.Spot>> GetByCityIdAsync(Guid cityId, CancellationToken cancellationToken = default)
+        public async Task<List<Domain.Spots.Spot>> GetByCityIdAsync(
+            Guid cityId, 
+            CancellationToken cancellationToken = default)
         {
             IQueryable<Domain.Spots.Spot> spots = _dbContext.Spots
                 .Where(spot => spot.CityId == cityId);
 
             return await spots.ToListAsync();
+        }
+
+        public async Task<List<Domain.Spots.Spot>> GetRandomByCityIdAsync(
+            Guid cityId, 
+            int count, 
+            CancellationToken cancellationToken = default)
+        {
+            if (count < 1)
+            {
+                throw new ArgumentException(
+                    "Count of random records cannot be less than one.", nameof(count));
+            }
+
+            var sql = """
+                SELECT *
+                FROM "{1}"
+                ORDER BY RANDOM()
+                LIMIT {0}
+            """;
+
+            var formattedSql = string.Format(
+                sql,
+                count,
+                nameof(ApplicationDbContext.Spots));
+
+            return await _dbContext.Spots
+                .FromSqlRaw(formattedSql)
+                .ToListAsync(cancellationToken);
         }
     }
 }

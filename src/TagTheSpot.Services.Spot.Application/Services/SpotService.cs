@@ -1,5 +1,4 @@
-﻿using MassTransit;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using TagTheSpot.Services.Shared.Essentials.Results;
 using TagTheSpot.Services.Spot.Application.Abstractions.Data;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
@@ -15,26 +14,29 @@ namespace TagTheSpot.Services.Spot.Application.Services
         private readonly ISpotRepository _spotRepository;
         private readonly ICityRepository _cityRepository;
         private readonly IBlobService _blobService;
-        private readonly Mapper<AddSpotRequest, Domain.Spots.Spot> _mapper;
+        private readonly Mapper<AddSpotRequest, Domain.Spots.Spot> _requestMapper;
+        private readonly Mapper<Domain.Spots.Spot, SpotResponse> _responseMapper;
         private readonly ILogger<SpotService> _logger;
 
         public SpotService(
             ISpotRepository spotRepository,
             ICityRepository cityRepository,
             IBlobService blobService,
-            Mapper<AddSpotRequest, Domain.Spots.Spot> mapper,
+            Mapper<AddSpotRequest, Domain.Spots.Spot> requestMapper,
+            Mapper<Domain.Spots.Spot, SpotResponse> responseMapper,
             ILogger<SpotService> logger)
         {
             _spotRepository = spotRepository;
             _cityRepository = cityRepository;
             _blobService = blobService;
-            _mapper = mapper;
+            _requestMapper = requestMapper;
+            _responseMapper = responseMapper;
             _logger = logger;
         }
 
         public async Task<Result<Guid>> AddSpotAsync(AddSpotRequest request)
         {
-            var spot = _mapper.Map(request);
+            var spot = _requestMapper.Map(request);
 
             var cityExists = await _cityRepository.ExistsAsync(request.CityId);
 
@@ -97,7 +99,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
             return Result.Success(spot.Id);
         }
 
-        public async Task<Result<List<SpotResponse>>> GetByCityId(Guid cityId)
+        public async Task<Result<List<SpotResponse>>> GetByCityIdAsync(Guid cityId)
         {
             var exists = await _cityRepository.ExistsAsync(cityId);
 
@@ -110,6 +112,25 @@ namespace TagTheSpot.Services.Spot.Application.Services
                 .GetByCityIdAsync(cityId);
 
             return Result.Success(spots.Select(spot => spot.ToSpotResponse()).ToList());
+        }
+
+        public async Task<Result<List<SpotResponse>>> GetRandomByCityIdAsync(
+            GetRandomSpotsByCityIdRequest request,
+            CancellationToken cancellationToken = default)
+        {
+            var exists = await _cityRepository.ExistsAsync(request.CityId);
+
+            if (!exists)
+            {
+                return Result.Failure<List<SpotResponse>>(SpotErrors.CityNotFound);
+            }
+
+            var spots = await _spotRepository.GetRandomByCityIdAsync(
+                cityId: request.CityId,
+                count: request.Count,
+                cancellationToken);
+
+            return _responseMapper.Map(spots).ToList();
         }
     }
 }

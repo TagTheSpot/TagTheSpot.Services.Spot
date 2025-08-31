@@ -11,6 +11,10 @@ namespace TagTheSpot.Services.Spot.Application.Abstractions.Services
 
         Task<Result<Guid>> DeleteSpotAsync(Guid id);
 
-        Task<Result<List<SpotResponse>>> GetByCityId(Guid cityId);
+        Task<Result<List<SpotResponse>>> GetByCityIdAsync(Guid cityId);
+
+        Task<Result<List<SpotResponse>>> GetRandomByCityIdAsync(
+            GetRandomSpotsByCityIdRequest request,
+            CancellationToken cancellationToken = default);
     }
 }
