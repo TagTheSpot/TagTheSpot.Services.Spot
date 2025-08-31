@@ -17,5 +17,10 @@
         Task<List<Spot>> GetByCityIdAsync(
             Guid cityId,
             CancellationToken cancellationToken = default);
+
+        Task<List<Spot>> GetRandomByCityIdAsync(
+            Guid cityId,
+            int count,
+            CancellationToken cancellationToken = default);
     }
 }

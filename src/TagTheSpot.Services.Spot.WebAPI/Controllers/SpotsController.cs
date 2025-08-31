@@ -31,6 +31,19 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
                 Ok(result.Value) : _problemDetailsFactory.GetProblemDetails(result);
         }
 
+        [HttpGet("random")]
+        public async Task<IActionResult> GetRandomSpotsByCityId(
+            [FromQuery] GetRandomSpotsByCityIdRequest request,
+            CancellationToken cancellationToken)
+        {
+            var result = await _spotService.GetRandomByCityIdAsync(
+                request, cancellationToken);
+
+            return result.IsSuccess
+                ? Ok(result.Value)
+                : _problemDetailsFactory.GetProblemDetails(result);
+        }
+
         [Authorize(Roles = "Admin,Owner")]
         [HttpPost]
         public async Task<IActionResult> AddSpot(
