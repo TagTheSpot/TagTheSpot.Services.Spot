@@ -84,7 +84,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
                     .NotFound("404", "Spot with the specified ID was not found."));
             }
 
-            return Result.Success(spot.ToSpotResponse());
+            return Result.Success(_responseMapper.Map(spot));
         }
 
         public async Task<Result<Guid>> DeleteSpotAsync(Guid id)
@@ -111,7 +111,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
             List<Domain.Spots.Spot> spots = await _spotRepository
                 .GetByCityIdAsync(cityId);
 
-            return Result.Success(spots.Select(spot => spot.ToSpotResponse()).ToList());
+            return Result.Success(_responseMapper.Map(spots).ToList());
         }
 
         public async Task<Result<List<SpotResponse>>> GetRandomByCityIdAsync(
