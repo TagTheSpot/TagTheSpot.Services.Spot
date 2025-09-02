@@ -13,14 +13,14 @@ namespace TagTheSpot.Services.Spot.Application.Mappers
                 CityId: source.CityId,
                 Latitude: source.Latitude,
                 Longitude: source.Longitude,
-                Type: source.Type,
+                Type: source.Type.ToString(),
                 Description: source.Description,
-                SkillLevel: source.SkillLevel,
+                SkillLevel: source.SkillLevel.ToString(),
                 IsCovered: source.IsCovered,
                 Lighting: source.Lighting,
                 CreatedAt: source.CreatedAt,
-                Accessibility: source.Accessibility,
-                Condition: source.Condition,
+                Accessibility: source.Accessibility.ToString(),
+                Condition: source.Condition.ToString(),
                 ImagesUrls: source.ImagesUrls);
         }
     }
