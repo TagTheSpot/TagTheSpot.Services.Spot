@@ -31,5 +31,19 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
                 ? Ok(result.Value) 
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
+
+        [Authorize]
+        [HttpGet("{submissionId:guid:required}")]
+        public async Task<IActionResult> GetSubmissionById(
+            [FromRoute] Guid submissionId,
+            CancellationToken cancellationToken)
+        {
+            var result = await _submissionService.GetSubmissionByIdAsync(
+                submissionId, cancellationToken);
+
+            return result.IsSuccess
+                ? Ok(result.Value)
+                : _problemDetailsFactory.GetProblemDetails(result);
+        }
     }
 }

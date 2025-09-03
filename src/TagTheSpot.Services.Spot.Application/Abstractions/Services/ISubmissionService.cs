@@ -7,5 +7,8 @@ namespace TagTheSpot.Services.Spot.Application.Abstractions.Services
     {
         Task<Result<IEnumerable<SubmissionResponse>>> GetCurrentUserSubmissionsAsync(
             CancellationToken cancellationToken);
+
+        Task<Result<SubmissionResponse?>> GetSubmissionByIdAsync(
+            Guid id, CancellationToken cancellationToken);
     }
 }
