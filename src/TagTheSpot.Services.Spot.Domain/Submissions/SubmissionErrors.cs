@@ -8,5 +8,10 @@ namespace TagTheSpot.Services.Spot.Domain.Submissions
             Error.NotFound(
                 code: "Submission.CityNotFound",
                 description: "The city has not been found");
+      
+        public static readonly Error NotFound =
+            Error.NotFound(
+                code: "Submission.NotFound",
+                description: "The submission has not been found.");
     }
 }

@@ -1,7 +1,11 @@
-﻿namespace TagTheSpot.Services.Spot.Application.Abstractions.Identity
+﻿using TagTheSpot.Services.Spot.Domain.Users;
+
+namespace TagTheSpot.Services.Spot.Application.Abstractions.Identity
 {
     public interface ICurrentUserService
     {
-        Guid GetCurrentUserId();
+        Guid GetUserId();
+
+        Role GetRole();
     }
 }
