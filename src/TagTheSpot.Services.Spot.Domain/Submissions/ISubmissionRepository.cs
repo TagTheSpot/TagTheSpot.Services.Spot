@@ -2,6 +2,10 @@
 {
     public interface ISubmissionRepository
     {
+        Task InsertAsync(
+            Submission submission, 
+            CancellationToken cancellationToken = default);
+
         Task<IEnumerable<Submission>> GetByUserIdAsync(
             Guid userId, CancellationToken cancellationToken);
 

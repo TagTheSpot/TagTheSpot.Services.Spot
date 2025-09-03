@@ -12,7 +12,6 @@ namespace TagTheSpot.Services.Spot.Application.Mappers
             return new SubmissionResponse(
                 Id: source.Id,
                 UserId: source.UserId,
-                SpotId: source.SpotId,
                 CityId: source.CityId,
                 Latitude: source.Latitude,
                 Longitude: source.Longitude,
