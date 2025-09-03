@@ -161,6 +161,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddMapper<AddSpotRequest, Domain.Spots.Spot, AddSpotRequestToSpotMapper>();
             builder.Services.AddMapper<Submission, SubmissionResponse, SubmissionToSubmissionResponseMapper>();
             builder.Services.AddMapper<Submission, Domain.Spots.Spot, SubmissionToSpotMapper>();
+            builder.Services.AddMapper<AddSubmissionRequest, Submission, AddSubmissionRequestToSubmissionMapper>();
             builder.Services.AddMapper<Domain.Spots.Spot, SpotResponse, SpotToSpotResponseMapper>();
 
             builder.Services.AddSingleton<ProblemDetailsFactory>();

@@ -74,14 +74,18 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
         }
 
         [Authorize]
-        [HttpPost]
+        [HttpPost("submit")]
         public async Task<IActionResult> SubmitSpot(
             [FromForm] AddSubmissionRequest request)
         {
             var result = await _submissionService.AddSubmissionAsync(request);
 
             return result.IsSuccess
-                ? Created()
+                ? CreatedAtAction(
+                    actionName: nameof(SubmissionsController.GetSubmissionById),
+                    controllerName: "Submissions",
+                    routeValues: new { submissionId = result.Value },
+                    value: result.Value)
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
     }

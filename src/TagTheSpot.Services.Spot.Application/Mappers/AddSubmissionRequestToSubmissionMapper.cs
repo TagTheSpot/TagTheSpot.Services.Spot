@@ -13,10 +13,9 @@ namespace TagTheSpot.Services.Spot.Application.Mappers
             return new Submission()
             {
                 Id = Guid.NewGuid(),
-                UserId = source.UserId,
                 Latitude = source.Latitude,
                 Longitude = source.Longitude,
-                Type = Enum.Parse<SpotType>(source.Type),
+                Type = Enum.Parse<SpotType>(source.SpotType),
                 Description = source.Description,
                 SkillLevel = source.SkillLevel is null ? null : Enum.Parse<SkillLevel>(source.SkillLevel),
                 IsCovered = source.IsCovered,

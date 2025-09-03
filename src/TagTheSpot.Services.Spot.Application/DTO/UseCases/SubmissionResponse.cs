@@ -3,7 +3,6 @@
     public sealed record SubmissionResponse(
         Guid Id,
         Guid UserId,
-        Guid SpotId,
         Guid CityId,
         double Latitude,
         double Longitude,

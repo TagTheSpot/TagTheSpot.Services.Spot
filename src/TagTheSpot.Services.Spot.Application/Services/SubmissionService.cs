@@ -28,9 +28,10 @@ namespace TagTheSpot.Services.Spot.Application.Services
             ICurrentUserService currentUserService,
             Mapper<Submission, SubmissionResponse> submissionMapper,
             ICityRepository cityRepository,
-            ILogger<SpotService> logger)
+            ILogger<SpotService> logger,
             IUserRepository userRepository,
-            Mapper<Submission, SubmissionResponse> submissionMapper)
+            Mapper<AddSubmissionRequest, Submission> requestMapper,
+            IBlobService blobService)
         {
             _submissionRepository = submissionRepository;
             _currentUserService = currentUserService;
@@ -38,6 +39,8 @@ namespace TagTheSpot.Services.Spot.Application.Services
             _submissionMapper = submissionMapper;
             _cityRepository = cityRepository;
             _logger = logger;
+            _requestMapper = requestMapper;
+            _blobService = blobService;
         }
 
         public async Task<Result<Guid>> AddSubmissionAsync(AddSubmissionRequest request)
@@ -75,7 +78,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
 
             submission.ImagesUrls = imagesUris;
 
-            submission.UserId = _currentUserService.GetCurrentUserId();
+            submission.UserId = _currentUserService.GetUserId();
 
             await _submissionRepository.InsertAsync(submission);
 
