@@ -17,8 +17,15 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             _logger = logger;
         }
 
+        public async Task InsertAsync(Submission submission, CancellationToken cancellationToken)
+        {
+            await _dbContext.Submissions.AddAsync(submission, cancellationToken);
+            await _dbContext.SaveChangesAsync();
+        }
+
         public async Task<Submission?> GetByIdAsync(
-            Guid id, CancellationToken cancellationToken)
+            Guid id, 
+            CancellationToken cancellationToken = default)
         {
             return await _dbContext.Submissions
                 .FindAsync(

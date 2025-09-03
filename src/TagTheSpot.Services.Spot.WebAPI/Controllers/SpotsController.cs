@@ -11,14 +11,17 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
     public class SpotsController : ControllerBase
     {
         private readonly ISpotService _spotService;
+        private readonly ISubmissionService _submissionService;
         private readonly ProblemDetailsFactory _problemDetailsFactory;
 
         public SpotsController(
             ISpotService spotService,
-            ProblemDetailsFactory problemDetailsFactory)
+            ProblemDetailsFactory problemDetailsFactory,
+            ISubmissionService submissionService)
         {
             _spotService = spotService;
             _problemDetailsFactory = problemDetailsFactory;
+            _submissionService = submissionService;
         }
 
         [HttpGet("{id:guid}")]
@@ -67,6 +70,21 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
 
             return result.IsSuccess
                 ? Ok(result.Value)
+                : _problemDetailsFactory.GetProblemDetails(result);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> SubmitSpot(
+            [FromForm] AddSubmissionRequest request)
+        {
+            var result = await _submissionService.AddSubmissionAsync(request);
+
+            return result.IsSuccess
+                ? CreatedAtAction(
+                    actionName: nameof(),
+                    routeValues: new { id = result.Value },
+                    value: result.Value)
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
     }

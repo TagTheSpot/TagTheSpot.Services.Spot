@@ -6,11 +6,9 @@ namespace TagTheSpot.Services.Spot.Domain.Submissions
     {
         public Guid Id { get; init; }
 
-        public Guid UserId { get; init; }
+        public Guid UserId { get; set; }
 
-        public Guid SpotId { get; init; }
-
-        public Guid CityId { get; init; }
+        public Guid CityId { get; set; }
 
         public double Latitude { get; set; }
 
