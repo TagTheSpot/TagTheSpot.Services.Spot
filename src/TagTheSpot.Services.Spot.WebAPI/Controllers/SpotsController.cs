@@ -81,10 +81,7 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
             var result = await _submissionService.AddSubmissionAsync(request);
 
             return result.IsSuccess
-                ? CreatedAtAction(
-                    actionName: nameof(),
-                    routeValues: new { id = result.Value },
-                    value: result.Value)
+                ? Created()
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
     }
