@@ -26,9 +26,7 @@ jobs:
         run: dotnet build ./src/TagTheSpot.Services.Spot.sln --configuration Release --no-restore
 
       - name: dotnet publish
-        run: dotnet publish ./src/TagTheSpot.Services.Spot.WebAPI/TagTheSpot.Services.Spot.WebAPI.csproj \
-            -c Release \
-            -o ${{ github.workspace }}/myapp
+        run: dotnet publish ./src/TagTheSpot.Services.Spot.WebAPI/TagTheSpot.Services.Spot.WebAPI.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -55,3 +53,4 @@ jobs:
           package: .
 
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CE78B44C4390458EB66DE0001BFD2642 }}
+
