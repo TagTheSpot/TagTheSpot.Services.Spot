@@ -63,10 +63,10 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
         }
 
         [Authorize(Roles = "Owner")]
-        [HttpDelete]
-        public async Task<IActionResult> DeleteSpot(Guid id)
+        [HttpDelete("{spotId:guid:required}")]
+        public async Task<IActionResult> DeleteSpot(Guid spotId)
         {
-            var result = await _spotService.DeleteSpotAsync(id);
+            var result = await _spotService.DeleteSpotAsync(spotId);
 
             return result.IsSuccess
                 ? Ok(result.Value)

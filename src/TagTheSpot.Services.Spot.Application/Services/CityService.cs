@@ -16,7 +16,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
 
         public async Task<Result<CityResponse>> GetByIdAsync(Guid id)
         {
-            City? city = _cityRepository.GetByIdAsync(id).Result;
+            City? city = await _cityRepository.GetByIdAsync(id);
 
             if (city is null)
             {
