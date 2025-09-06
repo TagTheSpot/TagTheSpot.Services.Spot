@@ -76,12 +76,11 @@ namespace TagTheSpot.Services.Spot.Application.Services
 
         public async Task<Result<SpotResponse>> GetByIdAsync(Guid id)
         {
-            Domain.Spots.Spot? spot = await _spotRepository.GetByIdAsync(id);
+            var spot = await _spotRepository.GetByIdAsync(id);
 
             if (spot is null)
             {
-                return Result.Failure<SpotResponse>(Error
-                    .NotFound("404", "Spot with the specified ID was not found."));
+                return Result.Failure<SpotResponse>(SpotErrors.NotFound);
             }
 
             return Result.Success(_responseMapper.Map(spot));
@@ -89,12 +88,32 @@ namespace TagTheSpot.Services.Spot.Application.Services
 
         public async Task<Result<Guid>> DeleteSpotAsync(Guid id)
         {
-            Domain.Spots.Spot? spot = await _spotRepository.GetByIdAsync(id);
+            var spot = await _spotRepository.GetByIdAsync(id);
 
             if (spot is null)
-                return Result.Failure<Guid>(Error.NotFound("404", "Spot does not exist"));
+            {
+                return Result.Failure<Guid>(SpotErrors.NotFound);
+            }
 
             await _spotRepository.DeleteAsync(spot);
+
+            foreach (var imageUrl in spot.ImagesUrls)
+            {
+                try
+                {
+                    await _blobService.DeleteAsync(
+                        blobUri: imageUrl);
+
+                    _logger.LogInformation("Successfully deleted blob for spot {SpotId} with URL: {ImageUrl}.",
+                        spot.Id, imageUrl);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(
+                        ex,"Failed to delete blob for spot {SpotId} with URL: {ImageUrl}.",
+                        spot.Id, imageUrl);
+                }
+            }
 
             return Result.Success(spot.Id);
         }
