@@ -53,7 +53,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Services
             _logger.LogInformation("Content Safety analysis results: Hate={Hate}, Sexual={Sexual}, Violence={Violence}, SelfHarm={SelfHarm}",
                 hateSeverity, sexualSeverity, violenceSeverity, selfHarmSeverity);
 
-            if (hateSeverity >= _settings.HateThreshold)
+            if (hateSeverity > _settings.HateThreshold)
             {
                 _logger.LogWarning("Text blocked due to Hate severity ({Severity}) exceeding threshold ({Threshold})", 
                     hateSeverity, _settings.HateThreshold);
@@ -61,7 +61,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Services
                 return false;
             }
 
-            if (sexualSeverity >= _settings.SexualThreshold)
+            if (sexualSeverity > _settings.SexualThreshold)
             {
                 _logger.LogWarning("Text blocked due to Sexual severity ({Severity}) exceeding threshold ({Threshold})", 
                     sexualSeverity, _settings.SexualThreshold);
@@ -69,7 +69,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Services
                 return false;
             }
 
-            if (violenceSeverity >= _settings.ViolenceThreshold)
+            if (violenceSeverity > _settings.ViolenceThreshold)
             {
                 _logger.LogWarning("Text blocked due to Violence severity ({Severity}) exceeding threshold ({Threshold})", 
                     violenceSeverity, _settings.ViolenceThreshold);
@@ -77,7 +77,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Services
                 return false;
             }
 
-            if (selfHarmSeverity >= _settings.SelfHarmThreshold)
+            if (selfHarmSeverity > _settings.SelfHarmThreshold)
             {
                 _logger.LogWarning("Text blocked due to SelfHarm severity ({Severity}) exceeding threshold ({Threshold})", 
                     selfHarmSeverity, _settings.SelfHarmThreshold);

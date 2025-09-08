@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using TagTheSpot.Services.Shared.Essentials.Results;
 using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
+using TagTheSpot.Services.Spot.Application.Abstractions.AI;
 using TagTheSpot.Services.Spot.Application.Abstractions.Data;
 using TagTheSpot.Services.Spot.Application.Abstractions.Identity;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
@@ -19,6 +20,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
         private readonly ICurrentUserService _currentUserService;
         private readonly ICityRepository _cityRepository;
         private readonly IBlobService _blobService;
+        private readonly IContentSafetyService _contentSafetyService;
         private readonly Mapper<AddSubmissionRequest, Submission> _requestMapper;
         private readonly Mapper<Submission, SubmissionResponse> _submissionMapper;
         private readonly ILogger<SubmissionService> _logger;
@@ -33,6 +35,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
             IUserRepository userRepository,
             Mapper<AddSubmissionRequest, Submission> requestMapper,
             IBlobService blobService,
+            IContentSafetyService contentSafetyService,
             IPublishEndpoint publishEndpoint)
         {
             _submissionRepository = submissionRepository;
@@ -43,6 +46,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
             _requestMapper = requestMapper;
             _blobService = blobService;
             _publishEndpoint = publishEndpoint;
+            _contentSafetyService = contentSafetyService;
         }
 
         public async Task<Result<Guid>> AddSubmissionAsync(AddSubmissionRequest request)
@@ -57,6 +61,14 @@ namespace TagTheSpot.Services.Spot.Application.Services
             var submission = _requestMapper.Map(request);
 
             submission.CityId = city.Id;
+
+            var isDescriptionSafe = await _contentSafetyService
+                .IsTextSafeAsync(submission.Description);
+
+            if (!isDescriptionSafe)
+            {
+                return Result.Failure<Guid>(SubmissionErrors.DescriptionUnsafe);
+            }
 
             List<string> imagesUris = new();
 
