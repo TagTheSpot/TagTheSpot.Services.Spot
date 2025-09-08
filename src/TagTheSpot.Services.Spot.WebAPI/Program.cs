@@ -107,7 +107,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddScoped<ISubmissionService, SubmissionService>();
 
             builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
-            builder.Services.AddScoped<IContentSafetyService, AzureContentSafetyService>();
+            builder.Services.AddSingleton<IContentSafetyService, AzureContentSafetyService>();
 
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<AddSpotRequestValidator>();

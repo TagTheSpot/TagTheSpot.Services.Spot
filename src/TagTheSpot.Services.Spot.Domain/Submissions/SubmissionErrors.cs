@@ -13,5 +13,10 @@ namespace TagTheSpot.Services.Spot.Domain.Submissions
             Error.NotFound(
                 code: "Submission.NotFound",
                 description: "The submission has not been found.");
+
+        public static readonly Error DescriptionUnsafe =
+            Error.Validation(
+                code: "Submission.DescriptionUnsafe",
+                description: "The description contains unsafe content.");
     }
 }

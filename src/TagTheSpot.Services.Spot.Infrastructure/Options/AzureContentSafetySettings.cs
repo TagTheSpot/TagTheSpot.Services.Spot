@@ -14,16 +14,16 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Options
         public required string ApiKey { get; init; }
 
         [Range(0, 7)]
-        public int HateThreshold { get; init; } = 3;
+        public int HateThreshold { get; init; } = 2;
 
         [Range(0, 7)]
-        public int SexualThreshold { get; init; } = 2;
+        public int SexualThreshold { get; init; } = 1;
 
         [Range(0, 7)]
-        public int ViolenceThreshold { get; init; } = 3;
+        public int ViolenceThreshold { get; init; } = 2;
 
         [Range(0, 7)]
-        public int SelfHarmThreshold { get; init; } = 3;
+        public int SelfHarmThreshold { get; init; } = 2;
 
         /// <summary>
         /// Set to false in development to skip moderation.
