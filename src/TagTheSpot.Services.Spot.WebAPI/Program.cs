@@ -10,6 +10,7 @@ using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Integrations;
 using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
 using TagTheSpot.Services.Shared.Messaging.Events.Users;
 using TagTheSpot.Services.Shared.Messaging.Options;
+using TagTheSpot.Services.Spot.Application.Abstractions.AI;
 using TagTheSpot.Services.Spot.Application.Abstractions.Identity;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.Application.Abstractions.Storage;
@@ -82,6 +83,11 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 .ValidateDataAnnotations()
                 .ValidateOnStart();
 
+            builder.Services.AddOptions<AzureContentSafetySettings>()
+                .BindConfiguration(AzureContentSafetySettings.SectionName)
+                .ValidateDataAnnotations()
+                .ValidateOnStart();
+
             builder.Services.AddOptions<JwtSettings>()
                 .BindConfiguration(JwtSettings.SectionName)
                 .ValidateDataAnnotations()
@@ -101,6 +107,7 @@ namespace TagTheSpot.Services.Spot.WebAPI
             builder.Services.AddScoped<ISubmissionService, SubmissionService>();
 
             builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+            builder.Services.AddScoped<IContentSafetyService, AzureContentSafetyService>();
 
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<AddSpotRequestValidator>();
