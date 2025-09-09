@@ -8,5 +8,8 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Options
 
         [Required]
         public required string CityDataRelativePath { get; init; }
+
+        [Required]
+        public required string UAGeoJsonRelativePath { get; init; }
     }
 }

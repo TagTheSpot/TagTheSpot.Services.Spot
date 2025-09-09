@@ -10,7 +10,7 @@ services:
 
   tagthespot-services-spot-database:
     container_name: tagthespot.services.spot.database
-    image: postgres:latest
+    image: postgis/postgis:17-3.4
     environment:
       - POSTGRES_DB=tagthespot.services.spot
       - POSTGRES_USER=postgres

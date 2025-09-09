@@ -28,15 +28,20 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             return Task.FromResult(_cities.Any(x => x.Id == id));
         }
 
+        public Task<List<City>> GetAllAsync()
+        {
+            return Task.FromResult(_cities);
+        }
+
         public Task<City?> GetByIdAsync(Guid id)
         {
             return Task.FromResult(_cities.FirstOrDefault(c => c.Id == id));
         }
 
-        public Task<IEnumerable<City>> GetMatchingCitiesAsync(string cityPattern)
+        public Task<List<City>> GetMatchingCitiesAsync(string cityPattern)
         {
             return Task.FromResult(_cities.Where(city =>
-                city.Name.StartsWith(cityPattern, StringComparison.OrdinalIgnoreCase)));
+                city.Name.StartsWith(cityPattern, StringComparison.OrdinalIgnoreCase)).ToList());
         }
     }
 }

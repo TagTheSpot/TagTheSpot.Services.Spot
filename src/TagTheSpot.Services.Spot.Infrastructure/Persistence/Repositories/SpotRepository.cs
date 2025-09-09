@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using NetTopologySuite.Geometries;
 using TagTheSpot.Services.Spot.Domain.Spots;
+using TagTheSpot.Services.Spot.Infrastructure.Options;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
 {
@@ -7,7 +10,8 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public SpotRepository(ApplicationDbContext dbContext)
+        public SpotRepository(
+            ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -39,7 +43,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
         }
 
         public async Task<List<Domain.Spots.Spot>> GetByCityIdAsync(
-            Guid cityId, 
+            Guid cityId,
             CancellationToken cancellationToken = default)
         {
             IQueryable<Domain.Spots.Spot> spots = _dbContext.Spots
@@ -49,8 +53,8 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
         }
 
         public async Task<List<Domain.Spots.Spot>> GetRandomByCityIdAsync(
-            Guid cityId, 
-            int count, 
+            Guid cityId,
+            int count,
             CancellationToken cancellationToken = default)
         {
             if (count < 1)
@@ -74,6 +78,28 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             return await _dbContext.Spots
                 .FromSqlRaw(formattedSql)
                 .ToListAsync(cancellationToken);
+        }
+
+        public async Task<bool> SpotsExistNearbyAsync(
+            double latitude, 
+            double longitude, 
+            Guid cityId,
+            double minDistanceBetweenSpotsInMeters)
+        {
+            var point = new Point(longitude, latitude) { SRID = 4326 };
+
+            const bool useSpheroid = true;
+
+            return await _dbContext.Spots
+                .Where(s => s.CityId == cityId)
+                .AnyAsync(s =>
+                    EF.Functions.IsWithinDistance(
+                        point,
+                        EF.Property<Point>(s, "Location"),
+                        minDistanceBetweenSpotsInMeters,
+                        useSpheroid
+                    )
+                );
         }
     }
 }
