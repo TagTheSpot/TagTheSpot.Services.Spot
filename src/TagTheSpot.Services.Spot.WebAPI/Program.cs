@@ -11,6 +11,7 @@ using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
 using TagTheSpot.Services.Shared.Messaging.Events.Users;
 using TagTheSpot.Services.Shared.Messaging.Options;
 using TagTheSpot.Services.Spot.Application.Abstractions.AI;
+using TagTheSpot.Services.Spot.Application.Abstractions.Geo;
 using TagTheSpot.Services.Spot.Application.Abstractions.Identity;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.Application.Abstractions.Storage;
@@ -18,6 +19,7 @@ using TagTheSpot.Services.Spot.Application.Consumers;
 using TagTheSpot.Services.Spot.Application.DTO.UseCases;
 using TagTheSpot.Services.Spot.Application.Extensions;
 using TagTheSpot.Services.Spot.Application.Mappers;
+using TagTheSpot.Services.Spot.Application.Options;
 using TagTheSpot.Services.Spot.Application.Services;
 using TagTheSpot.Services.Spot.Application.Validators;
 using TagTheSpot.Services.Spot.Domain.Cities;
@@ -55,7 +57,11 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 {
                     var dbSettings = serviceProvider.GetRequiredService<IOptions<DbSettings>>().Value;
 
-                    options.UseNpgsql(dbSettings.ConnectionString);
+                    options.UseNpgsql(
+                        dbSettings.ConnectionString, options =>
+                        {
+                            options.UseNetTopologySuite();
+                        });
                 });
 
             builder.Services.AddOptions<DbSettings>()
@@ -93,10 +99,17 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 .ValidateDataAnnotations()
                 .ValidateOnStart();
 
+            builder.Services.AddOptions<LocationValidationSettings>()
+                .BindConfiguration(LocationValidationSettings.SectionName)
+                .ValidateDataAnnotations()
+                .ValidateOnStart();
+
             builder.Services.ConfigureAuthentication();
 
             builder.Services.AddSingleton<ICityRepository, CityRepository>();
             builder.Services.AddScoped<ICityService, CityService>();
+
+            builder.Services.AddSingleton<IGeoValidationService, UAGeoValidationService>();
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
 
@@ -193,8 +206,6 @@ namespace TagTheSpot.Services.Spot.WebAPI
             app.UseSwaggerUI();
 
             app.ApplyMigrations();
-
-            app.UseHttpsRedirection();
 
             app.UseAuthentication();
             app.UseAuthorization();

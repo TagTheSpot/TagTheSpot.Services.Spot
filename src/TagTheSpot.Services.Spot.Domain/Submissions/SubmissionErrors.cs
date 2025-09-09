@@ -18,5 +18,15 @@ namespace TagTheSpot.Services.Spot.Domain.Submissions
             Error.Validation(
                 code: "Submission.DescriptionUnsafe",
                 description: "The description contains unsafe content.");
+
+        public static readonly Error SpotLocationOutsideCity =
+            Error.Validation(
+                code: "Submission.SpotLocationOutsideCity",
+                description: "The coordinates of the spot is outside of the requested city.");
+
+        public static readonly Error SpotLocationTooClose =
+            Error.Validation(
+                code: "Submission.SpotLocationIsTooClose",
+                description: "The coordinates of the spot are too close to another existing spot.");
     }
 }

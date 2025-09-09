@@ -21,11 +21,17 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Services
 
             var credential = new AzureKeyCredential(_settings.ApiKey);
             _client = new ContentSafetyClient(new Uri(_settings.Endpoint), credential);
+
             _logger = logger;
         }
 
         public async Task<bool> IsTextSafeAsync(string text)
         {
+            if (!_settings.Enabled)
+            {
+                return true;
+            }
+
             var request = new AnalyzeTextOptions(text);
 
             try
@@ -43,7 +49,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Services
         }
 
         private bool AnalyzeTextResponse(
-            Azure.Response<AnalyzeTextResult> response)
+            Response<AnalyzeTextResult> response)
         {
             var hateSeverity = GetCategorySeverity(response, TextCategory.Hate);
             var sexualSeverity = GetCategorySeverity(response, TextCategory.Sexual);

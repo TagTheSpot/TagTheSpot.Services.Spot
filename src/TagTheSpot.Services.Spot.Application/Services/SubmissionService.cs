@@ -1,14 +1,18 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using TagTheSpot.Services.Shared.Essentials.Results;
 using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
 using TagTheSpot.Services.Spot.Application.Abstractions.AI;
 using TagTheSpot.Services.Spot.Application.Abstractions.Data;
+using TagTheSpot.Services.Spot.Application.Abstractions.Geo;
 using TagTheSpot.Services.Spot.Application.Abstractions.Identity;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.Application.Abstractions.Storage;
 using TagTheSpot.Services.Spot.Application.DTO.UseCases;
+using TagTheSpot.Services.Spot.Application.Options;
 using TagTheSpot.Services.Spot.Domain.Cities;
+using TagTheSpot.Services.Spot.Domain.Spots;
 using TagTheSpot.Services.Spot.Domain.Submissions;
 using TagTheSpot.Services.Spot.Domain.Users;
 
@@ -17,17 +21,21 @@ namespace TagTheSpot.Services.Spot.Application.Services
     public sealed class SubmissionService : ISubmissionService
     {
         private readonly ISubmissionRepository _submissionRepository;
+        private readonly ISpotRepository _spotRepository;
         private readonly ICurrentUserService _currentUserService;
         private readonly ICityRepository _cityRepository;
         private readonly IBlobService _blobService;
         private readonly IContentSafetyService _contentSafetyService;
+        private readonly IGeoValidationService _geoValidationService;
         private readonly Mapper<AddSubmissionRequest, Submission> _requestMapper;
         private readonly Mapper<Submission, SubmissionResponse> _submissionMapper;
         private readonly ILogger<SubmissionService> _logger;
         private readonly IPublishEndpoint _publishEndpoint;
+        private readonly LocationValidationSettings _locationValidationSettings;
 
         public SubmissionService(
             ISubmissionRepository submissionRepository,
+            ISpotRepository spotRepository,
             ICurrentUserService currentUserService,
             Mapper<Submission, SubmissionResponse> submissionMapper,
             ICityRepository cityRepository,
@@ -36,9 +44,12 @@ namespace TagTheSpot.Services.Spot.Application.Services
             Mapper<AddSubmissionRequest, Submission> requestMapper,
             IBlobService blobService,
             IContentSafetyService contentSafetyService,
-            IPublishEndpoint publishEndpoint)
+            IPublishEndpoint publishEndpoint,
+            IGeoValidationService geoValidationService,
+            IOptions<LocationValidationSettings> locationValidationSettings)
         {
             _submissionRepository = submissionRepository;
+            _spotRepository = spotRepository;
             _currentUserService = currentUserService;
             _submissionMapper = submissionMapper;
             _cityRepository = cityRepository;
@@ -47,6 +58,8 @@ namespace TagTheSpot.Services.Spot.Application.Services
             _blobService = blobService;
             _publishEndpoint = publishEndpoint;
             _contentSafetyService = contentSafetyService;
+            _geoValidationService = geoValidationService;
+            _locationValidationSettings = locationValidationSettings.Value;
         }
 
         public async Task<Result<Guid>> AddSubmissionAsync(AddSubmissionRequest request)
@@ -56,6 +69,28 @@ namespace TagTheSpot.Services.Spot.Application.Services
             if (city is null)
             {
                 return Result.Failure<Guid>(SubmissionErrors.CityNotFound);
+            }
+
+            var isSpotWithinCity = _geoValidationService.IsCoordinateWithinCity(
+                latitude: request.Latitude,
+                longitude: request.Longitude,
+                cityId: city.Id);
+
+            if (!isSpotWithinCity)
+            {
+                return Result.Failure<Guid>(SubmissionErrors.SpotLocationOutsideCity);
+            }
+
+            var spotsExistNearby = await _spotRepository.SpotsExistNearbyAsync(
+                latitude: request.Latitude,
+                longitude: request.Longitude,
+                cityId: request.CityId,
+                minDistanceBetweenSpotsInMeters:
+                    _locationValidationSettings.MinDistanceBetweenSpotsInMeters);
+
+            if (spotsExistNearby)
+            {
+                return Result.Failure<Guid>(SubmissionErrors.SpotLocationTooClose);
             }
 
             var submission = _requestMapper.Map(request);
@@ -70,7 +105,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
                 return Result.Failure<Guid>(SubmissionErrors.DescriptionUnsafe);
             }
 
-            List<string> imagesUris = new();
+            List<string> imagesUris = [];
 
             foreach (var image in request.Images)
             {
