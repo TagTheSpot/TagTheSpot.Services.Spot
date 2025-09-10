@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using NetTopologySuite.Geometries;
 using TagTheSpot.Services.Spot.Domain.Submissions;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
@@ -17,7 +18,9 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             _logger = logger;
         }
 
-        public async Task InsertAsync(Submission submission, CancellationToken cancellationToken)
+        public async Task InsertAsync(
+            Submission submission, 
+            CancellationToken cancellationToken = default)
         {
             await _dbContext.Submissions.AddAsync(submission, cancellationToken);
             await _dbContext.SaveChangesAsync();
@@ -34,7 +37,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
         }
 
         public async Task<IEnumerable<Submission>> GetByUserIdAsync(
-            Guid userId, CancellationToken cancellationToken)
+            Guid userId, CancellationToken cancellationToken = default)
         {
             return await _dbContext.Submissions.Where(
                 sub => sub.UserId == userId).ToListAsync();
@@ -42,7 +45,7 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
 
         public async Task UpdateAsync(
             Submission submission, 
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
             _dbContext.Submissions.Update(submission);
 
@@ -52,6 +55,28 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
             {
                 _logger.LogWarning("Affected {AffectedRows} rows while updating a Submission entity with id {SubmissionId}", affected, submission.Id.ToString());
             }
+        }
+
+        public async Task<bool> LocationForSubmissionTakenAsync(
+            double latitude, 
+            double longitude,
+            Guid cityId, 
+            double minDistanceBetweenSpotsInMeters)
+        {
+            var point = new Point(longitude, latitude) { SRID = 4326 };
+            const bool useSpheroid = true;
+
+            return await _dbContext.Submissions
+                .Where(s => s.CityId == cityId &&
+                    EF.Functions.IsWithinDistance(point, EF.Property<Point>(s, "Location"), minDistanceBetweenSpotsInMeters, useSpheroid))
+                .Select(s => true)
+                .Concat(
+                    _dbContext.Spots
+                        .Where(s => s.CityId == cityId &&
+                            EF.Functions.IsWithinDistance(point, EF.Property<Point>(s, "Location"), minDistanceBetweenSpotsInMeters, useSpheroid))
+                        .Select(s => true)
+                )
+                .AnyAsync();
         }
     }
 }

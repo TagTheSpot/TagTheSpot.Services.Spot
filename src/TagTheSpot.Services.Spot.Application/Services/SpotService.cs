@@ -16,6 +16,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
     public class SpotService : ISpotService
     {
         private readonly ISpotRepository _spotRepository;
+        private readonly ISubmissionRepository _submissionRepository;
         private readonly IGeoValidationService _geoValidationService;
         private readonly ICityRepository _cityRepository;
         private readonly IBlobService _blobService;
@@ -26,6 +27,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
 
         public SpotService(
             ISpotRepository spotRepository,
+            ISubmissionRepository submissionRepository,
             IGeoValidationService geoValidationService,
             ICityRepository cityRepository,
             IBlobService blobService,
@@ -35,6 +37,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
             IOptions<LocationValidationSettings> locationValidationSettings)
         {
             _spotRepository = spotRepository;
+            _submissionRepository = submissionRepository;
             _geoValidationService = geoValidationService;
             _cityRepository = cityRepository;
             _blobService = blobService;
@@ -65,16 +68,16 @@ namespace TagTheSpot.Services.Spot.Application.Services
                 return Result.Failure<Guid>(SpotErrors.LocationOutsideCity);
             }
 
-            var spotsExistNearby = await _spotRepository.SpotsExistNearbyAsync(
+            var locationTaken = await _submissionRepository.LocationForSubmissionTakenAsync(
                 latitude: request.Latitude,
                 longitude: request.Longitude,
                 cityId: request.CityId,
                 minDistanceBetweenSpotsInMeters:
                     _locationValidationSettings.MinDistanceBetweenSpotsInMeters);
 
-            if (spotsExistNearby)
+            if (locationTaken)
             {
-                return Result.Failure<Guid>(SpotErrors.LocationTooClose);
+                return Result.Failure<Guid>(SpotErrors.LocationAlreadyTaken);
             }
 
             spot.CityId = request.CityId;
@@ -142,7 +145,7 @@ namespace TagTheSpot.Services.Spot.Application.Services
                 catch (Exception ex)
                 {
                     _logger.LogError(
-                        ex,"Failed to delete blob for spot {SpotId} with URL: {ImageUrl}.",
+                        ex, "Failed to delete blob for spot {SpotId} with URL: {ImageUrl}.",
                         spot.Id, imageUrl);
                 }
             }

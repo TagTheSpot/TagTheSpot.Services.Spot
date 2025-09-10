@@ -16,12 +16,12 @@ namespace TagTheSpot.Services.Spot.Domain.Spots
 
         public static readonly Error LocationOutsideCity =
             Error.Validation(
-                code: "Submission.LocationOutsideCity",
-                description: "The coordinates of the spot is outside of the requested city.");
+                code: "Spot.LocationOutsideCity",
+                description: "The coordinates of the spot are outside of the requested city.");
 
-        public static readonly Error LocationTooClose =
+        public static readonly Error LocationAlreadyTaken =
             Error.Validation(
-                code: "Submission.LocationIsTooClose",
-                description: "The coordinates of the spot are too close to another existing spot.");
+                code: "Spot.LocationAlreadyTaken",
+                description: "The coordinates of the spot are too close to another existing spot/submission.");
     }
 }

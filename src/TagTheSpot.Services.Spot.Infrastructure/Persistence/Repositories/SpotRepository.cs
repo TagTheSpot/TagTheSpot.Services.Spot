@@ -79,27 +79,5 @@ namespace TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories
                 .FromSqlRaw(formattedSql)
                 .ToListAsync(cancellationToken);
         }
-
-        public async Task<bool> SpotsExistNearbyAsync(
-            double latitude, 
-            double longitude, 
-            Guid cityId,
-            double minDistanceBetweenSpotsInMeters)
-        {
-            var point = new Point(longitude, latitude) { SRID = 4326 };
-
-            const bool useSpheroid = true;
-
-            return await _dbContext.Spots
-                .Where(s => s.CityId == cityId)
-                .AnyAsync(s =>
-                    EF.Functions.IsWithinDistance(
-                        point,
-                        EF.Property<Point>(s, "Location"),
-                        minDistanceBetweenSpotsInMeters,
-                        useSpheroid
-                    )
-                );
-        }
     }
 }
