@@ -1,5 +1,4 @@
 ﻿using TagTheSpot.Services.Spot.Domain.Cities;
-using TagTheSpot.Services.Spot.Domain.Spots;
 
 namespace TagTheSpot.Services.Spot.Application.DTO.UseCases
 {

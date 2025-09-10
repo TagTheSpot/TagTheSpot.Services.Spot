@@ -187,25 +187,27 @@ namespace TagTheSpot.Services.Spot.Application.Services
             return _responseMapper.Map(spots).ToList();
         }
 
-        public async Task<Result<List<CoordinatesResponse>>> GetCoordinatesByCityIdAsync(Guid cityId)
+        public async Task<Result<CitySpotsCoordinatesResponse>> GetSpotsCoordinatesByCityIdAsync(Guid cityId)
         {
-            var exists = await _cityRepository.ExistsAsync(cityId);
+            var city = await _cityRepository.GetByIdAsync(cityId);
 
-            if (!exists)
+            if (city is null)
             {
-                return Result.Failure<List<CoordinatesResponse>>(SpotErrors.CityNotFound);
+                return Result.Failure<CitySpotsCoordinatesResponse>(SpotErrors.CityNotFound);
             }
 
             var spots = await _spotRepository
                 .GetByCityIdAsync(cityId);
 
-            var coordinates = spots
+            var spotsCoordinates = spots
                 .Select(spot => new CoordinatesResponse(
                     Latitude: spot.Latitude,
                     Longitude: spot.Longitude))
                 .ToList();
 
-            return Result.Success(coordinates);
+            return Result.Success(new CitySpotsCoordinatesResponse(
+                City: city.ToCityResponse(),
+                SpotsCoordinates: spotsCoordinates));
         }
     }
 }
