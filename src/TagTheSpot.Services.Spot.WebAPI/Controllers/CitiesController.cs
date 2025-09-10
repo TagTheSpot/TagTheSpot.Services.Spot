@@ -52,7 +52,7 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
         [HttpGet("{cityId:guid:required}/spots/coordinates")]
         public async Task<IActionResult> GetSpotsCoordinatesByCityId(Guid cityId)
         {
-            var result = await _spotService.GetCoordinatesByCityIdAsync(cityId);
+            var result = await _spotService.GetSpotsCoordinatesByCityIdAsync(cityId);
 
             return result.IsSuccess
                 ? Ok(result.Value)
