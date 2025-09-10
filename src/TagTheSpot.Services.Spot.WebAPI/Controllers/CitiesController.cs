@@ -48,5 +48,15 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
                 ? Ok(result.Value)
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
+
+        [HttpGet("{cityId:guid:required}/spots/coordinates")]
+        public async Task<IActionResult> GetSpotsCoordinatesByCityId(Guid cityId)
+        {
+            var result = await _spotService.GetCoordinatesByCityIdAsync(cityId);
+
+            return result.IsSuccess
+                ? Ok(result.Value)
+                : _problemDetailsFactory.GetProblemDetails(result);
+        }
     }
 }

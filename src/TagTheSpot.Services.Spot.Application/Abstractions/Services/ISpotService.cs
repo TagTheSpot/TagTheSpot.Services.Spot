@@ -13,6 +13,8 @@ namespace TagTheSpot.Services.Spot.Application.Abstractions.Services
 
         Task<Result<List<SpotResponse>>> GetByCityIdAsync(Guid cityId);
 
+        Task<Result<List<CoordinatesResponse>>> GetCoordinatesByCityIdAsync(Guid cityId);
+
         Task<Result<List<SpotResponse>>> GetRandomByCityIdAsync(
             GetRandomSpotsByCityIdRequest request,
             CancellationToken cancellationToken = default);
