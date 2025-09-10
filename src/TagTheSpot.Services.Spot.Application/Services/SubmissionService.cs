@@ -12,7 +12,6 @@ using TagTheSpot.Services.Spot.Application.Abstractions.Storage;
 using TagTheSpot.Services.Spot.Application.DTO.UseCases;
 using TagTheSpot.Services.Spot.Application.Options;
 using TagTheSpot.Services.Spot.Domain.Cities;
-using TagTheSpot.Services.Spot.Domain.Spots;
 using TagTheSpot.Services.Spot.Domain.Submissions;
 using TagTheSpot.Services.Spot.Domain.Users;
 
@@ -21,7 +20,6 @@ namespace TagTheSpot.Services.Spot.Application.Services
     public sealed class SubmissionService : ISubmissionService
     {
         private readonly ISubmissionRepository _submissionRepository;
-        private readonly ISpotRepository _spotRepository;
         private readonly ICurrentUserService _currentUserService;
         private readonly ICityRepository _cityRepository;
         private readonly IBlobService _blobService;
@@ -35,7 +33,6 @@ namespace TagTheSpot.Services.Spot.Application.Services
 
         public SubmissionService(
             ISubmissionRepository submissionRepository,
-            ISpotRepository spotRepository,
             ICurrentUserService currentUserService,
             Mapper<Submission, SubmissionResponse> submissionMapper,
             ICityRepository cityRepository,
@@ -49,7 +46,6 @@ namespace TagTheSpot.Services.Spot.Application.Services
             IOptions<LocationValidationSettings> locationValidationSettings)
         {
             _submissionRepository = submissionRepository;
-            _spotRepository = spotRepository;
             _currentUserService = currentUserService;
             _submissionMapper = submissionMapper;
             _cityRepository = cityRepository;
@@ -81,16 +77,16 @@ namespace TagTheSpot.Services.Spot.Application.Services
                 return Result.Failure<Guid>(SubmissionErrors.SpotLocationOutsideCity);
             }
 
-            var spotsExistNearby = await _spotRepository.SpotsExistNearbyAsync(
+            var locationTaken = await _submissionRepository.LocationForSubmissionTakenAsync(
                 latitude: request.Latitude,
                 longitude: request.Longitude,
                 cityId: request.CityId,
                 minDistanceBetweenSpotsInMeters:
                     _locationValidationSettings.MinDistanceBetweenSpotsInMeters);
 
-            if (spotsExistNearby)
+            if (locationTaken)
             {
-                return Result.Failure<Guid>(SubmissionErrors.SpotLocationTooClose);
+                return Result.Failure<Guid>(SubmissionErrors.LocationAlreadyTaken);
             }
 
             var submission = _requestMapper.Map(request);

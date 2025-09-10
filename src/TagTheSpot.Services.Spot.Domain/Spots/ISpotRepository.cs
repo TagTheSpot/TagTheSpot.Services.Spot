@@ -22,11 +22,5 @@
             Guid cityId,
             int count,
             CancellationToken cancellationToken = default);
-
-        Task<bool> SpotsExistNearbyAsync(
-            double latitude,
-            double longitude,
-            Guid cityId,
-            double minDistanceBetweenSpotsInMeters);
     }
 }

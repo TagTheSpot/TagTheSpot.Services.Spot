@@ -7,13 +7,19 @@
             CancellationToken cancellationToken = default);
 
         Task<IEnumerable<Submission>> GetByUserIdAsync(
-            Guid userId, CancellationToken cancellationToken);
+            Guid userId, CancellationToken cancellationToken = default);
 
         Task<Submission?> GetByIdAsync(
-            Guid id, CancellationToken cancellationToken);
+            Guid id, CancellationToken cancellationToken = default);
 
         Task UpdateAsync(
             Submission submission, 
-            CancellationToken cancellationToken);
+            CancellationToken cancellationToken = default);
+
+        Task<bool> LocationForSubmissionTakenAsync(
+            double latitude,
+            double longitude,
+            Guid cityId,
+            double minDistanceBetweenSpotsInMeters);
     }
 }
