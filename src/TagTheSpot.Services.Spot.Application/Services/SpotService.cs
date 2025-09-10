@@ -186,5 +186,26 @@ namespace TagTheSpot.Services.Spot.Application.Services
 
             return _responseMapper.Map(spots).ToList();
         }
+
+        public async Task<Result<List<CoordinatesResponse>>> GetCoordinatesByCityIdAsync(Guid cityId)
+        {
+            var exists = await _cityRepository.ExistsAsync(cityId);
+
+            if (!exists)
+            {
+                return Result.Failure<List<CoordinatesResponse>>(SpotErrors.CityNotFound);
+            }
+
+            var spots = await _spotRepository
+                .GetByCityIdAsync(cityId);
+
+            var coordinates = spots
+                .Select(spot => new CoordinatesResponse(
+                    Latitude: spot.Latitude,
+                    Longitude: spot.Longitude))
+                .ToList();
+
+            return Result.Success(coordinates);
+        }
     }
 }
