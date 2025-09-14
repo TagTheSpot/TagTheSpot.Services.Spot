@@ -47,6 +47,13 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
             builder.Services.AddControllers();
 
+            builder.Services.AddHttpClient<ISpotModerationService, GroqSpotModerationService>((sp, client) =>
+            {
+                var groqSettings = sp.GetRequiredService<IOptions<GroqApiSettings>>().Value;
+
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {groqSettings.ApiKey}");
+            });
+
             builder.Services.AddJsonMultipartFormDataSupport(JsonSerializerChoice.Newtonsoft);
 
             builder.Services.AddEndpointsApiExplorer();
@@ -104,7 +111,19 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 .ValidateDataAnnotations()
                 .ValidateOnStart();
 
+            builder.Services.AddOptions<GroqApiSettings>()
+                .BindConfiguration(GroqApiSettings.SectionName)
+                .ValidateDataAnnotations()
+                .ValidateOnStart();
+
+            builder.Services.AddOptions<SpotModerationSettings>()
+                .BindConfiguration(SpotModerationSettings.SectionName)
+                .ValidateDataAnnotations()
+                .ValidateOnStart();
+
             builder.Services.ConfigureAuthentication();
+
+            builder.Services.AddScoped<ISpotModerationService, GroqSpotModerationService>();
 
             builder.Services.AddSingleton<ICityRepository, CityRepository>();
             builder.Services.AddScoped<ICityService, CityService>();
