@@ -3,10 +3,14 @@ using Azure.Storage.Blobs.Models;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using MassTransit;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Microsoft.Net.Http.Headers;
 using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Extensions;
 using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Integrations;
+using System.Net.Http.Headers;
+using System.Net.Mime;
 using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
 using TagTheSpot.Services.Shared.Messaging.Events.Users;
 using TagTheSpot.Services.Shared.Messaging.Options;
@@ -47,11 +51,17 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
             builder.Services.AddControllers();
 
-            builder.Services.AddHttpClient<ISpotModerationService, GroqSpotModerationService>((sp, client) =>
+            builder.Services.AddHttpClient<ISubmissionModerationService, GroqSubmissionModerationService>((sp, client) =>
             {
                 var groqSettings = sp.GetRequiredService<IOptions<GroqApiSettings>>().Value;
 
-                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {groqSettings.ApiKey}");
+                client.DefaultRequestHeaders.Add(
+                    HeaderNames.Accept,
+                    MediaTypeNames.Application.Json);
+
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+                    JwtBearerDefaults.AuthenticationScheme,
+                    groqSettings.ApiKey);
             });
 
             builder.Services.AddJsonMultipartFormDataSupport(JsonSerializerChoice.Newtonsoft);
@@ -116,14 +126,12 @@ namespace TagTheSpot.Services.Spot.WebAPI
                 .ValidateDataAnnotations()
                 .ValidateOnStart();
 
-            builder.Services.AddOptions<SpotModerationSettings>()
-                .BindConfiguration(SpotModerationSettings.SectionName)
+            builder.Services.AddOptions<SubmissionModerationSettings>()
+                .BindConfiguration(SubmissionModerationSettings.SectionName)
                 .ValidateDataAnnotations()
                 .ValidateOnStart();
 
             builder.Services.ConfigureAuthentication();
-
-            builder.Services.AddScoped<ISpotModerationService, GroqSpotModerationService>();
 
             builder.Services.AddSingleton<ICityRepository, CityRepository>();
             builder.Services.AddScoped<ICityService, CityService>();

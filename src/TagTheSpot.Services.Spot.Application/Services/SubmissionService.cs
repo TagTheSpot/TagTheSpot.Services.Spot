@@ -22,8 +22,8 @@ namespace TagTheSpot.Services.Spot.Application.Services
         private readonly ISubmissionRepository _submissionRepository;
         private readonly ICurrentUserService _currentUserService;
         private readonly ICityRepository _cityRepository;
+        private readonly ISubmissionModerationService _submissionModerationService;
         private readonly IBlobService _blobService;
-        private readonly IContentSafetyService _contentSafetyService;
         private readonly IGeoValidationService _geoValidationService;
         private readonly Mapper<AddSubmissionRequest, Submission> _requestMapper;
         private readonly Mapper<Submission, SubmissionResponse> _submissionMapper;
@@ -34,26 +34,26 @@ namespace TagTheSpot.Services.Spot.Application.Services
         public SubmissionService(
             ISubmissionRepository submissionRepository,
             ICurrentUserService currentUserService,
+            ISubmissionModerationService submissionModerationService,
             Mapper<Submission, SubmissionResponse> submissionMapper,
             ICityRepository cityRepository,
             ILogger<SubmissionService> logger,
             IUserRepository userRepository,
             Mapper<AddSubmissionRequest, Submission> requestMapper,
             IBlobService blobService,
-            IContentSafetyService contentSafetyService,
             IPublishEndpoint publishEndpoint,
             IGeoValidationService geoValidationService,
             IOptions<LocationValidationSettings> locationValidationSettings)
         {
             _submissionRepository = submissionRepository;
             _currentUserService = currentUserService;
+            _submissionModerationService = submissionModerationService;
             _submissionMapper = submissionMapper;
             _cityRepository = cityRepository;
             _logger = logger;
             _requestMapper = requestMapper;
             _blobService = blobService;
             _publishEndpoint = publishEndpoint;
-            _contentSafetyService = contentSafetyService;
             _geoValidationService = geoValidationService;
             _locationValidationSettings = locationValidationSettings.Value;
         }
@@ -93,12 +93,17 @@ namespace TagTheSpot.Services.Spot.Application.Services
 
             submission.CityId = city.Id;
 
-            var isDescriptionSafe = await _contentSafetyService
-                .IsTextSafeAsync(submission.Description);
+            var descriptionModerationResult = await _submissionModerationService
+                .ModerateDescriptionAsync(submission);
 
-            if (!isDescriptionSafe)
+            if (!descriptionModerationResult.IsAppropriate)
             {
-                return Result.Failure<Guid>(SubmissionErrors.DescriptionUnsafe);
+                return Result.Failure<Guid>(SubmissionErrors.DescriptionInapproriate);
+            }
+
+            if (!descriptionModerationResult.IsRelevant)
+            {
+                return Result.Failure<Guid>(SubmissionErrors.DescriptionIrrelevantOrContradictory);
             }
 
             List<string> imagesUris = [];
