@@ -14,10 +14,15 @@ namespace TagTheSpot.Services.Spot.Domain.Submissions
                 code: "Submission.NotFound",
                 description: "The submission has not been found.");
 
-        public static readonly Error DescriptionUnsafe =
+        public static readonly Error DescriptionIrrelevantOrContradictory =
             Error.Validation(
-                code: "Submission.DescriptionUnsafe",
-                description: "The description contains unsafe content.");
+                code: "Submission.DescriptionIrrelevantOrContradictory",
+                description: "The description is either irrelevant or contradicts the submission's fields.");
+
+        public static readonly Error DescriptionInapproriate =
+            Error.Validation(
+                code: "Submission.DescriptionInapproriate",
+                description: "The description contains inappropriate content.");
 
         public static readonly Error SpotLocationOutsideCity =
             Error.Validation(
