@@ -3,7 +3,7 @@ using Azure.Storage.Blobs.Models;
 using Microsoft.Extensions.Options;
 using TagTheSpot.Services.Spot.Application.Abstractions.Storage;
 using TagTheSpot.Services.Spot.Application.DTO.Blobs;
-using TraffiLearn.Infrastructure.External.Blobs.Options;
+using TagTheSpot.Services.Spot.Infrastructure.Options;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Services
 {

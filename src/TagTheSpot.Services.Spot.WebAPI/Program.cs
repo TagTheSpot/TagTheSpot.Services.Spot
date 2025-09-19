@@ -39,7 +39,6 @@ using TagTheSpot.Services.Spot.Infrastructure.Services;
 using TagTheSpot.Services.Spot.WebAPI.Extensions;
 using TagTheSpot.Services.Spot.WebAPI.Factories;
 using TagTheSpot.Services.Spot.WebAPI.Middleware;
-using TraffiLearn.Infrastructure.External.Blobs.Options;
 
 namespace TagTheSpot.Services.Spot.WebAPI
 {
