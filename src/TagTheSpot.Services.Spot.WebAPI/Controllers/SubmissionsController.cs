@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TagTheSpot.Services.Shared.API.Factories;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
-using TagTheSpot.Services.Spot.WebAPI.Factories;
 
 namespace TagTheSpot.Services.Spot.WebAPI.Controllers
 {
@@ -27,8 +27,8 @@ namespace TagTheSpot.Services.Spot.WebAPI.Controllers
         {
             var result = await _submissionService.GetCurrentUserSubmissionsAsync(cancellationToken);
 
-            return result.IsSuccess 
-                ? Ok(result.Value) 
+            return result.IsSuccess
+                ? Ok(result.Value)
                 : _problemDetailsFactory.GetProblemDetails(result);
         }
 

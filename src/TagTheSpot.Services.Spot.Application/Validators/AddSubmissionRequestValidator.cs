@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
+using TagTheSpot.Services.Shared.Application.Extensions;
 using TagTheSpot.Services.Spot.Application.DTO.UseCases;
-using TagTheSpot.Services.Spot.Application.Extensions;
 using TagTheSpot.Services.Spot.Domain.Spots;
 
 namespace TagTheSpot.Services.Spot.Application.Validators

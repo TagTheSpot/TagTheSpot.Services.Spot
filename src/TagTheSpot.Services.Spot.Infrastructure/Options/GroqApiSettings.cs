@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TagTheSpot.Services.Shared.Abstractions.Options;
+using TagTheSpot.Services.Spot.Application.Options;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Options
 {
-    public sealed class GroqApiSettings
+    public sealed class GroqApiSettings : IAppOptions
     {
-        public const string SectionName = nameof(GroqApiSettings);
+        public static string SectionName => nameof(GroqApiSettings);
 
         [Required]
         [Url]

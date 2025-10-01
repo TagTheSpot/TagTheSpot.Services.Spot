@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TagTheSpot.Services.Shared.Abstractions.Options;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Options
 {
-    public sealed class DataSettings
+    public sealed class DataSettings : IAppOptions
     {
-        public const string SectionName = nameof(DataSettings);
+        public static string SectionName => nameof(DataSettings);
 
         [Required]
         public required string CityDataRelativePath { get; init; }

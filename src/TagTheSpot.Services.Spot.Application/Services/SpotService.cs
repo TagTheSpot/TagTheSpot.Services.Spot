@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TagTheSpot.Services.Shared.Abstractions.Mappers;
 using TagTheSpot.Services.Shared.Essentials.Results;
-using TagTheSpot.Services.Spot.Application.Abstractions.Data;
 using TagTheSpot.Services.Spot.Application.Abstractions.Geo;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.Application.Abstractions.Storage;

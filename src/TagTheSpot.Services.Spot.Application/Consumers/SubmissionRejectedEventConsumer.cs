@@ -1,6 +1,6 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Logging;
-using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
+using TagTheSpot.Services.Shared.Messaging.Submissions;
 using TagTheSpot.Services.Spot.Domain.Submissions;
 
 namespace TagTheSpot.Services.Spot.Application.Consumers

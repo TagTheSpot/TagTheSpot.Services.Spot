@@ -11,17 +11,22 @@ using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Extensions;
 using Swashbuckle.AspNetCore.JsonMultipartFormDataSupport.Integrations;
 using System.Net.Http.Headers;
 using System.Net.Mime;
-using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
-using TagTheSpot.Services.Shared.Messaging.Events.Users;
-using TagTheSpot.Services.Shared.Messaging.Options;
+using System.Reflection;
+using TagTheSpot.Services.Shared.API.DependencyInjection;
+using TagTheSpot.Services.Shared.API.Factories;
+using TagTheSpot.Services.Shared.API.Middleware;
+using TagTheSpot.Services.Shared.Application.Extensions;
+using TagTheSpot.Services.Shared.Auth.DependencyInjection;
+using TagTheSpot.Services.Shared.Auth.Options;
+using TagTheSpot.Services.Shared.Infrastructure.Options;
+using TagTheSpot.Services.Shared.Messaging.Submissions;
+using TagTheSpot.Services.Shared.Messaging.Users;
 using TagTheSpot.Services.Spot.Application.Abstractions.AI;
 using TagTheSpot.Services.Spot.Application.Abstractions.Geo;
 using TagTheSpot.Services.Spot.Application.Abstractions.Identity;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;
 using TagTheSpot.Services.Spot.Application.Abstractions.Storage;
 using TagTheSpot.Services.Spot.Application.Consumers;
-using TagTheSpot.Services.Spot.Application.DTO.UseCases;
-using TagTheSpot.Services.Spot.Application.Extensions;
 using TagTheSpot.Services.Spot.Application.Mappers;
 using TagTheSpot.Services.Spot.Application.Options;
 using TagTheSpot.Services.Spot.Application.Services;
@@ -33,12 +38,8 @@ using TagTheSpot.Services.Spot.Domain.Users;
 using TagTheSpot.Services.Spot.Infrastructure.Extensions;
 using TagTheSpot.Services.Spot.Infrastructure.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence;
-using TagTheSpot.Services.Spot.Infrastructure.Persistence.Options;
 using TagTheSpot.Services.Spot.Infrastructure.Persistence.Repositories;
 using TagTheSpot.Services.Spot.Infrastructure.Services;
-using TagTheSpot.Services.Spot.WebAPI.Extensions;
-using TagTheSpot.Services.Spot.WebAPI.Factories;
-using TagTheSpot.Services.Spot.WebAPI.Middleware;
 
 namespace TagTheSpot.Services.Spot.WebAPI
 {
@@ -49,6 +50,13 @@ namespace TagTheSpot.Services.Spot.WebAPI
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
+            builder.Services.AddEndpointsApiExplorer();
+
+            var swaggerXmlFileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var swaggerXmlFilePath = Path.Combine(AppContext.BaseDirectory, swaggerXmlFileName);
+
+            builder.Services.ConfigureSwaggerGen(swaggerXmlFilePath);
+            builder.Services.AddJsonMultipartFormDataSupport(JsonSerializerChoice.Newtonsoft);
 
             builder.Services.AddHttpClient<ISubmissionModerationService, GroqSubmissionModerationService>((sp, client) =>
             {
@@ -63,11 +71,6 @@ namespace TagTheSpot.Services.Spot.WebAPI
                     groqSettings.ApiKey);
             });
 
-            builder.Services.AddJsonMultipartFormDataSupport(JsonSerializerChoice.Newtonsoft);
-
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.ConfigureSwaggerGen();
-
             builder.Services.AddDbContext<ApplicationDbContext>(
                 (serviceProvider, options) =>
                 {
@@ -80,55 +83,16 @@ namespace TagTheSpot.Services.Spot.WebAPI
                         });
                 });
 
-            builder.Services.AddOptions<DbSettings>()
-                .BindConfiguration(DbSettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-
-            builder.Services.AddOptions<DataSettings>()
-                .BindConfiguration(DataSettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-
-            builder.Services.AddOptions<RabbitMqSettings>()
-                .BindConfiguration(RabbitMqSettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-
-            builder.Services.AddOptions<MessagingSettings>()
-                .BindConfiguration(MessagingSettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-
-            builder.Services.AddOptions<AzureBlobStorageSettings>()
-                .BindConfiguration(AzureBlobStorageSettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-
-            builder.Services.AddOptions<AzureContentSafetySettings>()
-                .BindConfiguration(AzureContentSafetySettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-
-            builder.Services.AddOptions<JwtSettings>()
-                .BindConfiguration(JwtSettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-
-            builder.Services.AddOptions<LocationValidationSettings>()
-                .BindConfiguration(LocationValidationSettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-
-            builder.Services.AddOptions<GroqApiSettings>()
-                .BindConfiguration(GroqApiSettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-
-            builder.Services.AddOptions<SubmissionModerationSettings>()
-                .BindConfiguration(SubmissionModerationSettings.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
+            builder.Services.ConfigureValidatableOnStartOptions<RabbitMqSettings>();
+            builder.Services.ConfigureValidatableOnStartOptions<JwtSettings>();
+            builder.Services.ConfigureValidatableOnStartOptions<DbSettings>();
+            builder.Services.ConfigureValidatableOnStartOptions<MessagingSettings>();
+            builder.Services.ConfigureValidatableOnStartOptions<DataSettings>();
+            builder.Services.ConfigureValidatableOnStartOptions<AzureBlobStorageSettings>();
+            builder.Services.ConfigureValidatableOnStartOptions<AzureContentSafetySettings>();
+            builder.Services.ConfigureValidatableOnStartOptions<LocationValidationSettings>();
+            builder.Services.ConfigureValidatableOnStartOptions<GroqApiSettings>();
+            builder.Services.ConfigureValidatableOnStartOptions<SubmissionModerationSettings>();
 
             builder.Services.ConfigureAuthentication();
 
@@ -204,15 +168,11 @@ namespace TagTheSpot.Services.Spot.WebAPI
 
             builder.Services.AddSingleton<IBlobService, AzureBlobStorageService>();
 
-            builder.Services.AddMapper<AddSpotRequest, Domain.Spots.Spot, AddSpotRequestToSpotMapper>();
-            builder.Services.AddMapper<Submission, SubmissionResponse, SubmissionToSubmissionResponseMapper>();
-            builder.Services.AddMapper<Submission, Domain.Spots.Spot, SubmissionToSpotMapper>();
-            builder.Services.AddMapper<AddSubmissionRequest, Submission, AddSubmissionRequestToSubmissionMapper>();
-            builder.Services.AddMapper<Domain.Spots.Spot, SpotResponse, SpotToSpotResponseMapper>();
+            builder.Services.AddMappersFromAssembly(typeof(AddSpotRequestToSpotMapper).Assembly);
 
             builder.Services.AddSingleton<ProblemDetailsFactory>();
             builder.Services.AddHttpContextAccessor();
-            builder.Services.AddCorsPolicies();
+            builder.Services.AddDevelopmentCorsPolicy();
 
             var app = builder.Build();
 
@@ -224,8 +184,8 @@ namespace TagTheSpot.Services.Spot.WebAPI
             }
             else
             {
-                app.UseHttpsRedirection();
                 app.UseHsts();
+                app.UseHttpsRedirection();
             }
 
             app.UseSwagger();

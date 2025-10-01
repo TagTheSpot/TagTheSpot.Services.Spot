@@ -1,4 +1,4 @@
-﻿using TagTheSpot.Services.Spot.Application.Abstractions.Data;
+﻿using TagTheSpot.Services.Shared.Abstractions.Mappers;
 using TagTheSpot.Services.Spot.Application.DTO.UseCases;
 using TagTheSpot.Services.Spot.Domain.Spots;
 using TagTheSpot.Services.Spot.Domain.Submissions;
@@ -23,7 +23,7 @@ namespace TagTheSpot.Services.Spot.Application.Mappers
                 Accessibility = source.Accessibility is null ? null : Enum.Parse<Accessibility>(source.Accessibility),
                 Condition = source.Condition is null ? null : Enum.Parse<Condition>(source.Condition),
                 SubmittedAt = DateTime.UtcNow
-            }; 
+            };
         }
     }
 }

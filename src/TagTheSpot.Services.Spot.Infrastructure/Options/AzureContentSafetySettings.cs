@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TagTheSpot.Services.Shared.Abstractions.Options;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Options
 {
-    public sealed class AzureContentSafetySettings
+    public sealed class AzureContentSafetySettings : IAppOptions
     {
-        public const string SectionName = nameof(AzureContentSafetySettings);
+        public static string SectionName => nameof(AzureContentSafetySettings);
 
         [Required]
         [Url]
