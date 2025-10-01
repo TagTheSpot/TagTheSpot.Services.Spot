@@ -1,10 +1,10 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TagTheSpot.Services.Shared.Abstractions.Mappers;
 using TagTheSpot.Services.Shared.Essentials.Results;
-using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
+using TagTheSpot.Services.Shared.Messaging.Submissions;
 using TagTheSpot.Services.Spot.Application.Abstractions.AI;
-using TagTheSpot.Services.Spot.Application.Abstractions.Data;
 using TagTheSpot.Services.Spot.Application.Abstractions.Geo;
 using TagTheSpot.Services.Spot.Application.Abstractions.Identity;
 using TagTheSpot.Services.Spot.Application.Abstractions.Services;

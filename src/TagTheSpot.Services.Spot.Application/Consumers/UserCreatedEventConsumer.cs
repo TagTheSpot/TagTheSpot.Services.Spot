@@ -1,6 +1,6 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Logging;
-using TagTheSpot.Services.Shared.Messaging.Events.Users;
+using TagTheSpot.Services.Shared.Messaging.Users;
 using TagTheSpot.Services.Spot.Domain.Users;
 
 namespace TagTheSpot.Services.Spot.Application.Consumers
@@ -11,7 +11,7 @@ namespace TagTheSpot.Services.Spot.Application.Consumers
         private readonly ILogger<UserCreatedEventConsumer> _logger;
 
         public UserCreatedEventConsumer(
-            IUserRepository userRepository, 
+            IUserRepository userRepository,
             ILogger<UserCreatedEventConsumer> logger)
         {
             _userRepository = userRepository;

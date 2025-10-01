@@ -1,7 +1,7 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Logging;
-using TagTheSpot.Services.Shared.Messaging.Events.Submissions;
-using TagTheSpot.Services.Spot.Application.Abstractions.Data;
+using TagTheSpot.Services.Shared.Abstractions.Mappers;
+using TagTheSpot.Services.Shared.Messaging.Submissions;
 using TagTheSpot.Services.Spot.Domain.Spots;
 using TagTheSpot.Services.Spot.Domain.Submissions;
 

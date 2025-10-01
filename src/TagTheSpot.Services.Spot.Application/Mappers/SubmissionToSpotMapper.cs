@@ -1,4 +1,4 @@
-﻿using TagTheSpot.Services.Spot.Application.Abstractions.Data;
+﻿using TagTheSpot.Services.Shared.Abstractions.Mappers;
 using TagTheSpot.Services.Spot.Domain.Submissions;
 
 namespace TagTheSpot.Services.Spot.Application.Mappers

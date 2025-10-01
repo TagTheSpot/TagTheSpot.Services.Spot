@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TagTheSpot.Services.Shared.Abstractions.Options;
 
 namespace TagTheSpot.Services.Spot.Infrastructure.Options
 {
-    public sealed class AzureBlobStorageSettings
+    public sealed class AzureBlobStorageSettings : IAppOptions
     {
-        public const string SectionName = nameof(AzureBlobStorageSettings);
+        public static string SectionName => nameof(AzureBlobStorageSettings);
 
         [Required]
         [StringLength(50)]
